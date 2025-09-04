@@ -107,10 +107,10 @@
   <header>
     <div class="wrap nav">
       <div class="logo">
-        <div class="logo-mark" aria-hidden="true"></div>
+        <img src="pump_pokeball_logo.png" alt="Logo" style="width:42px;height:42px;border-radius:8px;filter:drop-shadow(0 4px 8px rgba(0,0,0,0.2))" />
         <div>
-          <div style="font-weight:900;font-size:18px;letter-spacing:.3px">🌿 Pump Plays Pokémon</div>
-          <div style="font-size:12px;color:var(--muted);margin-top:-2px">Hoenn Democracy • Emerald Version</div>
+          <div style="font-weight:900;font-size:18px;letter-spacing:.3px">PUMP PLAYS POKÉMON</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:-2px">Interactive Democracy Gaming</div>
         </div>
       </div>
       <nav>
@@ -127,48 +127,19 @@
   <main>
     <section class="wrap hero" id="live">
       <div class="left card">
-        <div class="pill" id="status-pill"><span class="dot" style="background:var(--warn)"></span> Status: <span id="status-text">Preparing</span></div>
-        <h1>🌿 Let chat play <span style="color:var(--brand)">Pokémon Emerald</span> — on Pump.fun</h1>
-        <p class="brandline">"A thousand trainers, one journey through Hoenn — will we catch 'em all or get lost in Petalburg Woods?"</p>
+        <div class="pill" id="status-pill"><span class="dot" style="background:var(--ok)"></span> Ready to Play</div>
+        <h1>🚀 <span style="color:var(--brand)">PUMP PLAYS</span> <span style="color:#4ad2ff">POKÉMON</span></h1>
+        <p class="brandline" style="color:#ff6b9d;font-size:20px;font-weight:800">AT FULL SPEED!</p>
         <p class="subtitle">Type <code>!up !down !left !right !a !b !l !r !start !select</code> in chat to guide our trainer! Democracy votes every <strong id="vote-window">8s</strong> 🗳️ Token holders get boosted votes and special battle effects! ⚡</p>
         <div class="hero-cta">
-          <a class="btn brand" id="cta-join" target="_blank" rel="noopener">Join Livestream</a>
-          <a class="btn" id="cta-token" target="_blank" rel="noopener">View Token</a>
-          <a class="btn ghost" id="cta-telegram" target="_blank" rel="noopener">Join Telegram</a>
+          <a class="btn brand" id="cta-join" target="_blank" rel="noopener">WATCH LIVE</a>
+          <a class="btn ghost" id="cta-telegram" target="_blank" rel="noopener">JOIN DISCORD</a>
+          <a class="btn" id="cta-token" style="background:#ff6b9d;border-color:#ff6b9d" target="_blank" rel="noopener">PLAY NOW</a>
         </div>
-        <div style="margin-top:10px;color:var(--muted);font-size:13px">No tweets yet — we’re testing live. If the stream is offline, check back soon.</div>
+        <div style="margin-top:10px;color:var(--muted);font-size:13px">Interactive democracy gaming — powered by the community!</div>
       </div>
-      <div class="card screen scanlines" aria-label="Stream preview">
-        <div class="top">
-          <strong>Live Preview</strong>
-          <div class="pill"><span class="dot" style="background:var(--danger)"></span> Not broadcasting</div>
-        </div>
-        <div class="vid" id="preview">
-          <!-- Pump.fun Stream Embed -->
-          <iframe id="pump-stream" 
-                  src="https://pump.fun/coin/DxKwgDV2NZapgrpdvCHNdWcAByWuXvohKsdUAxcrpump"
-                  style="width:100%;height:100%;border:none;border-radius:8px;display:none"
-                  frameborder="0"
-                  allowfullscreen>
-          </iframe>
-          
-          <!-- Local OBS Virtual Camera (Development) -->
-          <video id="virtual-cam" style="width:100%;height:100%;object-fit:contain;display:none" autoplay playsinline muted></video>
-          
-          <!-- Stream Options -->
-          <div id="stream-options" style="display:grid;gap:12px;place-items:center;height:100%">
-            <svg width="120" height="120" viewBox="0 0 24 24" role="img" aria-label="Game controller">
-              <path fill="currentColor" d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm1.5 2A1.5 1.5 0 0 0 7 5.5v9A1.5 1.5 0 0 0 8.5 16h7A1.5 1.5 0 0 0 17 14.5v-9A1.5 1.5 0 0 0 15.5 4h-7ZM8 18h3v1H8v-1Zm5 0h3v1h-3v-1Zm-4.25-3.5a1.25 1.25 0 1 1-2.5 0a1.25 1.25 0 0 1 2.5 0Zm7 0a1.25 1.25 0 1 1-2.5 0a1.25 1.25 0 0 1 2.5 0Z"/>
-            </svg>
-            <div style="text-align:center">
-              <p style="color:var(--muted);margin:10px 0">Choose your stream source:</p>
-              <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
-                <button id="connect-pump-stream" class="btn brand">🔴 Pump.fun Stream</button>
-                <button id="connect-obs-cam" class="btn ghost">📹 OBS Camera (Local)</button>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="card" style="display:grid;place-items:center;padding:40px;background:radial-gradient(circle at center, rgba(24,194,156,0.15) 0%, rgba(74,210,255,0.15) 50%, rgba(255,107,157,0.15) 100%)">
+        <img src="pump_pokeball_logo.png" alt="Pump Plays Pokemon Logo" style="max-width:400px;width:100%;height:auto;filter:drop-shadow(0 8px 16px rgba(0,0,0,0.3))" />
       </div>
     </section>
 
@@ -179,22 +150,22 @@
         <div class="item">
           <div class="pill" style="margin-bottom:8px"><span class="dot" style="background:var(--ok)"></span> 01</div>
           <h3>GBA Emulator</h3>
-          <p>We run Pokémon Emerald on a Game Boy Advance emulator. The controller script sends button presses to the emulator every 8 seconds for precise, lag-free gameplay in the Hoenn region.</p>
+          <p>We run Pokémon Emerald on VisualBoyAdvance-M or mGBA. The controller script sends GBA inputs every vote window for precise, responsive gameplay.</p>
         </div>
         <div class="item">
           <div class="pill" style="margin-bottom:8px"><span class="dot" style="background:var(--ok)"></span> 02</div>
           <h3>Chat → Votes</h3>
-          <p>Pump.fun chat messages like <code>!up</code>, <code>!down</code>, <code>!a</code>, <code>!b</code>, <code>!start</code>, and <code>!select</code> are tallied. Democracy wins every 8 seconds!</p>
+          <p>Pump.fun chat messages like <code>!up</code>, <code>!a</code>, <code>!b</code>, <code>!l</code>, <code>!r</code> are tallied. Majority wins every 8 seconds.</p>
         </div>
         <div class="item">
           <div class="pill" style="margin-bottom:8px"><span class="dot" style="background:var(--ok)"></span> 03</div>
           <h3>Token Boosts</h3>
-          <p>Recent token traders get 2–5× vote weight for a short boost. Big trades trigger special on-screen effects and stronger voting power!</p>
+          <p>Recent buyers get 2–5× vote power for a limited time. Big buys trigger spectacular on-screen effects.</p>
         </div>
         <div class="item">
           <div class="pill" style="margin-bottom:8px"><span class="dot" style="background:var(--ok)"></span> 04</div>
           <h3>Live Overlay</h3>
-          <p>A beautiful OBS browser source shows real-time vote bars, countdown timer, last move executed, winning voter, and trade celebrations.</p>
+          <p>Real-time vote visualization with command bars, winner display, and dazzling trade animations.</p>
         </div>
       </div>
     </section>
@@ -218,11 +189,11 @@
               <tr><td><code>!r</code></td><td>R shoulder button</td></tr>
               <tr><td><code>!start</code></td><td>START (pause / menu)</td></tr>
               <tr><td><code>!select</code></td><td>SELECT (items / shortcuts)</td></tr>
-              <tr><td><code>!holda 800</code></td><td>Hold A for 800ms (works with <em>a,b,l,r,left,right,up,down,start,select</em>)</td></tr>
+              <tr><td><code>!holda 800</code></td><td>Hold A for 800ms (works with any button)</td></tr>
               <tr><td><code>!release</code></td><td>Release all held buttons</td></tr>
             </tbody>
           </table>
-          <div class="hint" style="color:var(--muted);font-size:13px;margin-top:8px">Tip: All commands are instant button presses. Use hold commands like <code>!holda 500</code> for longer interactions.</div>
+          <div class="hint" style="color:var(--muted);font-size:13px;margin-top:8px">Tip: Hold commands accept milliseconds (100-2000ms). Example: <code>!holdb 500</code> for half-second B press.</div>
           <div class="cta">
             <button class="btn" data-copy="!up !down !left !right !a !b !l !r !start !select">Copy GBA commands</button>
             <button class="btn ghost" id="btn-sim">Simulate test vote</button>
@@ -314,84 +285,6 @@
     </div>
   </footer>
 
-  <script>
-    // Stream Integration
-    function showPumpStream() {
-      const iframe = document.getElementById('pump-stream');
-      const video = document.getElementById('virtual-cam');
-      const options = document.getElementById('stream-options');
-      const statusPill = document.querySelector('.pill');
-      
-      // Show Pump.fun stream iframe
-      iframe.style.display = 'block';
-      video.style.display = 'none';
-      options.style.display = 'none';
-      
-      // Update status
-      statusPill.innerHTML = '<span class="dot" style="background:var(--ok)"></span> Pump.fun Stream';
-    }
-    
-    async function connectOBSCamera() {
-      try {
-        const video = document.getElementById('virtual-cam');
-        const iframe = document.getElementById('pump-stream');
-        const options = document.getElementById('stream-options');
-        const statusPill = document.querySelector('.pill');
-        
-        // Request camera access (OBS Virtual Camera will appear as a camera device)
-        const stream = await navigator.mediaDevices.getUserMedia({ 
-          video: { 
-            width: { ideal: 1920 },
-            height: { ideal: 1080 }
-          },
-          audio: false 
-        });
-        
-        // Show video and hide others
-        video.srcObject = stream;
-        video.style.display = 'block';
-        iframe.style.display = 'none';
-        options.style.display = 'none';
-        
-        // Update status
-        statusPill.innerHTML = '<span class="dot" style="background:var(--ok)"></span> OBS Connected';
-        
-      } catch (error) {
-        console.error('Failed to connect to OBS Virtual Camera:', error);
-        alert('Could not connect to OBS Virtual Camera. Make sure:\n1. OBS is running\n2. Virtual Camera is started in OBS\n3. Browser has camera permissions');
-      }
-    }
-    
-    // Button handlers
-    document.getElementById('connect-pump-stream')?.addEventListener('click', showPumpStream);
-    document.getElementById('connect-obs-cam')?.addEventListener('click', connectOBSCamera);
-    
-    // Auto-connect to Pump.fun stream on page load (for deployment)
-    window.addEventListener('load', async () => {
-      // Check if running locally or deployed
-      const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-      
-      if (!isLocal) {
-        // Auto-show Pump.fun stream when deployed
-        setTimeout(showPumpStream, 1000);
-      } else {
-        // Try to auto-connect OBS when running locally
-        try {
-          const devices = await navigator.mediaDevices.enumerateDevices();
-          const hasVirtualCam = devices.some(device => 
-            device.kind === 'videoinput' && 
-            (device.label.includes('OBS') || device.label.includes('Virtual'))
-          );
-          
-          if (hasVirtualCam) {
-            setTimeout(connectOBSCamera, 1000);
-          }
-        } catch (error) {
-          console.log('Could not enumerate devices:', error);
-        }
-      }
-    });
-  </script>
 
   <script>
     // ======== CONFIG (edit these to your real links) ========
