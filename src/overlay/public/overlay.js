@@ -15,13 +15,22 @@ class PokemonOverlay {
         this.commands = ['up', 'down', 'left', 'right', 'a', 'b', 'l', 'r', 'start', 'select'];
         this.chatMessages = [];
         this.maxChatMessages = 8;
+        this.timerInterval = null;
         this.init();
     }
     
     init() {
         this.connectSocket();
         this.setupEventListeners();
+        this.startTimerUpdates();
         console.log('🎮 Pump Plays Pokemon Emerald Overlay initialized');
+    }
+    
+    startTimerUpdates() {
+        // Update timer every second for countdown
+        this.timerInterval = setInterval(() => {
+            this.updateTimer();
+        }, 1000);
     }
     
     connectSocket() {
@@ -70,6 +79,7 @@ class PokemonOverlay {
     
     updateState(newState) {
         this.state = { ...this.state, ...newState };
+        this.lastStateUpdate = Date.now(); // Track when we last got state
         
         this.updateVoteDisplay();
         this.updateLastMove();
@@ -239,7 +249,15 @@ class PokemonOverlay {
     
     updateTimer() {
         const timerElement = document.getElementById('vote-timer');
-        const timeRemaining = Math.max(0, Math.floor(this.state.timeRemaining / 1000));
+        
+        // Calculate time remaining since last state update
+        let timeRemaining;
+        if (this.lastStateUpdate && this.state.timeRemaining) {
+            const timeSinceUpdate = Date.now() - this.lastStateUpdate;
+            timeRemaining = Math.max(0, Math.floor((this.state.timeRemaining - timeSinceUpdate) / 1000));
+        } else {
+            timeRemaining = Math.max(0, Math.floor(this.state.timeRemaining / 1000));
+        }
         
         timerElement.textContent = `${timeRemaining}s`;
         

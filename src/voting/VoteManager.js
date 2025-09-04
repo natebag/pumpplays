@@ -8,6 +8,7 @@ class VoteManager extends EventEmitter {
         this.currentVotes = {};
         this.voteFirstUsers = {}; // Track first user to vote for each command
         this.voteTimer = null;
+        this.voteStartTime = null; // Track when current vote started
         this.isActive = false;
         this.lastMove = null;
         this.voteHistory = [];
@@ -57,6 +58,7 @@ class VoteManager extends EventEmitter {
         // Clear previous votes and first users
         this.currentVotes = {};
         this.voteFirstUsers = {};
+        this.voteStartTime = Date.now(); // Record when this vote period started
         
         // Set timer for vote period end
         this.voteTimer = setTimeout(() => {
@@ -92,7 +94,7 @@ class VoteManager extends EventEmitter {
             }
             
             log(`Vote complete: ${winner} wins with ${results[winner]} votes`, 'VOTE');
-            this.emit('voteComplete', winner, results);
+            this.emit('voteComplete', winner, results, this.lastMove);
         } else {
             log('No votes received, skipping move', 'VOTE');
         }
@@ -184,7 +186,7 @@ class VoteManager extends EventEmitter {
     getCurrentVotes() {
         return {
             votes: { ...this.currentVotes },
-            timeRemaining: this.voteTimer ? Math.max(0, this.voteDuration - (Date.now() % this.voteDuration)) : 0,
+            timeRemaining: this.voteTimer && this.voteStartTime ? Math.max(0, this.voteDuration - (Date.now() - this.voteStartTime)) : 0,
             isActive: this.isActive
         };
     }

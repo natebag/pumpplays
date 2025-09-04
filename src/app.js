@@ -141,7 +141,7 @@ class PumpPlaysPokemon {
         });
         
         // Vote period ended - execute GBA command
-        this.voteManager.on('voteComplete', (winningMove, voteResults) => {
+        this.voteManager.on('voteComplete', (winningMove, voteResults, lastMoveData) => {
             log(`Move chosen: ${winningMove}`, 'VOTE');
             
             // Send command to Game Boy controller via bridge
@@ -161,7 +161,9 @@ class PumpPlaysPokemon {
                 log(`Could not parse winning command: ${winningMove}`, 'ERROR');
             }
             
-            this.overlayManager.updateLastMove(winningMove, voteResults);
+            // Pass the first voter data to overlay
+            const firstVoter = lastMoveData ? lastMoveData.firstVoter : null;
+            this.overlayManager.updateLastMove(winningMove, voteResults, firstVoter);
         });
         
         // Token trade detected (from both old TradeMonitor and new PumpFunAPI)

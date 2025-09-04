@@ -135,8 +135,9 @@ class OverlayManager extends EventEmitter {
      * Update last move display
      * @param {string} move - The winning move
      * @param {Object} results - Vote results
+     * @param {string} firstVoter - The first user to vote for this command
      */
-    updateLastMove(move, results) {
+    updateLastMove(move, results, firstVoter = null) {
         const totalVotes = Object.values(results).reduce((a, b) => a + b, 0);
         
         this.state.lastMove = {
@@ -144,6 +145,7 @@ class OverlayManager extends EventEmitter {
             timestamp: Date.now(),
             votes: results[move] || 0,
             totalVotes: totalVotes,
+            firstVoter: firstVoter,
             results: results
         };
         
