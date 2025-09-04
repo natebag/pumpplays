@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pump Plays Pokémon Emerald — Interactive GBA Livestream</title>
+  <meta name="description" content="A real-time interactive Pokémon Emerald (GBA) stream where Pump.fun chat controls the game via voting." />
+  <meta property="og:title" content="Pump Plays Pokémon Emerald — Interactive GBA Livestream" />
+  <meta property="og:description" content="Type !up !down !left !right !a !b !l !r !start !select in chat to control Pokémon Emerald together. Token traders get vote weight boosts!" />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#18C29C" />
+  <style>
+    :root{
+      --bg:#0a0d12;         /* deep space */
+      --bg-soft:#0f1320;    /* soft panel */
+      --card:#11182a;       /* card bg */
+      --text:#e7f3ff;       /* main text */
+      --muted:#9fb5d1;      /* secondary text */
+      --brand:#18C29C;      /* minty green (GameBoy vibe) */
+      --accent:#f74f78;     /* pink accent */
+      --warn:#ffd166;       /* yellow */
+      --ok:#56f59c;         /* success */
+      --danger:#ff6b6b;     /* red */
+      --shadow:0 8px 28px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.03);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;background:radial-gradient(1200px 800px at 20% -10%, #18213a 0%, rgba(24,33,58,0) 60%), linear-gradient(180deg, var(--bg) 0%, #080b10 100%);color:var(--text);font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, Noto Sans, "Apple Color Emoji", "Segoe UI Emoji"}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:1200px;margin:0 auto;padding:24px}
+    header{position:sticky;top:0;backdrop-filter:blur(10px);background:color-mix(in oklab, var(--bg-soft) 92%, transparent);border-bottom:1px solid #1d2440;z-index:10}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .logo{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.5px}
+    .logo-mark{display:grid;place-items:center;width:38px;height:38px;background:linear-gradient(135deg,#1ce0b7, #4ad2ff);border-radius:10px;box-shadow:var(--shadow)}
+    .logo-mark::after{content:"PP";font-weight:900;color:#0b1222}
+    .nav a.btn{margin-left:8px}
+
+    .hero{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:center;padding:36px 0}
+    .card{background:var(--card);border:1px solid #1b2545;border-radius:var(--radius);box-shadow:var(--shadow)}
+    .hero .left{padding:28px;border-radius:var(--radius);background:linear-gradient(180deg, rgba(24,194,156,.09) 0%, rgba(24,194,156,0) 100%)}
+    h1{font-size:clamp(28px, 4.2vw, 52px);line-height:1.1;margin:0 0 12px}
+    .subtitle{color:var(--muted);font-size:18px}
+    .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;border:1px solid #263154;background:#121a2d;color:var(--text);font-weight:700;box-shadow:var(--shadow);cursor:pointer}
+    .btn:hover{transform:translateY(-1px)}
+    .btn.brand{background:linear-gradient(135deg,#1ce0b7,#4ad2ff);color:#041420;border-color:#2de0d1}
+    .btn.ghost{background:transparent}
+
+    .pill{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:#0f1528;border:1px solid #263154;color:var(--muted);font-weight:700}
+    .pill .dot{width:9px;height:9px;border-radius:50%}
+
+    .screen{aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid #24335a}
+    .screen .top{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:#0e1430}
+    .screen .top strong{letter-spacing:.3px}
+    .screen .vid{display:grid;place-items:center;background:linear-gradient(180deg,#10223f,#0a142b);height:100%}
+    .scanlines{position:relative;overflow:hidden}
+    .scanlines::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0, rgba(255,255,255,.03) 1px, transparent 2px);pointer-events:none}
+
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+    .section{padding:54px 0}
+    h2{font-size:clamp(22px,3vw,34px);margin:0 0 18px}
+    .kicker{color:var(--brand);text-transform:uppercase;letter-spacing:1px;font-weight:800;font-size:12px}
+
+    .how .item{grid-column:span 3;background:var(--card);border:1px solid #1b2545;border-radius:16px;padding:18px;box-shadow:var(--shadow)}
+    .how .item h3{margin:6px 0 6px;font-size:18px}
+    .how .item p{margin:0;color:var(--muted)}
+
+    .cmds .panel{grid-column:span 7}
+    .cmds .panel .table{width:100%;border-collapse:collapse}
+    .cmds .panel th,.cmds .panel td{padding:10px 12px;border-bottom:1px dashed #223055;text-align:left}
+    .cmds .panel th{color:var(--muted);font-weight:600}
+    .cmds .side{grid-column:span 5}
+
+    .token{background:linear-gradient(180deg, rgba(247,79,120,.06) 0%, rgba(247,79,120,0) 100%)}
+    .token .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .tier{background:var(--card);border:1px solid #1b2545;border-radius:14px;padding:16px}
+    .tier h4{margin:6px 0 10px}
+    .tier p{margin:0;color:var(--muted)}
+
+    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+
+    .faq details{background:var(--card);border:1px solid #1b2545;border-radius:12px;padding:14px;margin:10px 0}
+    .faq summary{cursor:pointer;font-weight:800}
+
+    footer{border-top:1px solid #1d2440;color:var(--muted);padding:24px 0}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .how .item{grid-column:span 6}
+      .cmds .panel{grid-column:span 12}
+      .cmds .side{grid-column:span 12}
+      .token .tiers{grid-template-columns:1fr}
+    }
+    .brandline{margin:8px 0 0;font-weight:700;color:var(--text);opacity:.9}
+    /* Theme variants */
+    [data-theme="neon"]{--brand:#ffd800;--accent:#2aa7ff;--bg:#061018;--bg-soft:#0b1422;--card:#0d1a2c}
+    [data-theme="neon"] body{background:radial-gradient(1200px 800px at 20% -10%, #142542 0%, rgba(20,37,66,0) 60%), linear-gradient(180deg, var(--bg) 0%, #060a12 100%)}
+    [data-theme="stripes"]{--brand:#ff1c56;--accent:#ffd166;--bg:#0a0d12;--bg-soft:#101525;--card:#101a2d}
+    [data-theme="stripes"] body{background:
+      repeating-linear-gradient(45deg, rgba(255,255,255,0.03) 0 12px, rgba(255,255,255,0.0) 12px 24px),
+      linear-gradient(180deg, var(--bg) 0%, #080b10 100%)}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <div class="logo">
+        <div class="logo-mark" aria-hidden="true"></div>
+        <div>
+          <div style="font-weight:900;font-size:18px;letter-spacing:.3px">Pump Plays Pokémon</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:-2px">Chat controls Pokémon Emerald — live</div>
+        </div>
+      </div>
+      <nav>
+        <a class="btn ghost" id="nav-live" href="#live">Live</a>
+        <a class="btn ghost" id="nav-how" href="#how">How it works</a>
+        <a class="btn ghost" id="nav-commands" href="#commands">Commands</a>
+        <button class="btn ghost" id="btn-theme" type="button">Theme: Neon</button>
+        <a class="btn ghost" id="nav-telegram" target="_blank" rel="noopener">Telegram</a>
+        <a class="btn" id="nav-mint" target="_blank" rel="noopener">Open Token</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="wrap hero" id="live">
+      <div class="left card">
+        <div class="pill" id="status-pill"><span class="dot" style="background:var(--warn)"></span> Status: <span id="status-text">Preparing</span></div>
+        <h1>Let chat play <span style="color:var(--brand)">Pokémon Emerald</span> — on Pump.fun</h1>
+        <p class="brandline">"Anyone can handle their own Pokémon adventure — but can <strong>CT</strong> handle the Hoenn region?"</p>
+        <p class="subtitle">Type <code>!up !down !left !right !a !b !l !r !start !select</code> in the livestream chat to control the Game Boy Advance. Votes lock every <strong id="vote-window">8s</strong> and the winning move is sent to the GBA emulator. Recent token traders get boosted votes and special effects!</p>
+        <div class="hero-cta">
+          <a class="btn brand" id="cta-join" target="_blank" rel="noopener">Join Livestream</a>
+          <a class="btn" id="cta-token" target="_blank" rel="noopener">View Token</a>
+          <a class="btn ghost" id="cta-telegram" target="_blank" rel="noopener">Join Telegram</a>
+        </div>
+        <div style="margin-top:10px;color:var(--muted);font-size:13px">No tweets yet — we’re testing live. If the stream is offline, check back soon.</div>
+      </div>
+      <div class="card screen scanlines" aria-label="Stream preview">
+        <div class="top">
+          <strong>Live Preview</strong>
+          <div class="pill"><span class="dot" style="background:var(--danger)"></span> Not broadcasting</div>
+        </div>
+        <div class="vid" id="preview">
+          <video id="virtual-cam" style="width:100%;height:100%;object-fit:contain;display:none" autoplay playsinline muted></video>
+          <div id="placeholder-content">
+            <svg width="120" height="120" viewBox="0 0 24 24" role="img" aria-label="N64 controller">
+              <path fill="currentColor" d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm1.5 2A1.5 1.5 0 0 0 7 5.5v9A1.5 1.5 0 0 0 8.5 16h7A1.5 1.5 0 0 0 17 14.5v-9A1.5 1.5 0 0 0 15.5 4h-7ZM8 18h3v1H8v-1Zm5 0h3v1h-3v-1Zm-4.25-3.5a1.25 1.25 0 1 1-2.5 0a1.25 1.25 0 0 1 2.5 0Zm7 0a1.25 1.25 0 1 1-2.5 0a1.25 1.25 0 0 1 2.5 0Z"/>
+            </svg>
+            <p style="color:var(--muted);margin-top:10px">Click "Start Virtual Camera" in OBS, then click here to connect.</p>
+            <button id="connect-cam" class="btn" style="margin-top:10px">Connect OBS Camera</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap section how" id="how">
+      <div class="kicker">How it works</div>
+      <h2>Four moving parts. One clean experience.</h2>
+      <div class="grid">
+        <div class="item">
+          <div class="pill" style="margin-bottom:8px"><span class="dot" style="background:var(--ok)"></span> 01</div>
+          <h3>Emulator</h3>
+          <p>We run Pokémon Stadium 2 on Project64 (Windows) or Mupen64Plus. The controller script taps emulator hotkeys every vote window for clean, low-latency inputs.</p>
+        </div>
+        <div class="item">
+          <div class="pill" style="margin-bottom:8px"><span class="dot" style="background:var(--ok)"></span> 02</div>
+          <h3>Chat → Votes</h3>
+          <p>Livestream chat messages like <code>!up</code>, <code>!a</code>, <code>!z</code> and the <code>C</code>-buttons are tallied. Majority wins every few seconds.</p>
+        </div>
+        <div class="item">
+          <div class="pill" style="margin-bottom:8px"><span class="dot" style="background:var(--ok)"></span> 03</div>
+          <h3>Token Boosts</h3>
+          <p>Recent buyers get 2–5× weight for a short boost. Big buys trigger on-screen effects.</p>
+        </div>
+        <div class="item">
+          <div class="pill" style="margin-bottom:8px"><span class="dot" style="background:var(--ok)"></span> 04</div>
+          <h3>Overlay</h3>
+          <p>A sleek OBS browser source visualizes vote bars, last command, and trade fireworks.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap section cmds" id="commands">
+      <div class="grid">
+        <div class="panel card">
+          <h2>Chat Commands</h2>
+          <table class="table" aria-label="Command list">
+            <thead>
+              <tr><th>Command</th><th>Action</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>!up</code></td><td>D-Pad up (navigate menus)</td></tr>
+              <tr><td><code>!down</code></td><td>D-Pad down</td></tr>
+              <tr><td><code>!left</code></td><td>D-Pad left</td></tr>
+              <tr><td><code>!right</code></td><td>D-Pad right</td></tr>
+              <tr><td><code>!a</code></td><td>A button (confirm / interact)</td></tr>
+              <tr><td><code>!b</code></td><td>B button (cancel / run)</td></tr>
+              <tr><td><code>!l</code></td><td>L shoulder button</td></tr>
+              <tr><td><code>!r</code></td><td>R shoulder button</td></tr>
+              <tr><td><code>!start</code></td><td>START (pause / menu)</td></tr>
+              <tr><td><code>!select</code></td><td>SELECT (items / shortcuts)</td></tr>
+              <tr><td><code>!up25 / !up50 / !up100</code></td><td>Movement momentum (25%, 50%, 100%) — works for any direction</td></tr>
+              <tr><td><code>!holda 800</code></td><td>Hold A for 800ms (works with <em>a,b,l,r,left,right,up,down,start,select</em>)</td></tr>
+              <tr><td><code>!release</code></td><td>Release all held buttons</td></tr>
+            </tbody>
+          </table>
+          <div class="hint" style="color:var(--muted);font-size:13px;margin-top:8px">Tip: Momentum inputs accept 1–100 (percentage). Example: <code>!left35</code> for a gentle tilt left.</div>
+          <div class="cta">
+            <button class="btn" data-copy="!up !down !left !right !a !b !l !r !start !select">Copy GBA commands</button>
+            <button class="btn ghost" id="btn-sim">Simulate test vote</button>
+          </div>
+        </div>
+        <aside class="side card">
+          <h2 style="margin-top:8px">Quick Start (Viewers)</h2>
+          <ol>
+            <li>Open the livestream (button above).</li>
+            <li>Type a command in chat (e.g., <code>!a</code>, <code>!b</code>, or <code>!start</code>).</li>
+            <li>Watch the vote bars move in real time.</li>
+            <li>Every <span id="vote-window-2">8</span> seconds, the winning move plays.</li>
+          </ol>
+          <div class="kicker" style="margin-top:12px">Want extra influence?</div>
+          <p>Buy the token → get temporary vote boosts. Bigger buys = bigger boosts.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="wrap section token card">
+      <div class="kicker">Token perks</div>
+      <h2>Vote weighting & on-stream effects</h2>
+      <div class="tiers">
+        <div class="tier">
+          <div class="pill"><span class="dot" style="background:var(--brand)"></span> Tier 1</div>
+          <h4>Any buy &lt; 0.1 SOL</h4>
+          <p>+2× vote power for 60s • Small sparkle animation</p>
+        </div>
+        <div class="tier">
+          <div class="pill"><span class="dot" style="background:#26e1ff"></span> Tier 2</div>
+          <h4>0.1 – 0.5 SOL</h4>
+          <p>+3× vote power for 90s • Rare candy confetti</p>
+        </div>
+        <div class="tier">
+          <div class="pill"><span class="dot" style="background:var(--accent)"></span> Tier 3</div>
+          <h4>&gt; 0.5 SOL</h4>
+          <p>+5× vote power for 120s • Legendary entrance effect</p>
+        </div>
+      </div>
+      <div class="cta">
+        <a class="btn brand" id="cta-buy" target="_blank" rel="noopener">Open Token on Pump.fun</a>
+        <a class="btn ghost" id="cta-trades" target="_blank" rel="noopener">Live trade feed</a>
+      </div>
+      <p style="color:var(--muted);margin-top:8px;font-size:14px">Weights/effects are experimental and may change during tests.</p>
+    </section>
+
+    <section class="wrap section grid">
+      <div class="card" style="grid-column:span 5;padding:18px">
+        <div class="kicker">FAQ</div>
+        <div class="faq">
+          <details>
+            <summary>Is this legal?</summary>
+            <div style="color:var(--muted)">We stream transformative gameplay using a cartridge you own. We don’t distribute ROMs. Not legal advice; similar projects have streamed without issues.</div>
+          </details>
+          <details>
+            <summary>How are votes counted?</summary>
+            <div style="color:var(--muted)">Every few seconds we tally chat commands; the winner triggers a keypress in the emulator. Token buyers get temporary multipliers.</div>
+          </details>
+          <details>
+            <summary>How do I get more influence?</summary>
+            <div style="color:var(--muted)">Buy the token on Pump.fun during the stream. Higher tiers get larger temporary boosts.</div>
+          </details>
+          <details>
+            <summary>What if the stream is offline?</summary>
+            <div style="color:var(--muted)">We’re testing! The status pill updates automatically. Follow our socials (footer) for go-live alerts.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap section" id="disclaimer">
+      <div class="card" style="padding:18px">
+        <div class="kicker">Disclaimer</div>
+        <p style="margin:6px 0 0;color:var(--muted)">Not affiliated with Nintendo, Game Freak, or The Pokémon Company. “Pokémon” and related names are trademarks of their respective owners. This is a fan-made interactive stream experiment hosted on Pump.fun’s livestream feature.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+        <div>© <span id="year"></span> Pump Plays Pokémon • Built with ❤️ for the Pump.fun community</div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <a id="footer-mint" target="_blank" rel="noopener">Token</a>
+          <a id="footer-live" target="_blank" rel="noopener">Livestream</a>
+          <a id="footer-telegram" target="_blank" rel="noopener">Telegram</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // OBS Virtual Camera Integration
+    async function connectVirtualCamera() {
+      try {
+        const video = document.getElementById('virtual-cam');
+        const placeholder = document.getElementById('placeholder-content');
+        const statusPill = document.querySelector('.pill');
+        
+        // Request camera access (OBS Virtual Camera will appear as a camera device)
+        const stream = await navigator.mediaDevices.getUserMedia({ 
+          video: { 
+            width: { ideal: 1920 },
+            height: { ideal: 1080 }
+          },
+          audio: false 
+        });
+        
+        // Show video and hide placeholder
+        video.srcObject = stream;
+        video.style.display = 'block';
+        placeholder.style.display = 'none';
+        
+        // Update status
+        statusPill.innerHTML = '<span class="dot" style="background:var(--ok)"></span> OBS Connected';
+        
+      } catch (error) {
+        console.error('Failed to connect to OBS Virtual Camera:', error);
+        alert('Could not connect to OBS Virtual Camera. Make sure:\n1. OBS is running\n2. Virtual Camera is started in OBS\n3. Browser has camera permissions');
+      }
+    }
+    
+    // Connect button handler
+    document.getElementById('connect-cam')?.addEventListener('click', connectVirtualCamera);
+    
+    // Auto-connect on page load if camera is available
+    window.addEventListener('load', async () => {
+      try {
+        const devices = await navigator.mediaDevices.enumerateDevices();
+        const hasVirtualCam = devices.some(device => 
+          device.kind === 'videoinput' && 
+          (device.label.includes('OBS') || device.label.includes('Virtual'))
+        );
+        
+        if (hasVirtualCam) {
+          // Auto-connect if OBS Virtual Camera is detected
+          setTimeout(connectVirtualCamera, 1000);
+        }
+      } catch (error) {
+        console.log('Could not enumerate devices:', error);
+      }
+    });
+  </script>
+
+  <script>
+    // ======== CONFIG (edit these to your real links) ========
+    const LINKS = {
+      mint: 'https://pump.fun/coin/DxKwgDV2NZapgrpdvCHNdWcAByWuXvohKsdUAxcrpump',
+      live: 'https://pump.fun/coin/DxKwgDV2NZapgrpdvCHNdWcAByWuXvohKsdUAxcrpump',
+      trades: 'https://pump.fun/coin/DxKwgDV2NZapgrpdvCHNdWcAByWuXvohKsdUAxcrpump?tab=trade',
+      telegram: 'https://pump.fun/coin/DxKwgDV2NZapgrpdvCHNdWcAByWuXvohKsdUAxcrpump', // replace with your Telegram link when ready
+      statusEndpoint: '',
+      voteWindowSeconds: 8
+    };
+
+    // Wire nav & CTA links
+    const setHref = (id, url) => { const el = document.getElementById(id); if (el && url) el.href = url; }
+    setHref('cta-join', LINKS.live);
+    setHref('cta-token', LINKS.mint);
+    setHref('cta-buy', LINKS.mint);
+    setHref('cta-trades', LINKS.trades);
+    setHref('nav-mint', LINKS.mint);
+    setHref('nav-telegram', LINKS.telegram);
+    setHref('cta-telegram', LINKS.telegram);
+    setHref('footer-mint', LINKS.mint);
+    setHref('footer-live', LINKS.live);
+    setHref('footer-telegram', LINKS.telegram);
+
+    // Vote window text
+    const vwEls = [document.getElementById('vote-window'), document.getElementById('vote-window-2')];
+    vwEls.forEach(el => el && (el.textContent = LINKS.voteWindowSeconds + 's'));
+
+    // Live status (optional ping)
+    const pill = document.getElementById('status-pill');
+    const pillDot = pill.querySelector('.dot');
+    const pillText = document.getElementById('status-text');
+    async function refreshStatus(){
+      if(!LINKS.statusEndpoint){ pillDot.style.background = 'var(--warn)'; pillText.textContent = 'Preparing'; return; }
+      try{
+        const r = await fetch(LINKS.statusEndpoint, { cache: 'no-store' });
+        const j = await r.json();
+        const live = !!(j?.live);
+        pillDot.style.background = live ? 'var(--ok)' : 'var(--warn)';
+        pillText.textContent = live ? 'Live' : 'Preparing';
+      }catch(e){ pillDot.style.background = 'var(--warn)'; pillText.textContent = 'Preparing'; }
+    }
+    refreshStatus(); setInterval(refreshStatus, 10000);
+
+    // Clipboard helpers
+    document.querySelectorAll('[data-copy]').forEach(btn=>{
+      btn.addEventListener('click', async ()=>{
+        try{ await navigator.clipboard.writeText(btn.dataset.copy); btn.textContent = 'Copied!'; setTimeout(()=>btn.textContent='Copy all', 1200);}catch(e){ btn.textContent = 'Copy failed'; setTimeout(()=>btn.textContent='Copy all', 1200);}
+      })
+    });
+
+    // Simulate a vote lock (front-end only demo)
+    const simBtn = document.getElementById('btn-sim');
+    simBtn?.addEventListener('click', ()=>{
+      const cmds = ['!up','!down','!left','!right','!a','!b','!l','!r','!start','!select'];
+      const pick = cmds[Math.floor(Math.random()*cmds.length)];
+      const el = document.createElement('div');
+      el.textContent = `Simulated winner: ${pick}`;
+      el.style.cssText = 'margin-top:10px;padding:8px 10px;background:#0d1732;border:1px solid #1b2545;border-radius:10px;';
+      document.querySelector('.cmds .panel').appendChild(el);
+      setTimeout(()=>el.remove(), 2500);
+    });
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Theme toggle
+    const htmlEl = document.documentElement;
+    function setTheme(t){ htmlEl.setAttribute('data-theme', t); localStorage.setItem('pps-theme', t); document.getElementById('btn-theme').textContent = `Theme: ${t === 'neon' ? 'Neon' : 'Stripes'}`; }
+    setTheme(localStorage.getItem('pps-theme') || 'neon');
+    document.getElementById('btn-theme').addEventListener('click', ()=>{
+      const next = (htmlEl.getAttribute('data-theme') === 'neon') ? 'stripes' : 'neon';
+      setTheme(next);
+    });
+  </script>
+</body>
+</html>

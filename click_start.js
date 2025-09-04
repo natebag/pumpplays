@@ -1,0 +1,2 @@
+const { exec } = require('child_process');
+exec('powershell -Command "Add-Type -AssemblyName Microsoft.VisualBasic; $p = Get-Process Project64; [Microsoft.VisualBasic.Interaction]::AppActivate($p.Id); Start-Sleep 1; Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.SendKeys]::SendWait(\'{ENTER}\')"', () => console.log('Done'));
