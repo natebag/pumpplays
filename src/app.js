@@ -16,7 +16,7 @@ const { log } = require('./utils/logger');
 class PumpPlaysPokemon {
     constructor() {
         this.app = express();
-        this.port = process.env.PORT || 4444;
+        this.port = process.env.PORT || 4602;
         
         // Initialize components
         this.chatCollector = new ChatCollector();
