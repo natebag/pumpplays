@@ -178,23 +178,23 @@
       <div class="grid">
         <div class="item">
           <div class="pill" style="margin-bottom:8px"><span class="dot" style="background:var(--ok)"></span> 01</div>
-          <h3>Emulator</h3>
-          <p>We run Pokémon Stadium 2 on Project64 (Windows) or Mupen64Plus. The controller script taps emulator hotkeys every vote window for clean, low-latency inputs.</p>
+          <h3>GBA Emulator</h3>
+          <p>We run Pokémon Emerald on a Game Boy Advance emulator. The controller script sends button presses to the emulator every 8 seconds for precise, lag-free gameplay in the Hoenn region.</p>
         </div>
         <div class="item">
           <div class="pill" style="margin-bottom:8px"><span class="dot" style="background:var(--ok)"></span> 02</div>
           <h3>Chat → Votes</h3>
-          <p>Livestream chat messages like <code>!up</code>, <code>!a</code>, <code>!z</code> and the <code>C</code>-buttons are tallied. Majority wins every few seconds.</p>
+          <p>Pump.fun chat messages like <code>!up</code>, <code>!down</code>, <code>!a</code>, <code>!b</code>, <code>!start</code>, and <code>!select</code> are tallied. Democracy wins every 8 seconds!</p>
         </div>
         <div class="item">
           <div class="pill" style="margin-bottom:8px"><span class="dot" style="background:var(--ok)"></span> 03</div>
           <h3>Token Boosts</h3>
-          <p>Recent buyers get 2–5× weight for a short boost. Big buys trigger on-screen effects.</p>
+          <p>Recent token traders get 2–5× vote weight for a short boost. Big trades trigger special on-screen effects and stronger voting power!</p>
         </div>
         <div class="item">
           <div class="pill" style="margin-bottom:8px"><span class="dot" style="background:var(--ok)"></span> 04</div>
-          <h3>Overlay</h3>
-          <p>A sleek OBS browser source visualizes vote bars, last command, and trade fireworks.</p>
+          <h3>Live Overlay</h3>
+          <p>A beautiful OBS browser source shows real-time vote bars, countdown timer, last move executed, winning voter, and trade celebrations.</p>
         </div>
       </div>
     </section>
@@ -218,12 +218,11 @@
               <tr><td><code>!r</code></td><td>R shoulder button</td></tr>
               <tr><td><code>!start</code></td><td>START (pause / menu)</td></tr>
               <tr><td><code>!select</code></td><td>SELECT (items / shortcuts)</td></tr>
-              <tr><td><code>!up25 / !up50 / !up100</code></td><td>Movement momentum (25%, 50%, 100%) — works for any direction</td></tr>
               <tr><td><code>!holda 800</code></td><td>Hold A for 800ms (works with <em>a,b,l,r,left,right,up,down,start,select</em>)</td></tr>
               <tr><td><code>!release</code></td><td>Release all held buttons</td></tr>
             </tbody>
           </table>
-          <div class="hint" style="color:var(--muted);font-size:13px;margin-top:8px">Tip: Momentum inputs accept 1–100 (percentage). Example: <code>!left35</code> for a gentle tilt left.</div>
+          <div class="hint" style="color:var(--muted);font-size:13px;margin-top:8px">Tip: All commands are instant button presses. Use hold commands like <code>!holda 500</code> for longer interactions.</div>
           <div class="cta">
             <button class="btn" data-copy="!up !down !left !right !a !b !l !r !start !select">Copy GBA commands</button>
             <button class="btn ghost" id="btn-sim">Simulate test vote</button>
