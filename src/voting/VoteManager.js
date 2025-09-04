@@ -6,6 +6,7 @@ class VoteManager extends EventEmitter {
         super();
         this.voteDuration = (process.env.VOTE_DURATION_SECONDS || 8) * 1000;
         this.currentVotes = {};
+        this.voteFirstUsers = {}; // Track first user to vote for each command
         this.voteTimer = null;
         this.isActive = false;
         this.lastMove = null;
@@ -53,8 +54,9 @@ class VoteManager extends EventEmitter {
     startVotingPeriod() {
         if (!this.isActive) return;
         
-        // Clear previous votes
+        // Clear previous votes and first users
         this.currentVotes = {};
+        this.voteFirstUsers = {};
         
         // Set timer for vote period end
         this.voteTimer = setTimeout(() => {
@@ -79,7 +81,8 @@ class VoteManager extends EventEmitter {
                 command: winner,
                 timestamp: Date.now(),
                 votes: results[winner] || 0,
-                totalVotes: Object.values(results).reduce((a, b) => a + b, 0)
+                totalVotes: Object.values(results).reduce((a, b) => a + b, 0),
+                firstVoter: this.voteFirstUsers[winner] || 'Anonymous'
             };
             
             // Add to history
@@ -119,6 +122,8 @@ class VoteManager extends EventEmitter {
         // Initialize vote count for this command
         if (!this.currentVotes[normalizedCommand]) {
             this.currentVotes[normalizedCommand] = 0;
+            // Store the first user to vote for this command
+            this.voteFirstUsers[normalizedCommand] = user;
         }
         
         // Add weighted vote

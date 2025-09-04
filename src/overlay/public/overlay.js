@@ -123,10 +123,12 @@ class PokemonOverlay {
         const lastMove = this.state.lastMove;
         const commandElement = document.querySelector('.move-command');
         const detailsElement = document.querySelector('.move-details');
+        const winnerElement = document.getElementById('first-voter');
         
         if (!lastMove) {
             commandElement.textContent = 'Waiting...';
             detailsElement.textContent = 'Ready for commands!';
+            winnerElement.textContent = '---';
             return;
         }
         
@@ -146,10 +148,18 @@ class PokemonOverlay {
         commandElement.textContent = `${moveEmoji[lastMove.command] || ''} ${lastMove.command.toUpperCase()}`;
         detailsElement.textContent = `${lastMove.votes}/${lastMove.totalVotes} votes • ${this.getTimeAgo(lastMove.timestamp)}`;
         
+        // Display the first voter (winner)
+        const firstVoter = lastMove.firstVoter || 'Anonymous';
+        winnerElement.textContent = firstVoter.length > 12 ? firstVoter.substring(0, 12) + '...' : firstVoter;
+        
         // Add pulse effect for new moves
         if (this.lastMoveTimestamp !== lastMove.timestamp) {
             commandElement.classList.add('pulse');
-            setTimeout(() => commandElement.classList.remove('pulse'), 2000);
+            winnerElement.classList.add('pulse');
+            setTimeout(() => {
+                commandElement.classList.remove('pulse');
+                winnerElement.classList.remove('pulse');
+            }, 2000);
             this.lastMoveTimestamp = lastMove.timestamp;
         }
     }
