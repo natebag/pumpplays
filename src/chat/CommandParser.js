@@ -35,10 +35,10 @@ class CommandParser {
         
         const msg = message.trim().toLowerCase();
         
-        // Must start with !
-        if (!msg.startsWith('!')) return null;
+        // Must start with ! or /
+        if (!msg.startsWith('!') && !msg.startsWith('/')) return null;
         
-        const command = msg.substring(1);
+        const command = msg.substring(1); // Remove ! or / prefix
         
         // Release all held keys
         if (command === 'release') {

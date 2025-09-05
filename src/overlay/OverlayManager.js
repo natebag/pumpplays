@@ -11,7 +11,7 @@ class OverlayManager extends EventEmitter {
         this.app = express();
         this.server = null;
         this.io = null;
-        this.port = process.env.OVERLAY_PORT || 4603;
+        this.port = process.env.OVERLAY_PORT || 8081;
         
         this.state = {
             votes: {},

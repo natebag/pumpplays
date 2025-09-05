@@ -16,7 +16,7 @@ const { log } = require('./utils/logger');
 class PumpPlaysPokemon {
     constructor() {
         this.app = express();
-        this.port = process.env.PORT || 4602;
+        this.port = process.env.PORT || 8080;
         
         // Initialize components
         this.chatCollector = new ChatCollector();
@@ -135,7 +135,7 @@ class PumpPlaysPokemon {
             this.overlayManager.addChatMessage({
                 user,
                 message,
-                isCommand: /^!(up|down|left|right|a|b|l|r|start|select)$/i.test(message),
+                isCommand: /^[!\/](up|down|left|right|a|b|l|r|start|select)$/i.test(message),
                 isTrade: false
             });
         });

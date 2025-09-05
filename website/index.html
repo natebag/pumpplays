@@ -6,7 +6,7 @@
   <title>🌿 Pump Plays Pokémon Emerald — Battle Frontier Democracy</title>
   <meta name="description" content="Journey through Hoenn together! Chat votes control our Pokémon Emerald adventure. Trade tokens for vote power and help us become the Champion!" />
   <meta property="og:title" content="Pump Plays Pokémon Emerald — Interactive GBA Livestream" />
-  <meta property="og:description" content="Type !up !down !left !right !a !b !l !r !start !select in chat to control Pokémon Emerald together. Token traders get vote weight boosts!" />
+  <meta property="og:description" content="Type !up or /up, !down or /down, !left or /left, !right or /right, !a or /a, !b or /b in chat to control Pokémon Emerald together. Token traders get vote weight boosts!" />
   <meta property="og:type" content="website" />
   <meta name="theme-color" content="#18C29C" />
   <style>
@@ -130,7 +130,7 @@
         <div class="pill" id="status-pill"><span class="dot" style="background:var(--ok)"></span> Ready to Play</div>
         <h1>🚀 <span style="color:var(--brand)">PUMP PLAYS</span> <span style="color:#4ad2ff">POKÉMON</span></h1>
         <p class="brandline" style="color:#ff6b9d;font-size:20px;font-weight:800">AT FULL SPEED!</p>
-        <p class="subtitle">Type <code>!up !down !left !right !a !b !l !r !start !select</code> in chat to guide our trainer! Democracy votes every <strong id="vote-window">8s</strong> 🗳️ Token holders get boosted votes and special battle effects! ⚡</p>
+        <p class="subtitle">Type <code>!up</code> or <code>/up</code>, <code>!down</code> or <code>/down</code>, <code>!left</code> or <code>/left</code>, <code>!right</code> or <code>/right</code>, <code>!a</code> or <code>/a</code>, <code>!b</code> or <code>/b</code> in chat to guide our trainer! Democracy votes every <strong id="vote-window">4s</strong> 🗳️ Token holders get boosted votes and special battle effects! ⚡</p>
         <div class="hero-cta">
           <a class="btn brand" id="cta-join" target="_blank" rel="noopener">WATCH LIVE</a>
           <a class="btn ghost" id="cta-telegram" target="_blank" rel="noopener">JOIN DISCORD</a>
@@ -155,7 +155,7 @@
         <div class="item">
           <div class="pill" style="margin-bottom:8px"><span class="dot" style="background:var(--ok)"></span> 02</div>
           <h3>Chat → Votes</h3>
-          <p>Pump.fun chat messages like <code>!up</code>, <code>!a</code>, <code>!b</code>, <code>!l</code>, <code>!r</code> are tallied. Majority wins every 8 seconds.</p>
+          <p>Pump.fun chat messages like <code>!up</code> or <code>/up</code>, <code>!a</code> or <code>/a</code>, <code>!b</code> or <code>/b</code> are tallied. Majority wins every 4 seconds.</p>
         </div>
         <div class="item">
           <div class="pill" style="margin-bottom:8px"><span class="dot" style="background:var(--ok)"></span> 03</div>
@@ -179,16 +179,16 @@
               <tr><th>Command</th><th>Action</th></tr>
             </thead>
             <tbody>
-              <tr><td><code>!up</code></td><td>D-Pad up (navigate menus)</td></tr>
-              <tr><td><code>!down</code></td><td>D-Pad down</td></tr>
-              <tr><td><code>!left</code></td><td>D-Pad left</td></tr>
-              <tr><td><code>!right</code></td><td>D-Pad right</td></tr>
-              <tr><td><code>!a</code></td><td>A button (confirm / interact)</td></tr>
-              <tr><td><code>!b</code></td><td>B button (cancel / run)</td></tr>
-              <tr><td><code>!l</code></td><td>L shoulder button</td></tr>
-              <tr><td><code>!r</code></td><td>R shoulder button</td></tr>
-              <tr><td><code>!start</code></td><td>START (pause / menu)</td></tr>
-              <tr><td><code>!select</code></td><td>SELECT (items / shortcuts)</td></tr>
+              <tr><td><code>!up</code> or <code>/up</code></td><td>D-Pad up (navigate menus)</td></tr>
+              <tr><td><code>!down</code> or <code>/down</code></td><td>D-Pad down</td></tr>
+              <tr><td><code>!left</code> or <code>/left</code></td><td>D-Pad left</td></tr>
+              <tr><td><code>!right</code> or <code>/right</code></td><td>D-Pad right</td></tr>
+              <tr><td><code>!a</code> or <code>/a</code></td><td>A button (confirm / interact)</td></tr>
+              <tr><td><code>!b</code> or <code>/b</code></td><td>B button (cancel / run)</td></tr>
+              <tr><td><code>!l</code> or <code>/l</code></td><td>L shoulder button</td></tr>
+              <tr><td><code>!r</code> or <code>/r</code></td><td>R shoulder button</td></tr>
+              <tr><td><code>!start</code> or <code>/start</code></td><td>START (pause / menu)</td></tr>
+              <tr><td><code>!select</code> or <code>/select</code></td><td>SELECT (items / shortcuts)</td></tr>
               <tr><td><code>!holda 800</code></td><td>Hold A for 800ms (works with any button)</td></tr>
               <tr><td><code>!release</code></td><td>Release all held buttons</td></tr>
             </tbody>
@@ -203,9 +203,9 @@
           <h2 style="margin-top:8px">Quick Start (Viewers)</h2>
           <ol>
             <li>Open the livestream (button above).</li>
-            <li>Type a command in chat (e.g., <code>!a</code>, <code>!b</code>, or <code>!start</code>).</li>
+            <li>Type a command in chat (e.g., <code>!a</code> or <code>/a</code>, <code>!b</code> or <code>/b</code>, <code>!start</code> or <code>/start</code>).</li>
             <li>Watch the vote bars move in real time.</li>
-            <li>Every <span id="vote-window-2">8</span> seconds, the winning move plays.</li>
+            <li>Every <span id="vote-window-2">4</span> seconds, the winning move plays.</li>
           </ol>
           <div class="kicker" style="margin-top:12px">Want extra influence?</div>
           <p>Buy the token → get temporary vote boosts. Bigger buys = bigger boosts.</p>
@@ -294,7 +294,7 @@
       trades: 'https://pump.fun/coin/DxKwgDV2NZapgrpdvCHNdWcAByWuXvohKsdUAxcrpump?tab=trade',
       telegram: 'https://pump.fun/coin/DxKwgDV2NZapgrpdvCHNdWcAByWuXvohKsdUAxcrpump', // replace with your Telegram link when ready
       statusEndpoint: '',
-      voteWindowSeconds: 8
+      voteWindowSeconds: 4
     };
 
     // Wire nav & CTA links

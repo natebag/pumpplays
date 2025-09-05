@@ -10,7 +10,7 @@ class ChatCollector extends EventEmitter {
         this.collector = null;
         this.userWeights = new Map(); // Store temporary user vote weights
         // N64 Pokemon Stadium 2 command regex - matches all valid N64 commands
-        this.commandRegex = /^!(up|down|left|right|a|b|start|z|l|r|cup|cdown|cleft|cright|cu|cd|cl|cr|dpadup|dpaddown|dpadleft|dpadright|du|dd|dl|dr|release|hold[a-z]+(?:\s+\d+)?|(?:up|down|left|right)\d{1,3})$/i;
+        this.commandRegex = /^[!\/](up|down|left|right|a|b|start|z|l|r|cup|cdown|cleft|cright|cu|cd|cl|cr|dpadup|dpaddown|dpadleft|dpadright|du|dd|dl|dr|release|hold[a-z]+(?:\s+\d+)?|(?:up|down|left|right)\d{1,3})$/i;
         this.isConnected = false;
         
         // Choose collector based on available credentials

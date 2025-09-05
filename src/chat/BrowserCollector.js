@@ -179,7 +179,7 @@ class BrowserCollector extends EventEmitter {
                         }
                         
                         // Look for commands in new content
-                        const commandMatches = newContent.match(/!\w+/g);
+                        const commandMatches = newContent.match(/[!\/]\w+/g);
                         if (commandMatches) {
                             commandMatches.forEach(cmd => {
                                 const timestamp = new Date().toISOString();
@@ -290,9 +290,9 @@ class BrowserCollector extends EventEmitter {
                                         
                                         console.log(`Chat message: ${user}: ${text}`);
                                         
-                                        // Check for commands starting with !
-                                        if (text.startsWith('!') || text.includes('!')) {
-                                            const commandMatch = text.match(/!\w+/g);
+                                        // Check for commands starting with ! or /
+                                        if (text.startsWith('!') || text.startsWith('/') || text.includes('!') || text.includes('/')) {
+                                            const commandMatch = text.match(/[!\/]\w+/g);
                                             if (commandMatch) {
                                                 commandMatch.forEach(cmd => {
                                                     console.log('PUMP_COMMAND:', JSON.stringify({
@@ -386,8 +386,8 @@ class BrowserCollector extends EventEmitter {
                     try {
                         const data = JSON.parse(text.replace('PUMP_COMMAND:', ''));
                         log(`Real chat command: ${data.user}: ${data.text}`, 'CHAT');
-                        // Remove ! from command and emit as 'command' event
-                        const command = data.text.replace('!', '');
+                        // Remove ! or / from command and emit as 'command' event
+                        const command = data.text.replace(/^[!\/]/, '');
                         log(`Command: ${command} from ${data.user} (weight: 1)`, 'CHAT');
                         log(`🚀 EMITTING COMMAND EVENT IN NODE.JS: ${command} from ${data.user}`, 'DEBUG');
                         // Emit the command event in Node.js context so app.js can receive it

@@ -4,7 +4,7 @@ const { log } = require('../utils/logger');
 class VoteManager extends EventEmitter {
     constructor() {
         super();
-        this.voteDuration = (process.env.VOTE_DURATION_SECONDS || 8) * 1000;
+        this.voteDuration = 4 * 1000; // 4 seconds hardcoded
         this.currentVotes = {};
         this.voteFirstUsers = {}; // Track first user to vote for each command
         this.voteTimer = null;
