@@ -64,6 +64,11 @@ body {
     letter-spacing: 2px;
 }
 
+.game-title a:hover {
+    color: #ffff99;
+    transition: color 0.2s ease;
+}
+
 .subtitle {
     font-size: 10px;
     color: #ffffff;
