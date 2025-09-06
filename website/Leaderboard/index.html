@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pump Plays Pokemon - Hall of Fame Leaderboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Header Section -->
+        <header class="pokemon-header">
+            <div class="title-banner">
+                <h1 class="game-title">PUMP PLAYS POKEMON</h1>
+                <h2 class="subtitle">HALL OF FAME LEADERBOARD</h2>
+            </div>
+            <div class="pokeball-decoration"></div>
+        </header>
+
+        <!-- Main Stats Panel -->
+        <div class="stats-panel">
+            <div class="stat-box">
+                <span class="stat-label">TOTAL TRAINERS:</span>
+                <span class="stat-value" id="totalUsers">12</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-label">TOTAL VOTES:</span>
+                <span class="stat-value" id="totalVotes">512</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-label">LAST UPDATED:</span>
+                <span class="stat-value" id="lastUpdated">9/6/2025 1:17 AM</span>
+            </div>
+        </div>
+
+        <!-- Popular Commands Section -->
+        <div class="command-stats">
+            <h3 class="section-title">MOST POPULAR COMMANDS</h3>
+            <div class="command-grid">
+                <div class="command-item">
+                    <span class="command-name">A</span>
+                    <div class="command-bar">
+                        <div class="command-fill" style="width: 100%"></div>
+                        <span class="command-count">119</span>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <span class="command-name">DOWN</span>
+                    <div class="command-bar">
+                        <div class="command-fill" style="width: 90%"></div>
+                        <span class="command-count">107</span>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <span class="command-name">RIGHT</span>
+                    <div class="command-bar">
+                        <div class="command-fill" style="width: 76%"></div>
+                        <span class="command-count">91</span>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <span class="command-name">LEFT</span>
+                    <div class="command-bar">
+                        <div class="command-fill" style="width: 60%"></div>
+                        <span class="command-count">71</span>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <span class="command-name">UP</span>
+                    <div class="command-bar">
+                        <div class="command-fill" style="width: 56%"></div>
+                        <span class="command-count">67</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Leaderboard Section -->
+        <div class="leaderboard-container">
+            <h3 class="section-title">TOP TRAINERS HALL OF FAME</h3>
+            
+            <!-- Champion (1st place) -->
+            <div class="champion-card">
+                <div class="rank-badge champion">👑</div>
+                <div class="trainer-info">
+                    <div class="trainer-name">PUMPPLAYSGUY</div>
+                    <div class="trainer-title">CHAMPION</div>
+                    <div class="vote-count">220 VOTES</div>
+                </div>
+                <div class="command-breakdown">
+                    <span class="breakdown-item">DOWN: 50</span>
+                    <span class="breakdown-item">A: 45</span>
+                    <span class="breakdown-item">UP: 40</span>
+                    <span class="breakdown-item">RIGHT: 30</span>
+                    <span class="breakdown-item">B: 28</span>
+                </div>
+            </div>
+
+            <!-- Elite Four (2nd-5th place) -->
+            <div class="elite-four">
+                <div class="elite-card">
+                    <div class="rank-badge elite">2</div>
+                    <div class="trainer-info">
+                        <div class="trainer-name">OBNOXI</div>
+                        <div class="trainer-title">ELITE FOUR</div>
+                        <div class="vote-count">219 VOTES</div>
+                    </div>
+                    <div class="command-summary">A: 57, RIGHT: 53, DOWN: 43</div>
+                </div>
+
+                <div class="elite-card">
+                    <div class="rank-badge elite">3</div>
+                    <div class="trainer-info">
+                        <div class="trainer-name">LUKEBAG</div>
+                        <div class="trainer-title">ELITE FOUR</div>
+                        <div class="vote-count">20 VOTES</div>
+                    </div>
+                    <div class="command-summary">RIGHT: 6, DOWN: 5, B: 3</div>
+                </div>
+
+                <div class="elite-card">
+                    <div class="rank-badge elite">4</div>
+                    <div class="trainer-info">
+                        <div class="trainer-name">1984BOT</div>
+                        <div class="trainer-title">ELITE FOUR</div>
+                        <div class="vote-count">15 VOTES</div>
+                    </div>
+                    <div class="command-summary">A: 12, DOWN: 3</div>
+                </div>
+
+                <div class="elite-card">
+                    <div class="rank-badge elite">5</div>
+                    <div class="trainer-info">
+                        <div class="trainer-name">AHHW3J</div>
+                        <div class="trainer-title">ELITE FOUR</div>
+                        <div class="vote-count">10 VOTES</div>
+                    </div>
+                    <div class="command-summary">UP: 8, LEFT: 1, RIGHT: 1</div>
+                </div>
+            </div>
+
+            <!-- Gym Leaders (6th+ place) -->
+            <div class="gym-leaders">
+                <h4 class="gym-title">GYM LEADERS</h4>
+                <div class="gym-grid">
+                    <div class="gym-card">
+                        <div class="rank-badge gym">6</div>
+                        <div class="gym-info">
+                            <span class="gym-name">J8MJ3X</span>
+                            <span class="gym-votes">9 votes</span>
+                        </div>
+                    </div>
+                    <div class="gym-card">
+                        <div class="rank-badge gym">7</div>
+                        <div class="gym-info">
+                            <span class="gym-name">NUFFINMAN</span>
+                            <span class="gym-votes">7 votes</span>
+                        </div>
+                    </div>
+                    <div class="gym-card">
+                        <div class="rank-badge gym">8</div>
+                        <div class="gym-info">
+                            <span class="gym-name">J7J4O1</span>
+                            <span class="gym-votes">6 votes</span>
+                        </div>
+                    </div>
+                    <div class="gym-card">
+                        <div class="rank-badge gym">9</div>
+                        <div class="gym-info">
+                            <span class="gym-name">9SCITH</span>
+                            <span class="gym-votes">2 votes</span>
+                        </div>
+                    </div>
+                    <div class="gym-card">
+                        <div class="rank-badge gym">10</div>
+                        <div class="gym-info">
+                            <span class="gym-name">NATEBAG</span>
+                            <span class="gym-votes">2 votes</span>
+                        </div>
+                    </div>
+                    <div class="gym-card">
+                        <div class="rank-badge gym">11</div>
+                        <div class="gym-info">
+                            <span class="gym-name">A3JTJCXX</span>
+                            <span class="gym-votes">1 vote</span>
+                        </div>
+                    </div>
+                    <div class="gym-card">
+                        <div class="rank-badge gym">12</div>
+                        <div class="gym-info">
+                            <span class="gym-name">WB1</span>
+                            <span class="gym-votes">1 vote</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="pokemon-footer">
+            <div class="footer-text">
+                <p>🎮 PUMP PLAYS POKEMON - LIVE ON STREAM</p>
+                <p>Next report update in 4 hours</p>
+                <p>Join the adventure at pump.fun!</p>
+            </div>
+        </footer>
+
+        <!-- Auto-refresh functionality -->
+        <div class="refresh-indicator" id="refreshIndicator">
+            <span>🔄 Auto-refresh in <span id="countdown">300</span>s</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
