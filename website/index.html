@@ -117,6 +117,7 @@
         <a class="btn ghost" id="nav-live" href="#live">Live</a>
         <a class="btn ghost" id="nav-how" href="#how">How it works</a>
         <a class="btn ghost" id="nav-commands" href="#commands">Commands</a>
+        <a class="btn ghost" id="nav-leaderboard" href="Leaderboard/" target="_blank">Hall of Fame</a>
         <button class="btn ghost" id="btn-theme" type="button">Theme: Neon</button>
         <a class="btn ghost" id="nav-telegram" target="_blank" rel="noopener">Telegram</a>
         <a class="btn" id="nav-mint" target="_blank" rel="noopener">Open Token</a>
@@ -130,7 +131,7 @@
         <div class="pill" id="status-pill"><span class="dot" style="background:var(--ok)"></span> Ready to Play</div>
         <h1>🚀 <span style="color:var(--brand)">PUMP PLAYS</span> <span style="color:#4ad2ff">POKÉMON</span></h1>
         <p class="brandline" style="color:#ff6b9d;font-size:20px;font-weight:800">AT FULL SPEED!</p>
-        <p class="subtitle">Type <code>!up</code> or <code>/up</code>, <code>!down</code> or <code>/down</code>, <code>!left</code> or <code>/left</code>, <code>!right</code> or <code>/right</code>, <code>!a</code> or <code>/a</code>, <code>!b</code> or <code>/b</code> in chat to guide our trainer! Democracy votes every <strong id="vote-window">4s</strong> 🗳️ Token holders get boosted votes and special battle effects! ⚡</p>
+        <p class="subtitle">Type <code>!up</code> or <code>/up</code>, <code>!down</code> or <code>/down</code>, <code>!left</code> or <code>/left</code>, <code>!right</code> or <code>/right</code>, <code>!a</code> or <code>/a</code>, <code>!b</code> or <code>/b</code> in chat to guide our trainer! Democracy votes every <strong id="vote-window">3s</strong> 🗳️ Token holders get boosted votes and special battle effects! ⚡</p>
         <div class="hero-cta">
           <a class="btn brand" id="cta-join" target="_blank" rel="noopener">WATCH LIVE</a>
           <a class="btn ghost" id="cta-telegram" target="_blank" rel="noopener">JOIN DISCORD</a>
@@ -155,7 +156,7 @@
         <div class="item">
           <div class="pill" style="margin-bottom:8px"><span class="dot" style="background:var(--ok)"></span> 02</div>
           <h3>Chat → Votes</h3>
-          <p>Pump.fun chat messages like <code>!up</code> or <code>/up</code>, <code>!a</code> or <code>/a</code>, <code>!b</code> or <code>/b</code> are tallied. Majority wins every 4 seconds.</p>
+          <p>Pump.fun chat messages like <code>!up</code> or <code>/up</code>, <code>!a</code> or <code>/a</code>, <code>!b</code> or <code>/b</code> are tallied. Majority wins every 3 seconds.</p>
         </div>
         <div class="item">
           <div class="pill" style="margin-bottom:8px"><span class="dot" style="background:var(--ok)"></span> 03</div>
@@ -189,11 +190,18 @@
               <tr><td><code>!r</code> or <code>/r</code></td><td>R shoulder button</td></tr>
               <tr><td><code>!start</code> or <code>/start</code></td><td>START (pause / menu)</td></tr>
               <tr><td><code>!select</code> or <code>/select</code></td><td>SELECT (items / shortcuts)</td></tr>
-              <tr><td><code>!holda 800</code></td><td>Hold A for 800ms (works with any button)</td></tr>
+              <tr><td style="border-top:2px solid var(--brand)"><code>!holda 1000</code></td><td><strong>Hold A button for 1000ms</strong></td></tr>
+              <tr><td><code>!holdright 500</code></td><td><strong>Hold RIGHT for 500ms</strong></td></tr>
+              <tr><td><code>!up75</code></td><td><strong>75% momentum directional</strong></td></tr>
               <tr><td><code>!release</code></td><td>Release all held buttons</td></tr>
             </tbody>
           </table>
-          <div class="hint" style="color:var(--muted);font-size:13px;margin-top:8px">Tip: Hold commands accept milliseconds (100-2000ms). Example: <code>!holdb 500</code> for half-second B press.</div>
+          <div class="hint" style="color:var(--muted);font-size:13px;margin-top:12px;background:var(--bg-soft);padding:12px;border-radius:8px;border:1px solid #1b2545;">
+            <div style="color:var(--brand);font-weight:700;margin-bottom:6px">💡 ADVANCED COMMANDS:</div>
+            <div><strong>Hold Commands:</strong> Use <code>!holda 1500</code> to hold A for 1.5 seconds. Works with any button (100-5000ms range).</div>
+            <div style="margin-top:4px"><strong>Momentum:</strong> Use <code>!up50</code> for 50% power movement, <code>!right100</code> for full power (1-100%).</div>
+            <div style="margin-top:4px"><strong>Both prefixes work:</strong> <code>!up</code> = <code>/up</code>, <code>!holda 800</code> = <code>/holda 800</code></div>
+          </div>
           <div class="cta">
             <button class="btn" data-copy="!up !down !left !right !a !b !l !r !start !select">Copy GBA commands</button>
             <button class="btn ghost" id="btn-sim">Simulate test vote</button>
@@ -205,11 +213,72 @@
             <li>Open the livestream (button above).</li>
             <li>Type a command in chat (e.g., <code>!a</code> or <code>/a</code>, <code>!b</code> or <code>/b</code>, <code>!start</code> or <code>/start</code>).</li>
             <li>Watch the vote bars move in real time.</li>
-            <li>Every <span id="vote-window-2">4</span> seconds, the winning move plays.</li>
+            <li>Every <span id="vote-window-2">3</span> seconds, the winning move plays.</li>
           </ol>
           <div class="kicker" style="margin-top:12px">Want extra influence?</div>
           <p>Buy the token → get temporary vote boosts. Bigger buys = bigger boosts.</p>
         </aside>
+      </div>
+    </section>
+
+    <section class="wrap section" id="leaderboard-preview">
+      <div class="kicker">Hall of Fame</div>
+      <h2>Top Trainers Leaderboard</h2>
+      <div class="grid">
+        <div class="card" style="grid-column:span 8;padding:20px">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+            <h3 style="margin:0;color:var(--brand)">🏆 Current Champion & Elite Four</h3>
+            <a href="Leaderboard/" target="_blank" class="btn ghost">View Full Leaderboard</a>
+          </div>
+          <div style="display:grid;gap:10px">
+            <div style="display:flex;align-items:center;gap:12px;padding:10px;background:linear-gradient(90deg,rgba(255,215,0,0.1),rgba(255,215,0,0.05));border-radius:8px;border:1px solid rgba(255,215,0,0.3)">
+              <div style="background:linear-gradient(45deg,#ffd700,#ffed4a);color:#000;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-weight:800">👑</div>
+              <div style="flex:1"><strong>PUMPPLAYSGUY</strong> - 220 votes • <em>Champion</em></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;padding:8px;background:rgba(138,43,226,0.1);border-radius:6px;border:1px solid rgba(138,43,226,0.3)">
+              <div style="background:#8a2be2;color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700">2</div>
+              <div style="flex:1"><strong>OBNOXI</strong> - 219 votes • <em>Elite Four</em></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;padding:8px;background:rgba(138,43,226,0.1);border-radius:6px;border:1px solid rgba(138,43,226,0.3)">
+              <div style="background:#8a2be2;color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700">3</div>
+              <div style="flex:1"><strong>LUKEBAG</strong> - 20 votes • <em>Elite Four</em></div>
+            </div>
+          </div>
+          <div style="margin-top:12px;color:var(--muted);font-size:12px">🔄 Updates automatically every 4 hours • <strong>512 total votes</strong> from <strong>12 trainers</strong></div>
+        </div>
+        <div class="card" style="grid-column:span 4;padding:20px">
+          <h3 style="margin:0 0 12px;color:var(--accent)">🎮 Most Popular Commands</h3>
+          <div style="display:grid;gap:8px;font-size:12px">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <span><code>!a</code></span>
+              <div style="flex:1;margin:0 8px;height:4px;background:#1a3d21;border-radius:2px;overflow:hidden">
+                <div style="width:100%;height:100%;background:var(--brand);border-radius:2px"></div>
+              </div>
+              <span>119</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <span><code>!down</code></span>
+              <div style="flex:1;margin:0 8px;height:4px;background:#1a3d21;border-radius:2px;overflow:hidden">
+                <div style="width:90%;height:100%;background:var(--brand);border-radius:2px"></div>
+              </div>
+              <span>107</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <span><code>!right</code></span>
+              <div style="flex:1;margin:0 8px;height:4px;background:#1a3d21;border-radius:2px;overflow:hidden">
+                <div style="width:76%;height:100%;background:var(--brand);border-radius:2px"></div>
+              </div>
+              <span>91</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <span><code>!left</code></span>
+              <div style="flex:1;margin:0 8px;height:4px;background:#1a3d21;border-radius:2px;overflow:hidden">
+                <div style="width:60%;height:100%;background:var(--brand);border-radius:2px"></div>
+              </div>
+              <span>71</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -236,6 +305,7 @@
       <div class="cta">
         <a class="btn brand" id="cta-buy" target="_blank" rel="noopener">Open Token on Pump.fun</a>
         <a class="btn ghost" id="cta-trades" target="_blank" rel="noopener">Live trade feed</a>
+        <a class="btn ghost" id="cta-dexscreener" target="_blank" rel="noopener">View on DexScreener</a>
       </div>
       <p style="color:var(--muted);margin-top:8px;font-size:14px">Weights/effects are experimental and may change during tests.</p>
     </section>
@@ -279,6 +349,8 @@
         <div style="display:flex;gap:10px;flex-wrap:wrap">
           <a id="footer-mint" target="_blank" rel="noopener">Token</a>
           <a id="footer-live" target="_blank" rel="noopener">Livestream</a>
+          <a id="footer-dexscreener" target="_blank" rel="noopener">DexScreener</a>
+          <a href="Leaderboard/" target="_blank">Hall of Fame</a>
           <a id="footer-telegram" target="_blank" rel="noopener">Telegram</a>
         </div>
       </div>
@@ -292,9 +364,10 @@
       mint: 'https://pump.fun/coin/DxKwgDV2NZapgrpdvCHNdWcAByWuXvohKsdUAxcrpump',
       live: 'https://pump.fun/coin/DxKwgDV2NZapgrpdvCHNdWcAByWuXvohKsdUAxcrpump',
       trades: 'https://pump.fun/coin/DxKwgDV2NZapgrpdvCHNdWcAByWuXvohKsdUAxcrpump?tab=trade',
+      dexscreener: 'https://dexscreener.com/solana/DxKwgDV2NZapgrpdvCHNdWcAByWuXvohKsdUAxcrpump',
       telegram: 'https://pump.fun/coin/DxKwgDV2NZapgrpdvCHNdWcAByWuXvohKsdUAxcrpump', // replace with your Telegram link when ready
       statusEndpoint: '',
-      voteWindowSeconds: 4
+      voteWindowSeconds: 3
     };
 
     // Wire nav & CTA links
@@ -303,11 +376,13 @@
     setHref('cta-token', LINKS.mint);
     setHref('cta-buy', LINKS.mint);
     setHref('cta-trades', LINKS.trades);
+    setHref('cta-dexscreener', LINKS.dexscreener);
     setHref('nav-mint', LINKS.mint);
     setHref('nav-telegram', LINKS.telegram);
     setHref('cta-telegram', LINKS.telegram);
     setHref('footer-mint', LINKS.mint);
     setHref('footer-live', LINKS.live);
+    setHref('footer-dexscreener', LINKS.dexscreener);
     setHref('footer-telegram', LINKS.telegram);
 
     // Vote window text
