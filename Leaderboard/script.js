@@ -1,4 +1,4 @@
-// Pokemon Leaderboard JavaScript
+// Pokemon Leaderboard JavaScript - Updated to work with existing HTML structure
 class PokemonLeaderboard {
     constructor() {
         this.refreshInterval = 300; // 5 minutes in seconds
@@ -36,7 +36,7 @@ class PokemonLeaderboard {
             
             if (timeLeft <= 0) {
                 timeLeft = this.refreshInterval;
-                this.refreshData();
+                this.loadLeaderboardData();
             }
         }, 1000);
     }
@@ -63,26 +63,14 @@ class PokemonLeaderboard {
         } catch (error) {
             console.error('❌ Failed to load data:', error);
             this.showErrorState();
-            
-            // Fallback to parsing local report if JSON fetch fails
-            try {
-                await this.parseLatestReport();
-            } catch (fallbackError) {
-                console.error('❌ Fallback also failed:', fallbackError);
-            }
         }
-    }
-    
-    async refreshData() {
-        // This is now just an alias for loadLeaderboardData
-        await this.loadLeaderboardData();
     }
 
     updateLeaderboard(data) {
         try {
             console.log('📊 Updating leaderboard with data:', data);
             
-            // Update stats
+            // Update main stats
             const totalUsersElement = document.getElementById('totalUsers');
             const totalVotesElement = document.getElementById('totalVotes');
             const lastUpdatedElement = document.getElementById('lastUpdated');
@@ -95,113 +83,93 @@ class PokemonLeaderboard {
                                                 date.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
             }
             
-            // Update champion
+            // Update champion (works with existing HTML structure)
             this.updateChampion(data.champion);
             
-            // Update Elite Four
+            // Update Elite Four (works with existing HTML structure)
             this.updateEliteFour(data.eliteFour);
             
-            // Update Gym Leaders
+            // Update Gym Leaders (works with existing HTML structure) 
             this.updateGymLeaders(data.gymLeaders);
             
-            // Update top commands
+            // Update top commands (works with existing HTML structure)
             this.updateTopCommands(data);
             
         } catch (error) {
             console.error('Failed to update leaderboard:', error);
         }
     }
-
-    showLoadingState() {
-        const container = document.querySelector('.game-container');
-        container.classList.add('loading');
-        
-        const refreshIndicator = document.getElementById('refreshIndicator');
-        if (refreshIndicator) {
-            refreshIndicator.innerHTML = '<span>🔄 Updating leaderboard...</span>';
-        }
-    }
-
-    hideLoadingState() {
-        const container = document.querySelector('.game-container');
-        container.classList.remove('loading');
-        
-        const refreshIndicator = document.getElementById('refreshIndicator');
-        if (refreshIndicator) {
-            const timeLeft = this.refreshInterval;
-            refreshIndicator.innerHTML = `<span>🔄 Auto-refresh in <span id="countdown">${timeLeft}</span>s</span>`;
-        }
-    }
-
-    showErrorState() {
-        const refreshIndicator = document.getElementById('refreshIndicator');
-        if (refreshIndicator) {
-            refreshIndicator.innerHTML = '<span>❌ Update failed - retrying...</span>';
-        }
-        
-        setTimeout(() => {
-            this.hideLoadingState();
-        }, 3000);
-    }
-
-    simulateLoading() {
-        return new Promise(resolve => {
-            setTimeout(resolve, 1000 + Math.random() * 2000); // 1-3 seconds
-        });
-    }
     
     updateChampion(champion) {
         if (!champion) return;
         
-        const championElement = document.querySelector('.champion-card');
-        if (championElement) {
-            championElement.querySelector('.trainer-name').textContent = champion.username;
-            championElement.querySelector('.trainer-score').textContent = `${champion.totalVotes} VOTES`;
+        // Find champion card in existing HTML structure
+        const championCard = document.querySelector('.champion-card');
+        if (championCard) {
+            const nameElement = championCard.querySelector('.trainer-name');
+            const voteElement = championCard.querySelector('.vote-count');
+            const commandsElement = championCard.querySelector('.command-breakdown');
             
-            // Update champion commands
-            const commandsText = Object.entries(champion.commands || {})
-                .slice(0, 5)
-                .map(([cmd, count]) => `${cmd.toUpperCase()}: ${count}`)
-                .join(', ') || `Total: ${champion.totalVotes}`;
-            championElement.querySelector('.trainer-commands').textContent = commandsText;
+            if (nameElement) nameElement.textContent = champion.username;
+            if (voteElement) voteElement.textContent = `${champion.totalVotes.toLocaleString()} VOTES`;
+            
+            if (commandsElement && champion.commands) {
+                // Update command breakdown with real data
+                const topCommands = Object.entries(champion.commands)
+                    .sort(([,a], [,b]) => b - a)
+                    .slice(0, 5);
+                    
+                commandsElement.innerHTML = topCommands
+                    .map(([cmd, count]) => `<span class="breakdown-item">${cmd.toUpperCase()}: ${count}</span>`)
+                    .join('');
+            }
         }
     }
     
     updateEliteFour(eliteFour) {
-        if (!eliteFour) return;
+        if (!eliteFour || eliteFour.length === 0) return;
         
-        const eliteFourElements = document.querySelectorAll('.elite-four-member');
+        // Find elite four cards in existing HTML structure
+        const eliteCards = document.querySelectorAll('.elite-card');
+        
         eliteFour.slice(0, 4).forEach((member, index) => {
-            if (eliteFourElements[index]) {
-                const element = eliteFourElements[index];
-                element.querySelector('.trainer-name').textContent = member.username;
-                element.querySelector('.trainer-score').textContent = `${member.totalVotes} VOTES`;
+            if (eliteCards[index]) {
+                const card = eliteCards[index];
+                const nameElement = card.querySelector('.trainer-name');
+                const voteElement = card.querySelector('.vote-count');
+                const commandsElement = card.querySelector('.command-summary');
                 
-                const commandsText = Object.entries(member.commands || {})
-                    .slice(0, 3)
-                    .map(([cmd, count]) => `${cmd.toUpperCase()}: ${count}`)
-                    .join(', ') || `Total: ${member.totalVotes}`;
-                element.querySelector('.trainer-commands').textContent = commandsText;
+                if (nameElement) nameElement.textContent = member.username;
+                if (voteElement) voteElement.textContent = `${member.totalVotes.toLocaleString()} VOTES`;
+                
+                if (commandsElement && member.commands) {
+                    const topCommands = Object.entries(member.commands)
+                        .sort(([,a], [,b]) => b - a)
+                        .slice(0, 3);
+                        
+                    commandsElement.textContent = topCommands
+                        .map(([cmd, count]) => `${cmd.toUpperCase()}: ${count}`)
+                        .join(', ');
+                }
             }
         });
     }
     
     updateGymLeaders(gymLeaders) {
-        if (!gymLeaders) return;
+        if (!gymLeaders || gymLeaders.length === 0) return;
         
-        const gymLeadersList = document.querySelector('.gym-leaders-list');
-        if (!gymLeadersList) return;
+        // Find gym cards in existing HTML structure
+        const gymCards = document.querySelectorAll('.gym-card');
         
-        gymLeadersList.innerHTML = '';
-        gymLeaders.forEach((leader, index) => {
-            const leaderElement = document.createElement('div');
-            leaderElement.className = 'gym-leader';
-            leaderElement.innerHTML = `
-                <span class="rank">${leader.rank || (index + 6)}</span>
-                <span class="trainer-name">${leader.username}</span>
-                <span class="trainer-score">${leader.totalVotes} votes</span>
-            `;
-            gymLeadersList.appendChild(leaderElement);
+        gymLeaders.slice(0, gymCards.length).forEach((leader, index) => {
+            if (gymCards[index]) {
+                const card = gymCards[index];
+                const nameElement = card.querySelector('.gym-name');
+                const voteElement = card.querySelector('.gym-votes');
+                
+                if (nameElement) nameElement.textContent = leader.username;
+                if (voteElement) voteElement.textContent = `${leader.totalVotes.toLocaleString()} votes`;
+            }
         });
     }
     
@@ -209,38 +177,58 @@ class PokemonLeaderboard {
         // Calculate top commands from all users
         const allCommands = {};
         
-        if (data.champion && data.champion.commands) {
-            Object.entries(data.champion.commands).forEach(([cmd, count]) => {
-                allCommands[cmd] = (allCommands[cmd] || 0) + count;
-            });
-        }
-        
-        [...(data.eliteFour || []), ...(data.gymLeaders || [])]
-            .forEach(user => {
-                if (user.commands) {
-                    Object.entries(user.commands).forEach(([cmd, count]) => {
-                        allCommands[cmd] = (allCommands[cmd] || 0) + count;
-                    });
-                }
-            });
+        // Aggregate commands from all users
+        const allUsers = [data.champion, ...(data.eliteFour || []), ...(data.gymLeaders || [])];
+        allUsers.forEach(user => {
+            if (user && user.commands) {
+                Object.entries(user.commands).forEach(([cmd, count]) => {
+                    allCommands[cmd] = (allCommands[cmd] || 0) + count;
+                });
+            }
+        });
         
         const sortedCommands = Object.entries(allCommands)
             .sort(([,a], [,b]) => b - a)
             .slice(0, 5);
         
-        const commandsList = document.querySelector('.popular-commands');
-        if (commandsList) {
-            commandsList.innerHTML = '';
-            sortedCommands.forEach(([cmd, count]) => {
-                const cmdElement = document.createElement('div');
-                cmdElement.className = 'command-item';
-                cmdElement.innerHTML = `
-                    <span class="command-name">${cmd.toUpperCase()}</span>
-                    <span class="command-count">${count}</span>
-                `;
-                commandsList.appendChild(cmdElement);
-            });
-        }
+        // Update existing command items
+        const commandItems = document.querySelectorAll('.command-item');
+        sortedCommands.forEach((commandData, index) => {
+            if (commandItems[index]) {
+                const [cmd, count] = commandData;
+                const item = commandItems[index];
+                const nameElement = item.querySelector('.command-name');
+                const countElement = item.querySelector('.command-count');
+                
+                if (nameElement) nameElement.textContent = cmd.toUpperCase();
+                if (countElement) countElement.textContent = count.toLocaleString();
+                
+                // Update progress bar width based on relative percentage
+                const maxCount = sortedCommands[0][1];
+                const percentage = (count / maxCount) * 100;
+                const fillElement = item.querySelector('.command-fill');
+                if (fillElement) {
+                    fillElement.style.width = `${percentage}%`;
+                }
+            }
+        });
+    }
+
+    showLoadingState() {
+        const container = document.querySelector('.game-container');
+        if (container) container.classList.add('loading');
+    }
+
+    hideLoadingState() {
+        const container = document.querySelector('.game-container');
+        if (container) container.classList.remove('loading');
+    }
+
+    showErrorState() {
+        console.log('❌ Failed to load leaderboard data');
+        setTimeout(() => {
+            this.hideLoadingState();
+        }, 3000);
     }
 
     addAnimations() {
@@ -383,143 +371,44 @@ class PokemonLeaderboard {
     }
 
     playClickSound() {
-        // Pokemon-style click sound (would need audio files)
         console.log('🔊 *click sound*');
     }
 
     playRefreshSound() {
-        // Pokemon-style refresh sound
         console.log('🔊 *refresh sound*');
     }
 
-    // Method to update leaderboard display with new data from GitHub
-    updateLeaderboardDisplay(data) {
-        console.log('📊 Updating leaderboard display with GitHub data:', data);
-        
-        // Update stats
-        if (data.totalUsers) {
-            const element = document.getElementById('totalUsers');
-            if (element) element.textContent = data.totalUsers.toLocaleString();
-        }
-        
-        if (data.totalVotes) {
-            const element = document.getElementById('totalVotes');
-            if (element) element.textContent = data.totalVotes.toLocaleString();
-        }
-        
-        // Update champion
-        if (data.champion) {
-            this.updateChampionDisplay(data.champion);
-        }
-        
-        // Update Elite Four
-        if (data.eliteFour && data.eliteFour.length > 0) {
-            this.updateEliteFourDisplay(data.eliteFour);
-        }
-        
-        // Update Gym Leaders
-        if (data.gymLeaders && data.gymLeaders.length > 0) {
-            this.updateGymLeadersDisplay(data.gymLeaders);
-        }
-        
-        // Update last updated timestamp
-        if (data.lastUpdated) {
-            const lastUpdatedElement = document.getElementById('lastUpdated');
-            if (lastUpdatedElement) {
-                const date = new Date(data.lastUpdated);
-                lastUpdatedElement.textContent = date.toLocaleDateString() + ' ' + 
-                                               date.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
-            }
-        }
-        
-        // Store data for later use
-        this.currentData = data;
-    }
-    
-    updateChampionDisplay(champion) {
-        const championCard = document.querySelector('.champion-card');
-        if (!championCard || !champion) return;
-        
-        const nameElement = championCard.querySelector('.champion-name');
-        const votesElement = championCard.querySelector('.champion-votes');
-        const commandsElement = championCard.querySelector('.champion-commands');
-        
-        if (nameElement) nameElement.textContent = champion.username;
-        if (votesElement) votesElement.textContent = `${champion.totalVotes.toLocaleString()} votes`;
-        
-        if (commandsElement && champion.topCommands) {
-            commandsElement.innerHTML = champion.topCommands
-                .slice(0, 3)
-                .map(cmd => `<span class="command-badge">${cmd.command}: ${cmd.count}</span>`)
-                .join(' ');
-        }
-    }
-    
-    updateEliteFourDisplay(eliteFour) {
-        eliteFour.forEach((user, index) => {
-            const card = document.querySelector(`[data-rank="${index + 2}"]`);
-            if (!card) return;
-            
-            const nameElement = card.querySelector('.elite-name');
-            const votesElement = card.querySelector('.elite-votes');
-            const percentElement = card.querySelector('.elite-percent');
-            
-            if (nameElement) nameElement.textContent = user.username;
-            if (votesElement) votesElement.textContent = `${user.totalVotes.toLocaleString()} votes`;
-            if (percentElement) percentElement.textContent = `${user.percentage}%`;
-        });
-    }
-    
-    updateGymLeadersDisplay(gymLeaders) {
-        const gymContainer = document.querySelector('.gym-leaders');
-        if (!gymContainer) return;
-        
-        // Clear existing gym leaders
-        const existingCards = gymContainer.querySelectorAll('.gym-card:not(.template)');
-        existingCards.forEach(card => card.remove());
-        
-        // Add new gym leaders
-        gymLeaders.forEach((user, index) => {
-            const card = this.createGymLeaderCard(user, index + 6); // Rank starts at 6
-            gymContainer.appendChild(card);
-        });
-    }
-    
-    createGymLeaderCard(user, rank) {
-        const card = document.createElement('div');
-        card.className = 'gym-card';
-        card.innerHTML = `
-            <div class="rank-badge">#${rank}</div>
-            <div class="gym-info">
-                <div class="gym-name">${user.username}</div>
-                <div class="gym-votes">${user.totalVotes.toLocaleString()} votes</div>
-                <div class="gym-percent">${user.percentage}%</div>
-            </div>
-            <div class="gym-commands">
-                ${user.topCommands ? user.topCommands.slice(0, 3)
-                    .map(cmd => `<span class="command-mini">${cmd.command}: ${cmd.count}</span>`)
-                    .join(' ') : ''}
-            </div>
-        `;
-        return card;
-    }
-
-    // Method to update leaderboard with new data (legacy method)
-    updateLeaderboard(newData) {
-        // Redirect to new method for compatibility
-        this.updateLeaderboardDisplay(newData);
-    }
-
-    // Method to manually refresh (could be called from a button)
+    // Method to manually refresh
     manualRefresh() {
         clearInterval(this.countdownTimer);
-        this.refreshData();
+        this.loadLeaderboardData();
         this.startCountdown();
     }
 }
 
 // CSS for additional animations
 const additionalCSS = `
+    @keyframes pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+    }
+    
+    @keyframes sparkle {
+        0% {
+            opacity: 1;
+            transform: scale(0) rotate(0deg);
+        }
+        100% {
+            opacity: 0;
+            transform: scale(1) rotate(180deg);
+        }
+    }
+    
+    .loading {
+        opacity: 0.7;
+        transition: opacity 0.3s ease;
+    }
+    
     @keyframes slideIn {
         from {
             opacity: 0;
@@ -533,28 +422,6 @@ const additionalCSS = `
     
     .animate-slide-in {
         animation: slideIn 0.6s ease-out forwards;
-    }
-    
-    @keyframes bounceIn {
-        0% {
-            opacity: 0;
-            transform: scale(0.3);
-        }
-        50% {
-            opacity: 1;
-            transform: scale(1.05);
-        }
-        70% {
-            transform: scale(0.9);
-        }
-        100% {
-            opacity: 1;
-            transform: scale(1);
-        }
-    }
-    
-    .animate-bounce-in {
-        animation: bounceIn 0.8s ease-out forwards;
     }
 `;
 
