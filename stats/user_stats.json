@@ -609,13 +609,13 @@
     "lastSeen": 1757231027301
   },
   "whenbag": {
-    "totalVotes": 4,
-    "totalWeight": 4,
+    "totalVotes": 22,
+    "totalWeight": 22,
     "commands": {
       "holdright": 3,
-      "a": 1
+      "a": 19
     },
     "firstSeen": 1757236648951,
-    "lastSeen": 1757236692845
+    "lastSeen": 1757236945189
   }
 }

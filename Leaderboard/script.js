@@ -1,9 +1,11 @@
 // Pokemon Leaderboard JavaScript - Updated to work with existing HTML structure
 class PokemonLeaderboard {
     constructor() {
-        this.refreshInterval = 300; // 5 minutes in seconds
+        this.refreshInterval = 30; // 30 seconds for data refresh (matches server)
         this.countdownTimer = null;
+        this.timestampTimer = null;
         this.apiEndpoint = 'data/leaderboard.json'; // JSON data file
+        this.lastUpdatedDate = null;
         
         this.init();
     }
@@ -13,17 +15,33 @@ class PokemonLeaderboard {
         this.loadLeaderboardData();
         
         this.startCountdown();
+        this.startTimestampUpdater();
         this.addAnimations();
         this.setupEventListeners();
         
-        // Auto-refresh every 5 minutes
+        // Auto-refresh every 30 seconds (matches server quick updates)
         setInterval(() => {
             this.loadLeaderboardData();
         }, this.refreshInterval * 1000);
 
-        console.log('🎮 Pokemon Leaderboard initialized!');
+        console.log('🎮 Pokemon Leaderboard initialized with 30s refresh!');
     }
 
+    startTimestampUpdater() {
+        // Update relative timestamp every 10 seconds
+        this.timestampTimer = setInterval(() => {
+            if (this.lastUpdatedDate) {
+                const lastUpdatedElement = document.getElementById('lastUpdated');
+                if (lastUpdatedElement) {
+                    const relativeTime = this.getRelativeTimeString(this.lastUpdatedDate);
+                    lastUpdatedElement.textContent = relativeTime;
+                }
+            }
+        }, 10000); // Update every 10 seconds
+        
+        console.log('⏰ Timestamp updater started (10s intervals)');
+    }
+    
     startCountdown() {
         let timeLeft = this.refreshInterval;
         const countdownElement = document.getElementById('countdown');
@@ -79,6 +97,7 @@ class PokemonLeaderboard {
             if (totalVotesElement) totalVotesElement.textContent = (data.totalVotes || 0).toLocaleString();
             if (lastUpdatedElement) {
                 const date = new Date(data.lastUpdated || Date.now());
+                this.lastUpdatedDate = date; // Store for timestamp updater
                 const relativeTime = this.getRelativeTimeString(date);
                 const absoluteTime = date.toLocaleDateString() + ' ' + 
                                    date.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});

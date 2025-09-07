@@ -5,6 +5,7 @@ const GitHubPublisher = require('./GitHubPublisher');
 const WebsiteUpdater = require('./websiteUpdater');
 const HTMLLeaderboardUpdater = require('./htmlLeaderboardUpdater');
 const SurgicalHTMLUpdater = require('./surgicalHTMLUpdater');
+const QuickStatsUpdater = require('./quickStatsUpdater');
 
 /**
  * Manages user statistics and generates leaderboard reports
@@ -20,6 +21,7 @@ class LeaderboardManager {
         this.websiteUpdater = new WebsiteUpdater();
         this.htmlUpdater = new HTMLLeaderboardUpdater();
         this.surgicalUpdater = new SurgicalHTMLUpdater();
+        this.quickUpdater = null; // Will be initialized after loading stats
         
         // Ensure directories exist
         this.ensureDirectories();
@@ -27,10 +29,11 @@ class LeaderboardManager {
         // Load existing stats
         this.loadStats();
         
-        // Start report timer
-        this.startReportTimer();
+        // Start BOTH update systems
+        this.startReportTimer(); // 4-hour CEO reports
+        this.startQuickUpdater(); // 30-second website updates
         
-        log('Leaderboard Manager initialized', 'STATS');
+        log('Leaderboard Manager initialized with dual update system', 'STATS');
     }
     
     ensureDirectories() {
@@ -257,6 +260,20 @@ class LeaderboardManager {
     }
     
     /**
+     * Start the 30-second quick updater for live website updates
+     */
+    startQuickUpdater() {
+        try {
+            const QuickStatsUpdater = require('./quickStatsUpdater');
+            this.quickUpdater = new QuickStatsUpdater(this);
+            this.quickUpdater.start();
+            log('⚡ Quick stats updater started (30-second intervals for live website)', 'STATS');
+        } catch (error) {
+            log(`⚠️ Quick updater failed to start: ${error.message}`, 'WARN');
+        }
+    }
+    
+    /**
      * Get current leaderboard for real-time display
      * @param {number} limit - Number of top users to return
      */
@@ -296,7 +313,13 @@ class LeaderboardManager {
      */
     cleanup() {
         this.saveStats();
-        log('Leaderboard stats saved on cleanup', 'STATS');
+        
+        // Stop quick updater if running
+        if (this.quickUpdater) {
+            this.quickUpdater.stop();
+        }
+        
+        log('Leaderboard stats saved and updaters stopped on cleanup', 'STATS');
     }
 }
 
