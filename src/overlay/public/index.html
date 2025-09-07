@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pump Plays Pokemon Emerald - Live Stream Overlay</title>
+    <link rel="stylesheet" href="overlay.css">
+</head>
+<body>
+    <!-- Main Overlay Container -->
+    <div id="overlay-container">
+        
+        <!-- Live Chat Panel -->
+        <div id="chat-panel" class="panel">
+            <div class="panel-header">
+                <h3>💬 LIVE CHAT</h3>
+                <div id="chat-count" class="chat-counter">0</div>
+            </div>
+            <div id="chat-messages" class="chat-container">
+                <div class="no-chat">Chat loading...</div>
+            </div>
+        </div>
+        
+        <!-- Vote Display Panel -->
+        <div id="vote-panel" class="panel">
+            <div class="panel-header">
+                <h2>🗳️ LIVE VOTES</h2>
+                <div id="vote-timer" class="timer">0s</div>
+            </div>
+            
+            <div id="vote-bars" class="vote-container">
+                <!-- Analog Stick -->
+                <div class="vote-bar" data-command="up">
+                    <span class="command">↑ UP</span>
+                    <div class="bar-container">
+                        <div class="bar-fill" style="width: 0%"></div>
+                        <span class="vote-count">0</span>
+                    </div>
+                </div>
+                
+                <div class="vote-bar" data-command="down">
+                    <span class="command">↓ DOWN</span>
+                    <div class="bar-container">
+                        <div class="bar-fill" style="width: 0%"></div>
+                        <span class="vote-count">0</span>
+                    </div>
+                </div>
+                
+                <div class="vote-bar" data-command="left">
+                    <span class="command">← LEFT</span>
+                    <div class="bar-container">
+                        <div class="bar-fill" style="width: 0%"></div>
+                        <span class="vote-count">0</span>
+                    </div>
+                </div>
+                
+                <div class="vote-bar" data-command="right">
+                    <span class="command">→ RIGHT</span>
+                    <div class="bar-container">
+                        <div class="bar-fill" style="width: 0%"></div>
+                        <span class="vote-count">0</span>
+                    </div>
+                </div>
+                
+                <!-- GBA Face Buttons -->
+                <div class="vote-bar" data-command="a">
+                    <span class="command">🅰️ A</span>
+                    <div class="bar-container">
+                        <div class="bar-fill" style="width: 0%"></div>
+                        <span class="vote-count">0</span>
+                    </div>
+                </div>
+                
+                <div class="vote-bar" data-command="b">
+                    <span class="command">🅱️ B</span>
+                    <div class="bar-container">
+                        <div class="bar-fill" style="width: 0%"></div>
+                        <span class="vote-count">0</span>
+                    </div>
+                </div>
+                
+                <!-- GBA Shoulder Buttons -->
+                <div class="vote-bar" data-command="l">
+                    <span class="command">🛡️ L</span>
+                    <div class="bar-container">
+                        <div class="bar-fill" style="width: 0%"></div>
+                        <span class="vote-count">0</span>
+                    </div>
+                </div>
+                
+                <div class="vote-bar" data-command="r">
+                    <span class="command">🛡️ R</span>
+                    <div class="bar-container">
+                        <div class="bar-fill" style="width: 0%"></div>
+                        <span class="vote-count">0</span>
+                    </div>
+                </div>
+                
+                <!-- GBA Control Buttons -->
+                <div class="vote-bar" data-command="start">
+                    <span class="command">▶️ START</span>
+                    <div class="bar-container">
+                        <div class="bar-fill" style="width: 0%"></div>
+                        <span class="vote-count">0</span>
+                    </div>
+                </div>
+                
+                <div class="vote-bar" data-command="select">
+                    <span class="command">⏹️ SELECT</span>
+                    <div class="bar-container">
+                        <div class="bar-fill" style="width: 0%"></div>
+                        <span class="vote-count">0</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="instructions">
+                Type <span class="highlight">!up !down !left !right !a !b !l !r !start !select</span> in chat to control Pokemon Emerald!
+                <br>🔥 Advanced: <span class="highlight">!holda 500</span> (hold A for 500ms) • <span class="highlight">!up75</span> (75% momentum) • <span class="highlight">!party</span> (scan team)
+                <br>💎 Traders get <span class="highlight">vote weight bonuses</span> for 60 seconds!
+            </div>
+        </div>
+        
+        <!-- Last Move Display -->
+        <div id="last-move-panel" class="panel">
+            <div class="panel-header">
+                <h3>⚡ LAST MOVE</h3>
+            </div>
+            <div id="last-move-display" class="last-move">
+                <div class="move-command">Waiting...</div>
+                <div class="move-details">Ready for commands!</div>
+                <div class="move-winner">🏆 First Voter: <span id="first-voter">---</span></div>
+            </div>
+        </div>
+        
+        <!-- Party Display Panel -->
+        <div id="party-panel" class="panel">
+            <div class="panel-header">
+                <h3>🎊 POKEMON PARTY</h3>
+                <div id="party-status" class="party-status">Ready</div>
+            </div>
+            <div id="party-display" class="party-container">
+                <div class="no-party">Use !party command to scan your team!</div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <!-- Trade Effects Container -->
+    <div id="trade-effects"></div>
+    
+    <!-- Custom Effects Container -->
+    <div id="custom-effects"></div>
+    
+    <!-- Scripts -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="overlay.js"></script>
+</body>
+</html>
