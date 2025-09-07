@@ -209,29 +209,8 @@ class LeaderboardManager {
             log(`📄 CEO Report generated: ${reportFile}`, 'STATS');
             log(`📊 Report covers ${sortedUsers.length} users with ${Object.values(this.userStats).reduce((sum, s) => sum + s.totalVotes, 0)} total votes`, 'STATS');
             
-            // Publish to GitHub for live website
-            try {
-                await this.githubPublisher.publishLeaderboard(this);
-            } catch (error) {
-                log(`⚠️ GitHub publish failed (continuing): ${error.message}`, 'WARN');
-            }
-            
-            // Update local Leaderboard HTML file with surgical precision (preserves layout)
-            try {
-                await this.surgicalUpdater.updateHTML(this);
-                log('✅ Surgical HTML update completed - layout preserved with fresh data!', 'STATS');
-            } catch (error) {
-                log(`⚠️ Surgical HTML update failed (continuing): ${error.message}`, 'WARN');
-            }
-            
-            // Also update website HTML with current stats (legacy)
-            try {
-                const leaderboardData = this.getLeaderboardData();
-                await this.websiteUpdater.updateWebsiteHTML(leaderboardData);
-                log('✅ Website HTML auto-updated with current stats', 'STATS');
-            } catch (error) {
-                log(`⚠️ Website HTML update failed (continuing): ${error.message}`, 'WARN');
-            }
+            // NO MORE GitHub operations - CEO reports are just for local use
+            log('📄 CEO Report saved locally (no GitHub push)', 'STATS');
             
             return reportFile;
             

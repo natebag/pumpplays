@@ -36,10 +36,7 @@ class SurgicalHTMLUpdater {
             // Write back
             fs.writeFileSync(this.htmlFile, html);
             
-            log('✅ HTML data updated surgically - layout preserved!', 'HTML');
-            
-            // Push to GitHub
-            await this.pushToGitHub();
+            log('✅ HTML data updated surgically - layout preserved! (no git push)', 'HTML');
             
         } catch (error) {
             log(`❌ Surgical HTML update failed: ${error.message}`, 'ERROR');

@@ -96,33 +96,14 @@ class QuickStatsUpdater {
             // Generate 30-second CEO-style report
             this.generate30SecReport(topUsers, stats);
             
-            // Update HTML with surgical precision (preserves layout) - NO GIT PUSH
+            // Update HTML with full surgical precision (preserves layout) - NO GIT PUSH
             try {
-                // Just update files locally, don't push to GitHub (causes conflicts)
-                const now = new Date();
-                const relativeTime = this.getRelativeTimeString(now);
+                // Use the full surgical updater to update ALL data in HTML
+                await this.surgicalUpdater.updateHTML(this.leaderboardManager);
                 
-                // Update HTML timestamp directly
-                let html = fs.readFileSync(this.surgicalUpdater.htmlFile, 'utf8');
-                const timestamp = now.toLocaleString('en-US', {
-                    month: 'numeric',
-                    day: 'numeric', 
-                    year: 'numeric',
-                    hour: 'numeric',
-                    minute: '2-digit',
-                    hour12: true
-                });
-                
-                // Update timestamp with regex to be more flexible
-                html = html.replace(/id="lastUpdated"[^>]*>([^<]*)<\/span>/,
-                    `id="lastUpdated" title="${timestamp}">${relativeTime}</span>`);
-                
-                // Write back
-                fs.writeFileSync(this.surgicalUpdater.htmlFile, html);
-                
-                // Only log occasionally
+                // Only log occasionally to avoid spam
                 if (this.updateCount % 10 === 1) {
-                    log('⚡ HTML timestamp updated (no git push)', 'HTML');
+                    log('⚡ HTML fully updated with surgical precision (no git push)', 'HTML');
                 }
                 
             } catch (htmlError) {

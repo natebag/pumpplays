@@ -1,19 +1,19 @@
 {
-  "lastUpdated": "2025-09-07T09:37:37.709Z",
+  "lastUpdated": "2025-09-07T09:39:10.767Z",
   "totalUsers": 49,
-  "totalVotes": 4699,
+  "totalVotes": 4739,
   "topCommands": [
     {
       "command": "A",
-      "count": 1889
+      "count": 1926
     },
     {
       "command": "DOWN",
-      "count": 493
+      "count": 494
     },
     {
       "command": "RIGHT",
-      "count": 464
+      "count": 466
     },
     {
       "command": "LEFT",
@@ -84,12 +84,12 @@
     },
     {
       "username": "natebag",
-      "totalVotes": 242,
-      "totalWeight": 242,
+      "totalVotes": 245,
+      "totalWeight": 245,
       "topCommands": [
         {
           "command": "a",
-          "count": 119
+          "count": 122
         },
         {
           "command": "down",
@@ -101,6 +101,27 @@
         }
       ]
     },
+    {
+      "username": "wb1",
+      "totalVotes": 220,
+      "totalWeight": 220,
+      "topCommands": [
+        {
+          "command": "a",
+          "count": 116
+        },
+        {
+          "command": "up",
+          "count": 25
+        },
+        {
+          "command": "down",
+          "count": 17
+        }
+      ]
+    }
+  ],
+  "gymLeaders": [
     {
       "username": "obnoxi",
       "totalVotes": 219,
@@ -117,27 +138,6 @@
         {
           "command": "down",
           "count": 43
-        }
-      ]
-    }
-  ],
-  "gymLeaders": [
-    {
-      "username": "wb1",
-      "totalVotes": 219,
-      "totalWeight": 219,
-      "topCommands": [
-        {
-          "command": "a",
-          "count": 115
-        },
-        {
-          "command": "up",
-          "count": 25
-        },
-        {
-          "command": "down",
-          "count": 17
         }
       ]
     },
@@ -237,21 +237,21 @@
       ]
     },
     {
-      "username": "8mJxLm",
-      "totalVotes": 31,
-      "totalWeight": 31,
+      "username": "whenbag",
+      "totalVotes": 58,
+      "totalWeight": 58,
       "topCommands": [
         {
           "command": "a",
-          "count": 12
+          "count": 52
         },
         {
-          "command": "b",
-          "count": 7
-        },
-        {
-          "command": "down",
+          "command": "holdright",
           "count": 3
+        },
+        {
+          "command": "right",
+          "count": 2
         }
       ]
     }
@@ -316,12 +316,12 @@
     },
     {
       "username": "natebag",
-      "totalVotes": 242,
-      "totalWeight": 242,
+      "totalVotes": 245,
+      "totalWeight": 245,
       "topCommands": [
         {
           "command": "a",
-          "count": 119
+          "count": 122
         },
         {
           "command": "down",
@@ -330,6 +330,25 @@
         {
           "command": "up",
           "count": 24
+        }
+      ]
+    },
+    {
+      "username": "wb1",
+      "totalVotes": 220,
+      "totalWeight": 220,
+      "topCommands": [
+        {
+          "command": "a",
+          "count": 116
+        },
+        {
+          "command": "up",
+          "count": 25
+        },
+        {
+          "command": "down",
+          "count": 17
         }
       ]
     },
@@ -349,25 +368,6 @@
         {
           "command": "down",
           "count": 43
-        }
-      ]
-    },
-    {
-      "username": "wb1",
-      "totalVotes": 219,
-      "totalWeight": 219,
-      "topCommands": [
-        {
-          "command": "a",
-          "count": 115
-        },
-        {
-          "command": "up",
-          "count": 25
-        },
-        {
-          "command": "down",
-          "count": 17
         }
       ]
     },
@@ -467,6 +467,25 @@
       ]
     },
     {
+      "username": "whenbag",
+      "totalVotes": 58,
+      "totalWeight": 58,
+      "topCommands": [
+        {
+          "command": "a",
+          "count": 52
+        },
+        {
+          "command": "holdright",
+          "count": 3
+        },
+        {
+          "command": "right",
+          "count": 2
+        }
+      ]
+    },
+    {
       "username": "8mJxLm",
       "totalVotes": 31,
       "totalWeight": 31,
@@ -481,21 +500,6 @@
         },
         {
           "command": "down",
-          "count": 3
-        }
-      ]
-    },
-    {
-      "username": "whenbag",
-      "totalVotes": 22,
-      "totalWeight": 22,
-      "topCommands": [
-        {
-          "command": "a",
-          "count": 19
-        },
-        {
-          "command": "holdright",
           "count": 3
         }
       ]
