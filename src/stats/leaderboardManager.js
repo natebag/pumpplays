@@ -4,6 +4,7 @@ const { log } = require('../utils/logger');
 const GitHubPublisher = require('./GitHubPublisher');
 const WebsiteUpdater = require('./websiteUpdater');
 const HTMLLeaderboardUpdater = require('./htmlLeaderboardUpdater');
+const SurgicalHTMLUpdater = require('./surgicalHTMLUpdater');
 
 /**
  * Manages user statistics and generates leaderboard reports
@@ -18,6 +19,7 @@ class LeaderboardManager {
         this.githubPublisher = new GitHubPublisher();
         this.websiteUpdater = new WebsiteUpdater();
         this.htmlUpdater = new HTMLLeaderboardUpdater();
+        this.surgicalUpdater = new SurgicalHTMLUpdater();
         
         // Ensure directories exist
         this.ensureDirectories();
@@ -211,12 +213,12 @@ class LeaderboardManager {
                 log(`⚠️ GitHub publish failed (continuing): ${error.message}`, 'WARN');
             }
             
-            // Update local Leaderboard HTML file and push to GitHub - DISABLED until layout is fixed
+            // Update local Leaderboard HTML file with surgical precision (preserves layout)
             try {
-                // await this.htmlUpdater.updateHTML(this);
-                log('⚠️ HTML Leaderboard updater temporarily disabled to preserve layout', 'WARN');
+                await this.surgicalUpdater.updateHTML(this);
+                log('✅ Surgical HTML update completed - layout preserved with fresh data!', 'STATS');
             } catch (error) {
-                log(`⚠️ HTML Leaderboard update failed (continuing): ${error.message}`, 'WARN');
+                log(`⚠️ Surgical HTML update failed (continuing): ${error.message}`, 'WARN');
             }
             
             // Also update website HTML with current stats (legacy)
