@@ -1,0 +1,621 @@
+{
+  "lukebag": {
+    "totalVotes": 143,
+    "totalWeight": 143,
+    "commands": {
+      "b": 4,
+      "start": 1,
+      "down": 17,
+      "a": 54,
+      "right": 10,
+      "up": 16,
+      "left": 35,
+      "holdright": 2,
+      "holdup": 4
+    },
+    "firstSeen": 1757122775655,
+    "lastSeen": 1757221898873
+  },
+  "pumpplaysguy": {
+    "totalVotes": 452,
+    "totalWeight": 452,
+    "commands": {
+      "down": 82,
+      "right": 48,
+      "up": 68,
+      "left": 45,
+      "a": 124,
+      "b": 50,
+      "select": 3,
+      "A": 2,
+      "start": 4,
+      "s": 2,
+      "RIGHT": 1,
+      "holdleft": 9,
+      "holdright": 2,
+      "holddown": 1,
+      "holdright2000": 1,
+      "holdleft2000": 2,
+      "holdup1500": 1,
+      "holdup": 6,
+      "holdleft1500": 1
+    },
+    "firstSeen": 1757122775664,
+    "lastSeen": 1757230892507
+  },
+  "obnoxi": {
+    "totalVotes": 219,
+    "totalWeight": 219,
+    "commands": {
+      "right": 53,
+      "down": 43,
+      "a": 57,
+      "left": 43,
+      "b": 13,
+      "up": 10
+    },
+    "firstSeen": 1757122775668,
+    "lastSeen": 1757127925723
+  },
+  "J8mj3X": {
+    "totalVotes": 10,
+    "totalWeight": 10,
+    "commands": {
+      "down": 3,
+      "left": 4,
+      "right": 1,
+      "a": 2
+    },
+    "firstSeen": 1757123211173,
+    "lastSeen": 1757152151812
+  },
+  "nuffinman": {
+    "totalVotes": 7,
+    "totalWeight": 7,
+    "commands": {
+      "up": 4,
+      "down": 3
+    },
+    "firstSeen": 1757123633752,
+    "lastSeen": 1757124090402
+  },
+  "a3jtjcxx": {
+    "totalVotes": 1,
+    "totalWeight": 1,
+    "commands": {
+      "a": 1
+    },
+    "firstSeen": 1757125607855,
+    "lastSeen": 1757125607855
+  },
+  "1984bot": {
+    "totalVotes": 15,
+    "totalWeight": 15,
+    "commands": {
+      "a": 12,
+      "down": 3
+    },
+    "firstSeen": 1757131588678,
+    "lastSeen": 1757134993131
+  },
+  "9SciTh": {
+    "totalVotes": 2,
+    "totalWeight": 2,
+    "commands": {
+      "left": 2
+    },
+    "firstSeen": 1757132650274,
+    "lastSeen": 1757132665622
+  },
+  "AHhW3j": {
+    "totalVotes": 18,
+    "totalWeight": 18,
+    "commands": {
+      "left": 1,
+      "up": 12,
+      "right": 3,
+      "down": 2
+    },
+    "firstSeen": 1757132889197,
+    "lastSeen": 1757139532108
+  },
+  "j7j4o1": {
+    "totalVotes": 10,
+    "totalWeight": 10,
+    "commands": {
+      "start": 6,
+      "up": 2,
+      "a": 2
+    },
+    "firstSeen": 1757134082582,
+    "lastSeen": 1757141843432
+  },
+  "natebag": {
+    "totalVotes": 242,
+    "totalWeight": 242,
+    "commands": {
+      "up": 24,
+      "a": 119,
+      "down": 25,
+      "holdright": 6,
+      "right": 15,
+      "select": 5,
+      "b": 15,
+      "holddown": 5,
+      "start": 3,
+      "holdleft": 10,
+      "left": 4,
+      "holdup": 11
+    },
+    "firstSeen": 1757134592964,
+    "lastSeen": 1757236468454
+  },
+  "wb1": {
+    "totalVotes": 219,
+    "totalWeight": 219,
+    "commands": {
+      "up": 25,
+      "left": 11,
+      "down": 17,
+      "a": 115,
+      "b": 7,
+      "holdup": 12,
+      "holdright": 9,
+      "right": 12,
+      "holdleft": 6,
+      "holddown": 5
+    },
+    "firstSeen": 1757134849516,
+    "lastSeen": 1757236587974
+  },
+  "droober": {
+    "totalVotes": 89,
+    "totalWeight": 89,
+    "commands": {
+      "down": 12,
+      "a": 34,
+      "right": 8,
+      "left": 4,
+      "up": 7,
+      "holddown": 2,
+      "holda": 6,
+      "holdleft": 6,
+      "holdright": 4,
+      "b": 5,
+      "holdup": 1
+    },
+    "firstSeen": 1757136474154,
+    "lastSeen": 1757234690522
+  },
+  "cuno": {
+    "totalVotes": 1893,
+    "totalWeight": 1893,
+    "commands": {
+      "a": 764,
+      "b": 175,
+      "down": 198,
+      "right": 251,
+      "up": 197,
+      "left": 235,
+      "start": 21,
+      "DOWN": 1,
+      "START": 1,
+      "RIGHT": 1,
+      "A": 1,
+      "B": 2,
+      "LEFT": 2,
+      "UP": 1,
+      "holddown": 7,
+      "holdright": 13,
+      "holdup": 6,
+      "holdleft": 17
+    },
+    "firstSeen": 1757139742018,
+    "lastSeen": 1757215067671
+  },
+  "5og6yK": {
+    "totalVotes": 6,
+    "totalWeight": 6,
+    "commands": {
+      "a": 2,
+      "up": 2,
+      "holdright": 1,
+      "down": 1
+    },
+    "firstSeen": 1757141086956,
+    "lastSeen": 1757213821112
+  },
+  "AdQpRj": {
+    "totalVotes": 4,
+    "totalWeight": 4,
+    "commands": {
+      "up": 4
+    },
+    "firstSeen": 1757146084319,
+    "lastSeen": 1757146104163
+  },
+  "d'jen": {
+    "totalVotes": 14,
+    "totalWeight": 14,
+    "commands": {
+      "start": 1,
+      "a": 5,
+      "left": 2,
+      "right": 3,
+      "down": 3
+    },
+    "firstSeen": 1757154478984,
+    "lastSeen": 1757179911602
+  },
+  "3jEfHr": {
+    "totalVotes": 1,
+    "totalWeight": 1,
+    "commands": {
+      "right": 1
+    },
+    "firstSeen": 1757154552731,
+    "lastSeen": 1757154552731
+  },
+  "sraavi": {
+    "totalVotes": 4,
+    "totalWeight": 4,
+    "commands": {
+      "left": 1,
+      "s": 2,
+      "a": 1
+    },
+    "firstSeen": 1757157053954,
+    "lastSeen": 1757157068245
+  },
+  "ho-oh": {
+    "totalVotes": 104,
+    "totalWeight": 104,
+    "commands": {
+      "a": 44,
+      "up": 6,
+      "down": 14,
+      "holdleft": 30,
+      "left": 1,
+      "holddown": 2,
+      "b": 6,
+      "holdright": 1
+    },
+    "firstSeen": 1757157214528,
+    "lastSeen": 1757212398672
+  },
+  "pump_waifu": {
+    "totalVotes": 6,
+    "totalWeight": 6,
+    "commands": {
+      "a": 1,
+      "up": 2,
+      "b": 3
+    },
+    "firstSeen": 1757158659575,
+    "lastSeen": 1757158759628
+  },
+  "begotten": {
+    "totalVotes": 110,
+    "totalWeight": 110,
+    "commands": {
+      "up": 15,
+      "left": 8,
+      "a": 48,
+      "right": 13,
+      "down": 11,
+      "b": 6,
+      "holdup": 1,
+      "s": 1,
+      "holddown": 5,
+      "holdleft": 2
+    },
+    "firstSeen": 1757159460411,
+    "lastSeen": 1757190538240
+  },
+  "8mJxLm": {
+    "totalVotes": 31,
+    "totalWeight": 31,
+    "commands": {
+      "right": 2,
+      "down": 3,
+      "Holdleft": 1,
+      "a": 12,
+      "up": 1,
+      "b": 7,
+      "holdup": 1,
+      "holddown1500": 1,
+      "holddown": 1,
+      "holdright": 2
+    },
+    "firstSeen": 1757160835156,
+    "lastSeen": 1757226118342
+  },
+  "narraman": {
+    "totalVotes": 10,
+    "totalWeight": 10,
+    "commands": {
+      "a": 7,
+      "b": 2,
+      "right": 1
+    },
+    "firstSeen": 1757162392419,
+    "lastSeen": 1757164299780
+  },
+  "a dol fitler": {
+    "totalVotes": 1,
+    "totalWeight": 1,
+    "commands": {
+      "a": 1
+    },
+    "firstSeen": 1757164169698,
+    "lastSeen": 1757164169698
+  },
+  "2oUHDm": {
+    "totalVotes": 1,
+    "totalWeight": 1,
+    "commands": {
+      "a": 1
+    },
+    "firstSeen": 1757165283923,
+    "lastSeen": 1757165283923
+  },
+  "dragon": {
+    "totalVotes": 904,
+    "totalWeight": 904,
+    "commands": {
+      "b": 60,
+      "a": 392,
+      "down": 36,
+      "holdleft": 51,
+      "holddown": 46,
+      "left": 12,
+      "start": 12,
+      "right": 31,
+      "holdright": 89,
+      "up": 14,
+      "holdup": 161
+    },
+    "firstSeen": 1757178380369,
+    "lastSeen": 1757204489280
+  },
+  "Fcj8J1": {
+    "totalVotes": 1,
+    "totalWeight": 1,
+    "commands": {
+      "left": 1
+    },
+    "firstSeen": 1757181960118,
+    "lastSeen": 1757181960118
+  },
+  "E6vros": {
+    "totalVotes": 19,
+    "totalWeight": 19,
+    "commands": {
+      "left": 6,
+      "a": 11,
+      "up": 1,
+      "start": 1
+    },
+    "firstSeen": 1757185470700,
+    "lastSeen": 1757185923121
+  },
+  "Luffy55": {
+    "totalVotes": 12,
+    "totalWeight": 12,
+    "commands": {
+      "down": 1,
+      "holdright": 4,
+      "right": 1,
+      "a": 3,
+      "b": 3
+    },
+    "firstSeen": 1757192795966,
+    "lastSeen": 1757193573098
+  },
+  "HGhoid": {
+    "totalVotes": 58,
+    "totalWeight": 58,
+    "commands": {
+      "a": 31,
+      "right": 4,
+      "up": 4,
+      "holdup": 1,
+      "down": 10,
+      "start": 3,
+      "b": 3,
+      "left": 1,
+      "holdleft": 1
+    },
+    "firstSeen": 1757195477627,
+    "lastSeen": 1757224062669
+  },
+  "5n85FR": {
+    "totalVotes": 8,
+    "totalWeight": 8,
+    "commands": {
+      "a": 8
+    },
+    "firstSeen": 1757195748259,
+    "lastSeen": 1757196766081
+  },
+  "do9n5r": {
+    "totalVotes": 5,
+    "totalWeight": 5,
+    "commands": {
+      "a": 5
+    },
+    "firstSeen": 1757196766363,
+    "lastSeen": 1757197066409
+  },
+  "G6oDLB": {
+    "totalVotes": 3,
+    "totalWeight": 3,
+    "commands": {
+      "holddown": 1,
+      "a": 1,
+      "holdleft": 1
+    },
+    "firstSeen": 1757197335737,
+    "lastSeen": 1757197382490
+  },
+  "culor": {
+    "totalVotes": 4,
+    "totalWeight": 4,
+    "commands": {
+      "start": 1,
+      "a": 1,
+      "down": 2
+    },
+    "firstSeen": 1757197959344,
+    "lastSeen": 1757197973366
+  },
+  "4ntj5G": {
+    "totalVotes": 4,
+    "totalWeight": 4,
+    "commands": {
+      "a": 1,
+      "b": 3
+    },
+    "firstSeen": 1757205661828,
+    "lastSeen": 1757205708232
+  },
+  "4VEy4R": {
+    "totalVotes": 3,
+    "totalWeight": 3,
+    "commands": {
+      "up": 1,
+      "select": 1,
+      "left": 1
+    },
+    "firstSeen": 1757206718097,
+    "lastSeen": 1757206777403
+  },
+  "Nohbdy": {
+    "totalVotes": 1,
+    "totalWeight": 1,
+    "commands": {
+      "a": 1
+    },
+    "firstSeen": 1757209664285,
+    "lastSeen": 1757209664285
+  },
+  "H4oiyv": {
+    "totalVotes": 1,
+    "totalWeight": 1,
+    "commands": {
+      "right": 1
+    },
+    "firstSeen": 1757212862322,
+    "lastSeen": 1757212862322
+  },
+  "CpnaHW": {
+    "totalVotes": 1,
+    "totalWeight": 1,
+    "commands": {
+      "a": 1
+    },
+    "firstSeen": 1757214420642,
+    "lastSeen": 1757214420642
+  },
+  "AEC1s7": {
+    "totalVotes": 10,
+    "totalWeight": 10,
+    "commands": {
+      "down": 1,
+      "holddown3": 1,
+      "holdleft2000": 1,
+      "right": 3,
+      "holdup": 1,
+      "holdright": 3
+    },
+    "firstSeen": 1757214853983,
+    "lastSeen": 1757215201540
+  },
+  "6iiFJA": {
+    "totalVotes": 6,
+    "totalWeight": 6,
+    "commands": {
+      "left": 1,
+      "right": 1,
+      "holdright": 1,
+      "a": 3
+    },
+    "firstSeen": 1757214960922,
+    "lastSeen": 1757215484047
+  },
+  "B2pGYx": {
+    "totalVotes": 1,
+    "totalWeight": 1,
+    "commands": {
+      "right": 1
+    },
+    "firstSeen": 1757219666866,
+    "lastSeen": 1757219666866
+  },
+  "onaizahcap": {
+    "totalVotes": 4,
+    "totalWeight": 4,
+    "commands": {
+      "a": 1,
+      "b": 2,
+      "up": 1
+    },
+    "firstSeen": 1757222695899,
+    "lastSeen": 1757224617204
+  },
+  "8gKAQa": {
+    "totalVotes": 4,
+    "totalWeight": 4,
+    "commands": {
+      "a": 1,
+      "A": 1,
+      "holdleft": 2
+    },
+    "firstSeen": 1757223491240,
+    "lastSeen": 1757225474178
+  },
+  "ploggy": {
+    "totalVotes": 6,
+    "totalWeight": 6,
+    "commands": {
+      "select": 2,
+      "right": 1,
+      "down": 1,
+      "a": 1,
+      "start": 1
+    },
+    "firstSeen": 1757223688753,
+    "lastSeen": 1757223838391
+  },
+  "4GkZby": {
+    "totalVotes": 8,
+    "totalWeight": 8,
+    "commands": {
+      "a": 1,
+      "start": 1,
+      "down": 5,
+      "b": 1
+    },
+    "firstSeen": 1757224295853,
+    "lastSeen": 1757224573130
+  },
+  "lovefent": {
+    "totalVotes": 2,
+    "totalWeight": 2,
+    "commands": {
+      "a": 2
+    },
+    "firstSeen": 1757231010387,
+    "lastSeen": 1757231027301
+  },
+  "whenbag": {
+    "totalVotes": 4,
+    "totalWeight": 4,
+    "commands": {
+      "holdright": 3,
+      "a": 1
+    },
+    "firstSeen": 1757236648951,
+    "lastSeen": 1757236692845
+  }
+}

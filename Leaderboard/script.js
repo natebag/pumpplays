@@ -78,9 +78,13 @@ class PokemonLeaderboard {
             if (totalUsersElement) totalUsersElement.textContent = data.totalUsers || 0;
             if (totalVotesElement) totalVotesElement.textContent = (data.totalVotes || 0).toLocaleString();
             if (lastUpdatedElement) {
-                const date = new Date(data.lastUpdated);
-                lastUpdatedElement.textContent = date.toLocaleDateString() + ' ' + 
-                                                date.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+                const date = new Date(data.lastUpdated || Date.now());
+                const relativeTime = this.getRelativeTimeString(date);
+                const absoluteTime = date.toLocaleDateString() + ' ' + 
+                                   date.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+                
+                lastUpdatedElement.textContent = relativeTime;
+                lastUpdatedElement.title = absoluteTime; // Show exact time on hover
             }
             
             // Update champion (works with existing HTML structure)
@@ -171,6 +175,25 @@ class PokemonLeaderboard {
                 if (voteElement) voteElement.textContent = `${leader.totalVotes.toLocaleString()} votes`;
             }
         });
+    }
+    
+    getRelativeTimeString(date) {
+        const now = new Date();
+        const diffInMinutes = Math.floor((now - date) / (1000 * 60));
+        
+        if (diffInMinutes < 1) return 'Just now';
+        if (diffInMinutes < 60) return `${diffInMinutes}m ago`;
+        
+        const diffInHours = Math.floor(diffInMinutes / 60);
+        if (diffInHours < 24) return `${diffInHours}h ago`;
+        
+        const diffInDays = Math.floor(diffInHours / 24);
+        if (diffInDays < 7) return `${diffInDays}d ago`;
+        
+        const diffInWeeks = Math.floor(diffInDays / 7);
+        if (diffInWeeks < 4) return `${diffInWeeks}w ago`;
+        
+        return date.toLocaleDateString();
     }
     
     updateTopCommands(data) {

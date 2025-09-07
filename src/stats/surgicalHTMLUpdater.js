@@ -175,14 +175,19 @@ class SurgicalHTMLUpdater {
             }
         });
         
-        // 5. Update Gym Leaders (top 3 only to be safe)
-        const gymLeaders = topUsers.slice(5, 8);
+        // 5. Update Gym Leaders (ranks 6-12, NO deduplication needed - each position is unique)
+        const gymLeaders = topUsers.slice(5, 12); // Get ranks 6-12
         const originalGym = [
-            { name: 'LUKEBAG', votes: '104' },
+            { name: 'LUKEBAG', votes: '143' },
+            { name: 'BEGOTTEN', votes: '110' },
+            { name: 'WB1', votes: '106' },
             { name: 'HO-OH', votes: '104' },
-            { name: 'NATEBAG', votes: '97' }
+            { name: 'DROOBER', votes: '74' },
+            { name: 'HGHOID', votes: '58' },
+            { name: '8MJXLM', votes: '31' }
         ];
         
+        // Update gym leader cards directly (no deduplication - each rank is unique)
         gymLeaders.forEach((user, index) => {
             if (index < originalGym.length) {
                 const original = originalGym[index];
@@ -220,20 +225,61 @@ class SurgicalHTMLUpdater {
             hour12: true
         });
         
-        // Update last updated time (exact replacement)
-        html = html.replace(
-            'id="lastUpdated">9/7/2025 3:36 AM</span>',
-            `id="lastUpdated">${timestamp}</span>`
-        );
+        // Get relative time for display
+        const relativeTime = this.getRelativeTimeString(now);
+        
+        // Update last updated time with relative time (but keep absolute time as fallback)
+        // First try to match the current timestamp pattern
+        const currentTimestamp = html.match(/id="lastUpdated"[^>]*title="([^"]*)"[^>]*>([^<]*)</);
+        if (currentTimestamp) {
+            html = html.replace(
+                `id="lastUpdated" title="${currentTimestamp[1]}">${currentTimestamp[2]}</span>`,
+                `id="lastUpdated" title="${timestamp}">${relativeTime}</span>`
+            );
+        } else {
+            // Fallback to original pattern matching
+            const simpleMatch = html.match(/id="lastUpdated">([^<]*)</);
+            if (simpleMatch) {
+                html = html.replace(
+                    `id="lastUpdated">${simpleMatch[1]}</span>`,
+                    `id="lastUpdated" title="${timestamp}">${relativeTime}</span>`
+                );
+            }
+        }
         
         // Update comment
         const commentTimestamp = now.toISOString().slice(0, 16).replace('T', ' ');
-        html = html.replace(
-            '<!-- Updated 2025-09-07 02:55 - Fixed JSON data loading -->',
-            `<!-- Updated ${commentTimestamp} - Auto-updated CEO report data -->`
-        );
+        const commentMatch = html.match(/<!-- Updated [^>]* -->/);
+        if (commentMatch) {
+            html = html.replace(
+                commentMatch[0],
+                `<!-- Updated ${commentTimestamp} - Auto-updated CEO report data -->`
+            );
+        }
         
         return html;
+    }
+    
+    /**
+     * Get relative time string (same as in script.js)
+     */
+    getRelativeTimeString(date) {
+        const now = new Date();
+        const diffInMinutes = Math.floor((now - date) / (1000 * 60));
+        
+        if (diffInMinutes < 1) return 'Just now';
+        if (diffInMinutes < 60) return `${diffInMinutes}m ago`;
+        
+        const diffInHours = Math.floor(diffInMinutes / 60);
+        if (diffInHours < 24) return `${diffInHours}h ago`;
+        
+        const diffInDays = Math.floor(diffInHours / 24);
+        if (diffInDays < 7) return `${diffInDays}d ago`;
+        
+        const diffInWeeks = Math.floor(diffInDays / 7);
+        if (diffInWeeks < 4) return `${diffInWeeks}w ago`;
+        
+        return date.toLocaleDateString();
     }
     
     /**

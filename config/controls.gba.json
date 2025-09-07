@@ -1,0 +1,34 @@
+{
+    "analog": {
+        "up": "UP",
+        "down": "DOWN", 
+        "left": "LEFT",
+        "right": "RIGHT"
+    },
+    "buttons": {
+        "a": "X",
+        "b": "Z",
+        "l": "A",
+        "r": "S",
+        "start": "ENTER",
+        "select": "BACKSPACE"
+    },
+    "primary": ["up", "down", "left", "right", "a", "b"],
+    "advanced": ["l", "r", "start", "select"],
+    "aliases": {
+        "w": "up",
+        "s": "down",
+        "d": "right",
+        "space": "a",
+        "ctrl": "b",
+        "shift": "l",
+        "tab": "r"
+    },
+    "holdDefaultsMs": 4000,
+    "momentumConfig": {
+        "25": 100,
+        "50": 200,
+        "75": 300,
+        "100": 400
+    }
+}

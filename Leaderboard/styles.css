@@ -57,7 +57,7 @@ body {
 }
 
 .game-title {
-    font-size: 16px;
+    font-size: clamp(10px, 4vw, 16px);
     color: #ffff00;
     text-shadow: 2px 2px 0px #000000, -1px -1px 0px #000000;
     margin-bottom: 10px;
@@ -135,6 +135,19 @@ body {
 .command-grid {
     display: grid;
     gap: 10px;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 480px) {
+    .command-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    .command-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 .command-item {
@@ -254,10 +267,13 @@ body {
 }
 
 .trainer-name {
-    font-size: 14px;
+    font-size: clamp(8px, 2.5vw, 14px);
     font-weight: bold;
     text-shadow: 1px 1px 0px rgba(0,0,0,0.5);
     margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .trainer-title {
@@ -267,8 +283,9 @@ body {
 }
 
 .vote-count {
-    font-size: 10px;
+    font-size: clamp(6px, 2vw, 10px);
     font-weight: bold;
+    white-space: nowrap;
 }
 
 .command-breakdown {
@@ -380,8 +397,9 @@ body {
 }
 
 .gym-votes {
-    font-size: 6px;
+    font-size: clamp(4px, 1.5vw, 6px);
     color: #bdc3c7;
+    white-space: nowrap;
 }
 
 /* Footer */

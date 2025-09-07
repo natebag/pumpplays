@@ -1,0 +1,43 @@
+{
+  "analog": { 
+    "up": "UP", 
+    "down": "DOWN", 
+    "left": "LEFT", 
+    "right": "RIGHT" 
+  },
+  "buttons": {
+    "a": "X",
+    "b": "Z",
+    "start": "ENTER",
+    "z": "J",
+    "l": "O",
+    "r": "P",
+    "cup": "HOME",
+    "cdown": "END",
+    "cleft": "PGDN",
+    "cright": "DELETE",
+    "dpadup": "UP",
+    "dpaddown": "DOWN",
+    "dpadleft": "LEFT",
+    "dpadright": "RIGHT"
+  },
+  "aliases": {
+    "cu": "cup", 
+    "cd": "cdown", 
+    "cl": "cleft", 
+    "cr": "cright",
+    "du": "dpadup", 
+    "dd": "dpaddown", 
+    "dl": "dpadleft", 
+    "dr": "dpadright"
+  },
+  "holdDefaultsMs": 800,
+  "momentumConfig": {
+    "25": 60,
+    "50": 120,
+    "75": 150,
+    "100": 180
+  },
+  "primary": ["a", "b", "start", "z", "l", "r", "up", "down", "left", "right", "cup", "cdown"],
+  "advanced": ["cleft", "cright", "dpadup", "dpaddown", "dpadleft", "dpadright"]
+}
