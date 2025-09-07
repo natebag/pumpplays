@@ -1,0 +1,41 @@
+⚡ PUMP PLAYS POKEMON - 30-SECOND UPDATE REPORT
+Generated: 9/7/2025, 5:34:13 AM
+Update #1 (Every 30 seconds)
+Total Users: 49
+Total Votes: 4699
+============================================================
+
+TOP 20 MOST ACTIVE USERS:
+
+1. CUNO - 1893 votes - 764 a, 251 right, 235 left
+2. DRAGON - 904 votes - 392 a, 161 holdup, 89 holdright
+3. PUMPPLAYSGUY - 452 votes - 124 a, 82 down, 68 up
+4. NATEBAG - 242 votes - 119 a, 25 down, 24 up
+5. OBNOXI - 219 votes - 57 a, 53 right, 43 down
+6. WB1 - 219 votes - 115 a, 25 up, 17 down
+7. LUKEBAG - 143 votes - 54 a, 35 left, 17 down
+8. BEGOTTEN - 110 votes - 48 a, 15 up, 13 right
+9. HO-OH - 104 votes - 44 a, 30 holdleft, 14 down
+10. DROOBER - 89 votes - 34 a, 12 down, 8 right
+11. HGHOID - 58 votes - 31 a, 10 down, 4 right
+12. 8MJXLM - 31 votes - 12 a, 7 b, 3 down
+13. WHENBAG - 22 votes - 19 a, 3 holdright
+14. E6VROS - 19 votes - 11 a, 6 left, 1 up
+15. AHHW3J - 18 votes - 12 up, 3 right, 2 down
+16. 1984BOT - 15 votes - 12 a, 3 down
+17. D'JEN - 14 votes - 5 a, 3 right, 3 down
+18. LUFFY55 - 12 votes - 4 holdright, 3 a, 3 b
+19. J8MJ3X - 10 votes - 4 left, 3 down, 2 a
+20. J7J4O1 - 10 votes - 6 start, 2 up, 2 a
+
+============================================================
+📊 QUICK ANALYTICS:
+
+Total Votes: 4584
+Average Votes per User: 229
+Most Popular Commands: A (1889), DOWN (493), RIGHT (464), LEFT (418), UP (416)
+Vote Change: First update
+
+============================================================
+⚡ Next update in 30 seconds
+📊 Full CEO Report generates every 4 hours
