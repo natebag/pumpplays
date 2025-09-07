@@ -3,19 +3,22 @@ class PokemonLeaderboard {
     constructor() {
         this.refreshInterval = 300; // 5 minutes in seconds
         this.countdownTimer = null;
-        this.apiEndpoint = '/api/leaderboard'; // Will need to create this endpoint
+        this.apiEndpoint = 'data/leaderboard.json'; // JSON data file
         
         this.init();
     }
 
     init() {
+        // Load data immediately on page load
+        this.loadLeaderboardData();
+        
         this.startCountdown();
         this.addAnimations();
         this.setupEventListeners();
         
         // Auto-refresh every 5 minutes
         setInterval(() => {
-            this.refreshData();
+            this.loadLeaderboardData();
         }, this.refreshInterval * 1000);
 
         console.log('🎮 Pokemon Leaderboard initialized!');
@@ -38,47 +41,65 @@ class PokemonLeaderboard {
         }, 1000);
     }
 
-    async refreshData() {
-        console.log('🔄 Refreshing leaderboard data...');
+    async loadLeaderboardData() {
+        console.log('🔄 Loading leaderboard data...');
         
         try {
             // Show loading state
             this.showLoadingState();
             
-            // In the future, we'll fetch from the actual API
-            // const response = await fetch(this.apiEndpoint);
-            // const data = await response.json();
+            // Fetch the actual JSON data
+            const response = await fetch(this.apiEndpoint + '?t=' + Date.now()); // Add timestamp to prevent caching
+            const data = await response.json();
             
-            // For now, simulate loading
-            await this.simulateLoading();
-            
-            // Parse latest CEO report
-            await this.parseLatestReport();
+            // Update the UI with real data
+            this.updateLeaderboard(data);
             
             this.hideLoadingState();
             this.playRefreshSound();
             
         } catch (error) {
-            console.error('❌ Failed to refresh data:', error);
+            console.error('❌ Failed to load data:', error);
             this.showErrorState();
         }
     }
+    
+    async refreshData() {
+        // This is now just an alias for loadLeaderboardData
+        await this.loadLeaderboardData();
+    }
 
-    async parseLatestReport() {
+    updateLeaderboard(data) {
         try {
-            // This would normally fetch from the server
-            // For now, we'll use the static data we already have
-            console.log('📊 Using cached leaderboard data');
+            console.log('📊 Updating leaderboard with data:', data);
             
-            // Update last updated timestamp
+            // Update stats
+            const totalUsersElement = document.getElementById('totalUsers');
+            const totalVotesElement = document.getElementById('totalVotes');
             const lastUpdatedElement = document.getElementById('lastUpdated');
+            
+            if (totalUsersElement) totalUsersElement.textContent = data.totalUsers || 0;
+            if (totalVotesElement) totalVotesElement.textContent = (data.totalVotes || 0).toLocaleString();
             if (lastUpdatedElement) {
-                const now = new Date();
-                lastUpdatedElement.textContent = now.toLocaleDateString() + ' ' + 
-                                               now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+                const date = new Date(data.lastUpdated);
+                lastUpdatedElement.textContent = date.toLocaleDateString() + ' ' + 
+                                                date.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
             }
+            
+            // Update champion
+            this.updateChampion(data.champion);
+            
+            // Update Elite Four
+            this.updateEliteFour(data.eliteFour);
+            
+            // Update Gym Leaders
+            this.updateGymLeaders(data.gymLeaders);
+            
+            // Update top commands
+            this.updateTopCommands(data);
+            
         } catch (error) {
-            console.error('Failed to parse report:', error);
+            console.error('Failed to update leaderboard:', error);
         }
     }
 
@@ -118,6 +139,99 @@ class PokemonLeaderboard {
         return new Promise(resolve => {
             setTimeout(resolve, 1000 + Math.random() * 2000); // 1-3 seconds
         });
+    }
+    
+    updateChampion(champion) {
+        if (!champion) return;
+        
+        const championElement = document.querySelector('.champion-card');
+        if (championElement) {
+            championElement.querySelector('.trainer-name').textContent = champion.username;
+            championElement.querySelector('.trainer-score').textContent = `${champion.totalVotes} VOTES`;
+            
+            // Update champion commands
+            const commandsText = Object.entries(champion.commands || {})
+                .slice(0, 5)
+                .map(([cmd, count]) => `${cmd.toUpperCase()}: ${count}`)
+                .join(', ') || `Total: ${champion.totalVotes}`;
+            championElement.querySelector('.trainer-commands').textContent = commandsText;
+        }
+    }
+    
+    updateEliteFour(eliteFour) {
+        if (!eliteFour) return;
+        
+        const eliteFourElements = document.querySelectorAll('.elite-four-member');
+        eliteFour.slice(0, 4).forEach((member, index) => {
+            if (eliteFourElements[index]) {
+                const element = eliteFourElements[index];
+                element.querySelector('.trainer-name').textContent = member.username;
+                element.querySelector('.trainer-score').textContent = `${member.totalVotes} VOTES`;
+                
+                const commandsText = Object.entries(member.commands || {})
+                    .slice(0, 3)
+                    .map(([cmd, count]) => `${cmd.toUpperCase()}: ${count}`)
+                    .join(', ') || `Total: ${member.totalVotes}`;
+                element.querySelector('.trainer-commands').textContent = commandsText;
+            }
+        });
+    }
+    
+    updateGymLeaders(gymLeaders) {
+        if (!gymLeaders) return;
+        
+        const gymLeadersList = document.querySelector('.gym-leaders-list');
+        if (!gymLeadersList) return;
+        
+        gymLeadersList.innerHTML = '';
+        gymLeaders.forEach((leader, index) => {
+            const leaderElement = document.createElement('div');
+            leaderElement.className = 'gym-leader';
+            leaderElement.innerHTML = `
+                <span class="rank">${leader.rank || (index + 6)}</span>
+                <span class="trainer-name">${leader.username}</span>
+                <span class="trainer-score">${leader.totalVotes} votes</span>
+            `;
+            gymLeadersList.appendChild(leaderElement);
+        });
+    }
+    
+    updateTopCommands(data) {
+        // Calculate top commands from all users
+        const allCommands = {};
+        
+        if (data.champion && data.champion.commands) {
+            Object.entries(data.champion.commands).forEach(([cmd, count]) => {
+                allCommands[cmd] = (allCommands[cmd] || 0) + count;
+            });
+        }
+        
+        [...(data.eliteFour || []), ...(data.gymLeaders || [])]
+            .forEach(user => {
+                if (user.commands) {
+                    Object.entries(user.commands).forEach(([cmd, count]) => {
+                        allCommands[cmd] = (allCommands[cmd] || 0) + count;
+                    });
+                }
+            });
+        
+        const sortedCommands = Object.entries(allCommands)
+            .sort(([,a], [,b]) => b - a)
+            .slice(0, 5);
+        
+        const commandsList = document.querySelector('.popular-commands');
+        if (commandsList) {
+            commandsList.innerHTML = '';
+            sortedCommands.forEach(([cmd, count]) => {
+                const cmdElement = document.createElement('div');
+                cmdElement.className = 'command-item';
+                cmdElement.innerHTML = `
+                    <span class="command-name">${cmd.toUpperCase()}</span>
+                    <span class="command-count">${count}</span>
+                `;
+                commandsList.appendChild(cmdElement);
+            });
+        }
     }
 
     addAnimations() {
