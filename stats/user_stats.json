@@ -131,11 +131,11 @@
     "lastSeen": 1757141843432
   },
   "natebag": {
-    "totalVotes": 242,
-    "totalWeight": 242,
+    "totalVotes": 245,
+    "totalWeight": 245,
     "commands": {
       "up": 24,
-      "a": 119,
+      "a": 122,
       "down": 25,
       "holdright": 6,
       "right": 15,
@@ -148,16 +148,16 @@
       "holdup": 11
     },
     "firstSeen": 1757134592964,
-    "lastSeen": 1757236468454
+    "lastSeen": 1757237836111
   },
   "wb1": {
-    "totalVotes": 219,
-    "totalWeight": 219,
+    "totalVotes": 220,
+    "totalWeight": 220,
     "commands": {
       "up": 25,
       "left": 11,
       "down": 17,
-      "a": 115,
+      "a": 116,
       "b": 7,
       "holdup": 12,
       "holdright": 9,
@@ -166,7 +166,7 @@
       "holddown": 5
     },
     "firstSeen": 1757134849516,
-    "lastSeen": 1757236587974
+    "lastSeen": 1757237862866
   },
   "droober": {
     "totalVotes": 89,
@@ -609,13 +609,15 @@
     "lastSeen": 1757231027301
   },
   "whenbag": {
-    "totalVotes": 22,
-    "totalWeight": 22,
+    "totalVotes": 58,
+    "totalWeight": 58,
     "commands": {
       "holdright": 3,
-      "a": 19
+      "a": 52,
+      "right": 2,
+      "down": 1
     },
     "firstSeen": 1757236648951,
-    "lastSeen": 1757236945189
+    "lastSeen": 1757237521193
   }
 }

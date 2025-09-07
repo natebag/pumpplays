@@ -96,20 +96,38 @@ class QuickStatsUpdater {
             // Generate 30-second CEO-style report
             this.generate30SecReport(topUsers, stats);
             
-            // Update HTML with surgical precision (preserves layout)
+            // Update HTML with surgical precision (preserves layout) - NO GIT PUSH
             try {
-                await this.surgicalUpdater.updateHTML(this.leaderboardManager);
+                // Just update files locally, don't push to GitHub (causes conflicts)
+                const now = new Date();
+                const relativeTime = this.getRelativeTimeString(now);
                 
-                // Try to push to GitHub (but don't fail if it doesn't work)
-                try {
-                    await this.pushToGitHub();
-                } catch (pushError) {
-                    // Silently continue - we don't want to spam logs every 30 seconds
+                // Update HTML timestamp directly
+                let html = fs.readFileSync(this.surgicalUpdater.htmlFile, 'utf8');
+                const timestamp = now.toLocaleString('en-US', {
+                    month: 'numeric',
+                    day: 'numeric', 
+                    year: 'numeric',
+                    hour: 'numeric',
+                    minute: '2-digit',
+                    hour12: true
+                });
+                
+                // Update timestamp with regex to be more flexible
+                html = html.replace(/id="lastUpdated"[^>]*>([^<]*)<\/span>/,
+                    `id="lastUpdated" title="${timestamp}">${relativeTime}</span>`);
+                
+                // Write back
+                fs.writeFileSync(this.surgicalUpdater.htmlFile, html);
+                
+                // Only log occasionally
+                if (this.updateCount % 10 === 1) {
+                    log('⚡ HTML timestamp updated (no git push)', 'HTML');
                 }
                 
             } catch (htmlError) {
                 // Log error but continue - don't break the update cycle
-                if (Math.random() < 0.01) { // Only log 1% of the time to avoid spam
+                if (Math.random() < 0.05) { // Only log 5% of the time
                     log(`⚠️ HTML update error (continuing): ${htmlError.message}`, 'WARN');
                 }
             }
@@ -176,6 +194,28 @@ class QuickStatsUpdater {
      */
     getUpdateCount() {
         return Math.floor((Date.now() - this.lastUpdateTime) / this.updateInterval);
+    }
+    
+    /**
+     * Get relative time string (same as in script.js)
+     */
+    getRelativeTimeString(date) {
+        const now = new Date();
+        const diffInMinutes = Math.floor((now - date) / (1000 * 60));
+        
+        if (diffInMinutes < 1) return 'Just now';
+        if (diffInMinutes < 60) return `${diffInMinutes}m ago`;
+        
+        const diffInHours = Math.floor(diffInMinutes / 60);
+        if (diffInHours < 24) return `${diffInHours}h ago`;
+        
+        const diffInDays = Math.floor(diffInHours / 24);
+        if (diffInDays < 7) return `${diffInDays}d ago`;
+        
+        const diffInWeeks = Math.floor(diffInDays / 7);
+        if (diffInWeeks < 4) return `${diffInWeeks}w ago`;
+        
+        return date.toLocaleDateString();
     }
     
     /**
