@@ -1,12 +1,12 @@
 {
   "champion": {
     "username": "CUNO",
-    "totalVotes": 7714,
-    "totalWeight": 7714,
+    "totalVotes": 8325,
+    "totalWeight": 8325,
     "rank": 1,
     "commands": {},
     "topCommands": [],
-    "percentage": "39.1"
+    "percentage": "40.8"
   },
   "eliteFour": [
     {
@@ -16,7 +16,7 @@
       "rank": 2,
       "commands": {},
       "topCommands": [],
-      "percentage": "18.4"
+      "percentage": "17.7"
     },
     {
       "username": "PUMPPLAYSGUY",
@@ -25,7 +25,7 @@
       "rank": 3,
       "commands": {},
       "topCommands": [],
-      "percentage": "9.5"
+      "percentage": "9.1"
     },
     {
       "username": "NATEBAG",
@@ -34,7 +34,7 @@
       "rank": 4,
       "commands": {},
       "topCommands": [],
-      "percentage": "5.5"
+      "percentage": "5.4"
     },
     {
       "username": "OBNOXI",
@@ -43,7 +43,7 @@
       "rank": 5,
       "commands": {},
       "topCommands": [],
-      "percentage": "5.2"
+      "percentage": "5.0"
     }
   ],
   "gymLeaders": [
@@ -54,7 +54,7 @@
       "rank": 6,
       "commands": {},
       "topCommands": [],
-      "percentage": "4.4"
+      "percentage": "4.2"
     },
     {
       "username": "WB1",
@@ -63,7 +63,7 @@
       "rank": 7,
       "commands": {},
       "topCommands": [],
-      "percentage": "3.4"
+      "percentage": "3.3"
     },
     {
       "username": "HO-OH",
@@ -72,12 +72,12 @@
       "rank": 8,
       "commands": {},
       "topCommands": [],
-      "percentage": "2.4"
+      "percentage": "2.3"
     },
     {
       "username": "BEGOTTEN",
-      "totalVotes": 441,
-      "totalWeight": 441,
+      "totalVotes": 458,
+      "totalWeight": 458,
       "rank": 9,
       "commands": {},
       "topCommands": [],
@@ -85,12 +85,12 @@
     },
     {
       "username": "HELLOGOODBYE",
-      "totalVotes": 315,
-      "totalWeight": 315,
+      "totalVotes": 316,
+      "totalWeight": 316,
       "rank": 10,
       "commands": {},
       "topCommands": [],
-      "percentage": "1.6"
+      "percentage": "1.5"
     },
     {
       "username": "DROOBER",
@@ -108,12 +108,12 @@
       "rank": 12,
       "commands": {},
       "topCommands": [],
-      "percentage": "1.2"
+      "percentage": "1.1"
     },
     {
       "username": "8MJXLM",
-      "totalVotes": 126,
-      "totalWeight": 126,
+      "totalVotes": 127,
+      "totalWeight": 127,
       "rank": 13,
       "commands": {},
       "topCommands": [],
@@ -165,18 +165,18 @@
       "percentage": "0.3"
     },
     {
-      "username": "LUFFY55",
-      "totalVotes": 48,
-      "totalWeight": 48,
+      "username": "BX74SO",
+      "totalVotes": 53,
+      "totalWeight": 53,
       "rank": 19,
       "commands": {},
       "topCommands": [],
-      "percentage": "0.2"
+      "percentage": "0.3"
     },
     {
-      "username": "J8MJ3X",
-      "totalVotes": 42,
-      "totalWeight": 42,
+      "username": "LUFFY55",
+      "totalVotes": 48,
+      "totalWeight": 48,
       "rank": 20,
       "commands": {},
       "topCommands": [],
@@ -184,12 +184,12 @@
     }
   ],
   "totalUsers": 50,
-  "totalVotes": 19732,
-  "lastUpdated": "2025-09-09T10:24:17.753Z",
-  "nextUpdate": "2025-09-09T14:24:17.753Z",
+  "totalVotes": 20415,
+  "lastUpdated": "2025-09-09T14:24:17.764Z",
+  "nextUpdate": "2025-09-09T18:24:17.764Z",
   "analytics": {
-    "averageVotesPerUser": 395,
+    "averageVotesPerUser": 408,
     "topCommands": [],
-    "championDominance": "39.1%"
+    "championDominance": "40.8%"
   }
 }
