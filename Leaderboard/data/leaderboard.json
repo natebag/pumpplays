@@ -6,7 +6,7 @@
     "rank": 1,
     "commands": {},
     "topCommands": [],
-    "percentage": "38.7"
+    "percentage": "39.0"
   },
   "eliteFour": [
     {
@@ -16,12 +16,12 @@
       "rank": 2,
       "commands": {},
       "topCommands": [],
-      "percentage": "18.5"
+      "percentage": "18.7"
     },
     {
       "username": "PUMPPLAYSGUY",
-      "totalVotes": 1877,
-      "totalWeight": 1877,
+      "totalVotes": 1866,
+      "totalWeight": 1866,
       "rank": 3,
       "commands": {},
       "topCommands": [],
@@ -29,12 +29,12 @@
     },
     {
       "username": "NATEBAG",
-      "totalVotes": 1105,
-      "totalWeight": 1105,
+      "totalVotes": 1085,
+      "totalWeight": 1085,
       "rank": 4,
       "commands": {},
       "topCommands": [],
-      "percentage": "5.7"
+      "percentage": "5.6"
     },
     {
       "username": "OBNOXI",
@@ -43,14 +43,14 @@
       "rank": 5,
       "commands": {},
       "topCommands": [],
-      "percentage": "5.2"
+      "percentage": "5.3"
     }
   ],
   "gymLeaders": [
     {
       "username": "LUKEBAG",
-      "totalVotes": 863,
-      "totalWeight": 863,
+      "totalVotes": 862,
+      "totalWeight": 862,
       "rank": 6,
       "commands": {},
       "topCommands": [],
@@ -58,30 +58,30 @@
     },
     {
       "username": "WB1",
-      "totalVotes": 670,
-      "totalWeight": 670,
+      "totalVotes": 662,
+      "totalWeight": 662,
       "rank": 7,
       "commands": {},
       "topCommands": [],
       "percentage": "3.4"
     },
     {
-      "username": "HO-OH",
-      "totalVotes": 446,
-      "totalWeight": 446,
+      "username": "BEGOTTEN",
+      "totalVotes": 441,
+      "totalWeight": 441,
       "rank": 8,
       "commands": {},
       "topCommands": [],
       "percentage": "2.3"
     },
     {
-      "username": "BEGOTTEN",
-      "totalVotes": 441,
-      "totalWeight": 441,
+      "username": "HO-OH",
+      "totalVotes": 416,
+      "totalWeight": 416,
       "rank": 9,
       "commands": {},
       "topCommands": [],
-      "percentage": "2.3"
+      "percentage": "2.1"
     },
     {
       "username": "DROOBER",
@@ -94,8 +94,8 @@
     },
     {
       "username": "HELLOGOODBYE",
-      "totalVotes": 242,
-      "totalWeight": 242,
+      "totalVotes": 239,
+      "totalWeight": 239,
       "rank": 11,
       "commands": {},
       "topCommands": [],
@@ -112,8 +112,8 @@
     },
     {
       "username": "8MJXLM",
-      "totalVotes": 125,
-      "totalWeight": 125,
+      "totalVotes": 124,
+      "totalWeight": 124,
       "rank": 13,
       "commands": {},
       "topCommands": [],
@@ -139,8 +139,8 @@
     },
     {
       "username": "AHHW3J",
-      "totalVotes": 73,
-      "totalWeight": 73,
+      "totalVotes": 72,
+      "totalWeight": 72,
       "rank": 16,
       "commands": {},
       "topCommands": [],
@@ -156,9 +156,9 @@
       "percentage": "0.3"
     },
     {
-      "username": "BOMBACLATTTT",
-      "totalVotes": 59,
-      "totalWeight": 59,
+      "username": "D'JEN",
+      "totalVotes": 56,
+      "totalWeight": 56,
       "rank": 18,
       "commands": {},
       "topCommands": [],
@@ -166,30 +166,30 @@
     },
     {
       "username": "LUFFY55",
-      "totalVotes": 57,
-      "totalWeight": 57,
+      "totalVotes": 48,
+      "totalWeight": 48,
       "rank": 19,
       "commands": {},
       "topCommands": [],
-      "percentage": "0.3"
+      "percentage": "0.2"
     },
     {
-      "username": "D'JEN",
-      "totalVotes": 56,
-      "totalWeight": 56,
+      "username": "J8MJ3X",
+      "totalVotes": 42,
+      "totalWeight": 42,
       "rank": 20,
       "commands": {},
       "topCommands": [],
-      "percentage": "0.3"
+      "percentage": "0.2"
     }
   ],
   "totalUsers": 50,
-  "totalVotes": 19550,
-  "lastUpdated": "2025-09-09T00:00:29.691Z",
-  "nextUpdate": "2025-09-09T04:00:29.691Z",
+  "totalVotes": 19406,
+  "lastUpdated": "2025-09-09T04:45:35.844Z",
+  "nextUpdate": "2025-09-09T08:45:35.844Z",
   "analytics": {
-    "averageVotesPerUser": 391,
+    "averageVotesPerUser": 388,
     "topCommands": [],
-    "championDominance": "38.7%"
+    "championDominance": "39.0%"
   }
 }
