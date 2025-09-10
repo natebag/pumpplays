@@ -1,10 +1,10 @@
 {
-  "totalUsers": 42,
-  "totalVotes": 4094,
-  "lastUpdated": "2025-09-07T03:36:37.368Z",
+  "totalUsers": 50,
+  "totalVotes": 26540,
+  "lastUpdated": "2025-09-10T01:10:03.845Z",
   "analytics": {
-    "averageVotesPerUser": 97,
+    "averageVotesPerUser": 531,
     "topCommands": [],
-    "championDominance": "46.2%"
+    "championDominance": "38.7%"
   }
 }
