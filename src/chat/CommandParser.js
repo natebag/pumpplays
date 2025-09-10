@@ -78,6 +78,22 @@ class CommandParser {
             };
         }
         
+        // Tap commands: !tapup3, !tapa5, !tapright2
+        const tapMatch = command.match(/^tap([a-z]+)(\d{1,2})$/);
+        if (tapMatch) {
+            const key = tapMatch[1];
+            const count = Math.min(10, Math.max(1, parseInt(tapMatch[2]))); // Limit 1-10 taps
+            
+            if (this.isValidKey(key)) {
+                return {
+                    type: 'tap',
+                    key: key,
+                    count: count,
+                    mappedKey: this.resolveKey(key)
+                };
+            }
+        }
+        
         // Regular button press
         if (this.isValidKey(command)) {
             return {
@@ -161,7 +177,8 @@ class CommandParser {
             special: ['release'],
             examples: {
                 hold: ['!holda', '!holdb 1000', '!holdleft 500'],
-                momentum: ['!up25', '!left50', '!right100']
+                momentum: ['!up25', '!left50', '!right100'],
+                tap: ['!tapup3', '!tapa5', '!tapright2']
             }
         };
         

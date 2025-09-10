@@ -16,7 +16,7 @@ class VoteManager extends EventEmitter {
         // Valid N64 Pokemon Stadium 2 commands (primary ones shown on overlay)
         this.validCommands = [
             'up', 'down', 'left', 'right', 
-            'a', 'b', 'start', 'z', 'l', 'r', 'cup', 'cdown',
+            'a', 'b', 'start', 'select', 'z', 'l', 'r', 'cup', 'cdown',
             // Advanced commands (not shown on overlay but still valid)
             'cleft', 'cright', 'dpadup', 'dpaddown', 'dpadleft', 'dpadright',
             // Aliases
@@ -116,8 +116,8 @@ class VoteManager extends EventEmitter {
         
         const normalizedCommand = command.toLowerCase().trim();
         
-        // Check if it's a valid command
-        if (!this.validCommands.includes(normalizedCommand)) {
+        // Check if it's a valid command or a tap pattern
+        if (!this.validCommands.includes(normalizedCommand) && !this.isValidTapCommand(normalizedCommand)) {
             return false;
         }
         
@@ -205,6 +205,22 @@ class VoteManager extends EventEmitter {
      */
     getHistory() {
         return [...this.voteHistory];
+    }
+    
+    /**
+     * Check if a command is a valid tap command pattern
+     * @param {string} command - The command to check
+     * @returns {boolean} True if it's a valid tap command
+     */
+    isValidTapCommand(command) {
+        const tapMatch = command.match(/^tap([a-z]+)(\d{1,2})$/);
+        if (tapMatch) {
+            const baseCommand = tapMatch[1];
+            const count = parseInt(tapMatch[2]);
+            // Check if base command is valid and count is reasonable
+            return this.validCommands.includes(baseCommand) && count >= 1 && count <= 10;
+        }
+        return false;
     }
     
     /**

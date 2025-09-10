@@ -83,6 +83,31 @@ class GameBoyBridge {
         // Normalize command
         const normalizedCommand = command.toLowerCase().trim();
         
+        // Check if this is a tap command with multiple rapid presses
+        if (parsedCommand && parsedCommand.type === 'tap') {
+            const baseKey = parsedCommand.mappedKey || this.commandMap[parsedCommand.key];
+            if (baseKey) {
+                const count = parsedCommand.count || 1;
+                const delayMs = 8; // 8ms delay between each tap
+                
+                try {
+                    // Send each tap command rapidly (GameBoy script will handle timing)
+                    for (let i = 0; i < count; i++) {
+                        const gameBoyCom = this.commandMap[parsedCommand.key];
+                        if (gameBoyCom) {
+                            fs.appendFileSync(this.commandsFile, gameBoyCom + '\\n');
+                        }
+                    }
+                    
+                    log(`Sent ${count} tap commands to Game Boy: ${parsedCommand.key} (rapid fire)`, 'GAMEBOY');
+                    return true;
+                } catch (error) {
+                    log(`Failed to send tap commands: ${error.message}`, 'ERROR');
+                    return false;
+                }
+            }
+        }
+        
         // Check if this is a hold command with custom timing
         if (parsedCommand && parsedCommand.type === 'hold') {
             const baseKey = parsedCommand.mappedKey || this.commandMap[parsedCommand.key];
