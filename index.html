@@ -196,17 +196,21 @@
               <tr><td style="border-top:2px solid var(--brand)"><code>!holda 1000</code></td><td><strong>Hold A button for 1000ms</strong></td></tr>
               <tr><td><code>!holdright 500</code></td><td><strong>Hold RIGHT for 500ms</strong></td></tr>
               <tr><td><code>!up75</code></td><td><strong>75% momentum directional</strong></td></tr>
+              <tr><td style="border-top:2px solid var(--accent)"><code>!tapa5</code></td><td><strong>Tap A button 5 times rapidly</strong></td></tr>
+              <tr><td><code>!tapup3</code></td><td><strong>Tap UP 3 times rapidly</strong></td></tr>
+              <tr><td><code>!tapright2</code></td><td><strong>Tap RIGHT 2 times rapidly</strong></td></tr>
               <tr><td><code>!release</code></td><td>Release all held buttons</td></tr>
             </tbody>
           </table>
           <div class="hint" style="color:var(--muted);font-size:13px;margin-top:12px;background:var(--bg-soft);padding:12px;border-radius:8px;border:1px solid #1b2545;">
             <div style="color:var(--brand);font-weight:700;margin-bottom:6px">💡 ADVANCED COMMANDS:</div>
             <div><strong>Hold Commands:</strong> Use <code>!holda 1500</code> to hold A for 1.5 seconds. Works with any button (100-5000ms range).</div>
+            <div style="margin-top:4px"><strong>Tap Commands:</strong> Use <code>!tapa5</code> to tap A 5 times rapidly, <code>!tapup3</code> for 3 rapid UP taps (1-10 range).</div>
             <div style="margin-top:4px"><strong>Momentum:</strong> Use <code>!up50</code> for 50% power movement, <code>!right100</code> for full power (1-100%).</div>
-            <div style="margin-top:4px"><strong>Both prefixes work:</strong> <code>!up</code> = <code>/up</code>, <code>!holda 800</code> = <code>/holda 800</code></div>
+            <div style="margin-top:4px"><strong>Both prefixes work:</strong> <code>!up</code> = <code>/up</code>, <code>!tapa5</code> = <code>/tapa5</code>, <code>!holda 800</code> = <code>/holda 800</code></div>
           </div>
           <div class="cta">
-            <button class="btn" data-copy="!up !down !left !right !a !b !l !r !start !select">Copy GBA commands</button>
+            <button class="btn" data-copy="!up !down !left !right !a !b !l !r !start !select !tapa5 !tapup3 !tapb2">Copy GBA commands</button>
             <button class="btn ghost" id="btn-sim">Simulate test vote</button>
           </div>
         </div>
@@ -320,4 +324,3 @@
   </script>
 </body>
 </html>
-<!-- force update -->
