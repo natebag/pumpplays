@@ -6,7 +6,7 @@
     "rank": 1,
     "commands": {},
     "topCommands": [],
-    "percentage": "41.3"
+    "percentage": "40.0"
   },
   "eliteFour": [
     {
@@ -16,30 +16,30 @@
       "rank": 2,
       "commands": {},
       "topCommands": [],
-      "percentage": "15.6"
+      "percentage": "15.2"
     },
     {
       "username": "PUMPPLAYSGUY",
-      "totalVotes": 2339,
-      "totalWeight": 2339,
+      "totalVotes": 2340,
+      "totalWeight": 2340,
       "rank": 3,
       "commands": {},
       "topCommands": [],
-      "percentage": "8.1"
+      "percentage": "7.8"
     },
     {
       "username": "BOMBACLATTTT",
-      "totalVotes": 1624,
-      "totalWeight": 1624,
+      "totalVotes": 1655,
+      "totalWeight": 1655,
       "rank": 4,
       "commands": {},
       "topCommands": [],
-      "percentage": "5.6"
+      "percentage": "5.5"
     },
     {
-      "username": "NATEBAG",
-      "totalVotes": 1342,
-      "totalWeight": 1342,
+      "username": "LUKEBAG",
+      "totalVotes": 1384,
+      "totalWeight": 1384,
       "rank": 5,
       "commands": {},
       "topCommands": [],
@@ -48,9 +48,9 @@
   ],
   "gymLeaders": [
     {
-      "username": "LUKEBAG",
-      "totalVotes": 1305,
-      "totalWeight": 1305,
+      "username": "NATEBAG",
+      "totalVotes": 1342,
+      "totalWeight": 1342,
       "rank": 6,
       "commands": {},
       "topCommands": [],
@@ -63,40 +63,49 @@
       "rank": 7,
       "commands": {},
       "topCommands": [],
-      "percentage": "4.3"
+      "percentage": "4.1"
+    },
+    {
+      "username": "2AEMHK",
+      "totalVotes": 806,
+      "totalWeight": 806,
+      "rank": 8,
+      "commands": {},
+      "topCommands": [],
+      "percentage": "2.7"
     },
     {
       "username": "WB1",
       "totalVotes": 752,
       "totalWeight": 752,
-      "rank": 8,
+      "rank": 9,
       "commands": {},
       "topCommands": [],
-      "percentage": "2.6"
+      "percentage": "2.5"
     },
     {
       "username": "HO-OH",
       "totalVotes": 634,
       "totalWeight": 634,
-      "rank": 9,
+      "rank": 10,
       "commands": {},
       "topCommands": [],
-      "percentage": "2.2"
+      "percentage": "2.1"
     },
     {
       "username": "BEGOTTEN",
       "totalVotes": 568,
       "totalWeight": 568,
-      "rank": 10,
+      "rank": 11,
       "commands": {},
       "topCommands": [],
-      "percentage": "2.0"
+      "percentage": "1.9"
     },
     {
       "username": "DROOBER",
       "totalVotes": 330,
       "totalWeight": 330,
-      "rank": 11,
+      "rank": 12,
       "commands": {},
       "topCommands": [],
       "percentage": "1.1"
@@ -105,7 +114,7 @@
       "username": "HELLOGOODBYE",
       "totalVotes": 292,
       "totalWeight": 292,
-      "rank": 12,
+      "rank": 13,
       "commands": {},
       "topCommands": [],
       "percentage": "1.0"
@@ -114,7 +123,7 @@
       "username": "HGHOID",
       "totalVotes": 290,
       "totalWeight": 290,
-      "rank": 13,
+      "rank": 14,
       "commands": {},
       "topCommands": [],
       "percentage": "1.0"
@@ -123,25 +132,25 @@
       "username": "8MJXLM",
       "totalVotes": 155,
       "totalWeight": 155,
-      "rank": 14,
+      "rank": 15,
       "commands": {},
       "topCommands": [],
       "percentage": "0.5"
     },
     {
       "username": "DO9N5R",
-      "totalVotes": 125,
-      "totalWeight": 125,
-      "rank": 15,
+      "totalVotes": 138,
+      "totalWeight": 138,
+      "rank": 16,
       "commands": {},
       "topCommands": [],
-      "percentage": "0.4"
+      "percentage": "0.5"
     },
     {
       "username": "ASH_KETCHUM",
       "totalVotes": 114,
       "totalWeight": 114,
-      "rank": 16,
+      "rank": 17,
       "commands": {},
       "topCommands": [],
       "percentage": "0.4"
@@ -150,7 +159,7 @@
       "username": "E6VROS",
       "totalVotes": 95,
       "totalWeight": 95,
-      "rank": 17,
+      "rank": 18,
       "commands": {},
       "topCommands": [],
       "percentage": "0.3"
@@ -159,7 +168,7 @@
       "username": "AHHW3J",
       "totalVotes": 90,
       "totalWeight": 90,
-      "rank": 18,
+      "rank": 19,
       "commands": {},
       "topCommands": [],
       "percentage": "0.3"
@@ -168,15 +177,6 @@
       "username": "POKECARDS",
       "totalVotes": 90,
       "totalWeight": 90,
-      "rank": 19,
-      "commands": {},
-      "topCommands": [],
-      "percentage": "0.3"
-    },
-    {
-      "username": "DUCAPA",
-      "totalVotes": 80,
-      "totalWeight": 80,
       "rank": 20,
       "commands": {},
       "topCommands": [],
@@ -184,12 +184,12 @@
     }
   ],
   "totalUsers": 50,
-  "totalVotes": 28925,
-  "lastUpdated": "2025-09-12T15:22:02.317Z",
-  "nextUpdate": "2025-09-12T19:22:02.317Z",
+  "totalVotes": 29870,
+  "lastUpdated": "2025-09-12T19:22:02.324Z",
+  "nextUpdate": "2025-09-12T23:22:02.324Z",
   "analytics": {
-    "averageVotesPerUser": 579,
+    "averageVotesPerUser": 597,
     "topCommands": [],
-    "championDominance": "41.3%"
+    "championDominance": "40.0%"
   }
 }
