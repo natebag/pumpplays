@@ -85,12 +85,12 @@
     },
     {
       "username": "HO-OH",
-      "totalVotes": 1420,
-      "totalWeight": 1420,
+      "totalVotes": 1470,
+      "totalWeight": 1470,
       "rank": 10,
       "commands": {},
       "topCommands": [],
-      "percentage": "2.2"
+      "percentage": "2.3"
     },
     {
       "username": "BEGOTTEN",
@@ -184,11 +184,11 @@
     }
   ],
   "totalUsers": 50,
-  "totalVotes": 63580,
-  "lastUpdated": "2025-09-13T14:42:45.813Z",
-  "nextUpdate": "2025-09-13T18:42:45.813Z",
+  "totalVotes": 63630,
+  "lastUpdated": "2025-09-13T14:52:46.753Z",
+  "nextUpdate": "2025-09-13T18:52:46.753Z",
   "analytics": {
-    "averageVotesPerUser": 1272,
+    "averageVotesPerUser": 1273,
     "topCommands": [],
     "championDominance": "39.6%"
   }
