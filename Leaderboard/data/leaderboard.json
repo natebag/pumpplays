@@ -20,8 +20,8 @@
     },
     {
       "username": "PUMPPLAYSGUY",
-      "totalVotes": 4855,
-      "totalWeight": 4855,
+      "totalVotes": 4858,
+      "totalWeight": 4858,
       "rank": 3,
       "commands": {},
       "topCommands": [],
@@ -29,8 +29,8 @@
     },
     {
       "username": "BOMBACLATTTT",
-      "totalVotes": 3739,
-      "totalWeight": 3739,
+      "totalVotes": 3741,
+      "totalWeight": 3741,
       "rank": 4,
       "commands": {},
       "topCommands": [],
@@ -38,8 +38,8 @@
     },
     {
       "username": "NATEBAG",
-      "totalVotes": 2856,
-      "totalWeight": 2856,
+      "totalVotes": 2873,
+      "totalWeight": 2873,
       "rank": 5,
       "commands": {},
       "topCommands": [],
@@ -81,7 +81,7 @@
       "rank": 9,
       "commands": {},
       "topCommands": [],
-      "percentage": "3.1"
+      "percentage": "3.0"
     },
     {
       "username": "WB1",
@@ -108,7 +108,7 @@
       "rank": 12,
       "commands": {},
       "topCommands": [],
-      "percentage": "1.1"
+      "percentage": "1.0"
     },
     {
       "username": "DROOBER",
@@ -165,18 +165,18 @@
       "percentage": "0.4"
     },
     {
-      "username": "ASH_KETCHUM",
-      "totalVotes": 228,
-      "totalWeight": 228,
+      "username": "95HOR5",
+      "totalVotes": 257,
+      "totalWeight": 257,
       "rank": 19,
       "commands": {},
       "topCommands": [],
-      "percentage": "0.3"
+      "percentage": "0.4"
     },
     {
-      "username": "E6VROS",
-      "totalVotes": 190,
-      "totalWeight": 190,
+      "username": "ASH_KETCHUM",
+      "totalVotes": 228,
+      "totalWeight": 228,
       "rank": 20,
       "commands": {},
       "topCommands": [],
@@ -184,11 +184,11 @@
     }
   ],
   "totalUsers": 50,
-  "totalVotes": 66898,
-  "lastUpdated": "2025-09-14T17:32:39.315Z",
-  "nextUpdate": "2025-09-14T21:32:39.315Z",
+  "totalVotes": 66988,
+  "lastUpdated": "2025-09-14T18:40:58.618Z",
+  "nextUpdate": "2025-09-14T22:40:58.618Z",
   "analytics": {
-    "averageVotesPerUser": 1338,
+    "averageVotesPerUser": 1340,
     "topCommands": [],
     "championDominance": "40.8%"
   }
