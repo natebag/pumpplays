@@ -1,12 +1,12 @@
 {
   "champion": {
     "username": "CUNO",
-    "totalVotes": 27512,
-    "totalWeight": 27512,
+    "totalVotes": 28107,
+    "totalWeight": 28107,
     "rank": 1,
     "commands": {},
     "topCommands": [],
-    "percentage": "40.3"
+    "percentage": "40.7"
   },
   "eliteFour": [
     {
@@ -16,7 +16,7 @@
       "rank": 2,
       "commands": {},
       "topCommands": [],
-      "percentage": "13.3"
+      "percentage": "13.2"
     },
     {
       "username": "PUMPPLAYSGUY",
@@ -25,7 +25,7 @@
       "rank": 3,
       "commands": {},
       "topCommands": [],
-      "percentage": "7.2"
+      "percentage": "7.1"
     },
     {
       "username": "BOMBACLATTTT",
@@ -34,7 +34,7 @@
       "rank": 4,
       "commands": {},
       "topCommands": [],
-      "percentage": "5.7"
+      "percentage": "5.6"
     },
     {
       "username": "NATEBAG",
@@ -103,12 +103,12 @@
     },
     {
       "username": "HELLOGOODBYE",
-      "totalVotes": 1024,
-      "totalWeight": 1024,
+      "totalVotes": 1115,
+      "totalWeight": 1115,
       "rank": 12,
       "commands": {},
       "topCommands": [],
-      "percentage": "1.5"
+      "percentage": "1.6"
     },
     {
       "username": "DROOBER",
@@ -144,7 +144,7 @@
       "rank": 16,
       "commands": {},
       "topCommands": [],
-      "percentage": "0.6"
+      "percentage": "0.5"
     },
     {
       "username": "8MJXLM",
@@ -162,7 +162,7 @@
       "rank": 18,
       "commands": {},
       "topCommands": [],
-      "percentage": "0.5"
+      "percentage": "0.4"
     },
     {
       "username": "DO9N5R",
@@ -184,12 +184,12 @@
     }
   ],
   "totalUsers": 50,
-  "totalVotes": 68339,
-  "lastUpdated": "2025-09-15T10:40:58.666Z",
-  "nextUpdate": "2025-09-15T14:40:58.666Z",
+  "totalVotes": 69026,
+  "lastUpdated": "2025-09-15T14:40:58.672Z",
+  "nextUpdate": "2025-09-15T18:40:58.672Z",
   "analytics": {
-    "averageVotesPerUser": 1367,
+    "averageVotesPerUser": 1381,
     "topCommands": [],
-    "championDominance": "40.3%"
+    "championDominance": "40.7%"
   }
 }
