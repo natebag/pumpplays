@@ -1,12 +1,12 @@
 {
   "champion": {
     "username": "CUNO",
-    "totalVotes": 28412,
-    "totalWeight": 28412,
+    "totalVotes": 29245,
+    "totalWeight": 29245,
     "rank": 1,
     "commands": {},
     "topCommands": [],
-    "percentage": "40.5"
+    "percentage": "41.1"
   },
   "eliteFour": [
     {
@@ -16,7 +16,7 @@
       "rank": 2,
       "commands": {},
       "topCommands": [],
-      "percentage": "13.0"
+      "percentage": "12.9"
     },
     {
       "username": "PUMPPLAYSGUY",
@@ -25,7 +25,7 @@
       "rank": 3,
       "commands": {},
       "topCommands": [],
-      "percentage": "7.0"
+      "percentage": "6.9"
     },
     {
       "username": "BOMBACLATTTT",
@@ -34,7 +34,7 @@
       "rank": 4,
       "commands": {},
       "topCommands": [],
-      "percentage": "5.7"
+      "percentage": "5.6"
     },
     {
       "username": "NATEBAG",
@@ -43,7 +43,7 @@
       "rank": 5,
       "commands": {},
       "topCommands": [],
-      "percentage": "5.2"
+      "percentage": "5.1"
     }
   ],
   "gymLeaders": [
@@ -72,7 +72,7 @@
       "rank": 8,
       "commands": {},
       "topCommands": [],
-      "percentage": "3.5"
+      "percentage": "3.4"
     },
     {
       "username": "HO-OH",
@@ -94,12 +94,12 @@
     },
     {
       "username": "HELLOGOODBYE",
-      "totalVotes": 1159,
-      "totalWeight": 1159,
+      "totalVotes": 1168,
+      "totalWeight": 1168,
       "rank": 11,
       "commands": {},
       "topCommands": [],
-      "percentage": "1.7"
+      "percentage": "1.6"
     },
     {
       "username": "BEGOTTEN",
@@ -184,12 +184,12 @@
     }
   ],
   "totalUsers": 50,
-  "totalVotes": 70101,
-  "lastUpdated": "2025-09-16T08:43:40.253Z",
-  "nextUpdate": "2025-09-16T12:43:40.253Z",
+  "totalVotes": 71129,
+  "lastUpdated": "2025-09-16T12:43:40.304Z",
+  "nextUpdate": "2025-09-16T16:43:40.304Z",
   "analytics": {
-    "averageVotesPerUser": 1402,
+    "averageVotesPerUser": 1423,
     "topCommands": [],
-    "championDominance": "40.5%"
+    "championDominance": "41.1%"
   }
 }
