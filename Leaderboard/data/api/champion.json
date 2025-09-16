@@ -1,11 +1,3 @@
 {
-  "champion": {
-    "username": "CUNO",
-    "totalVotes": 28107,
-    "totalWeight": 28107,
-    "rank": 1,
-    "commands": {},
-    "topCommands": [],
-    "percentage": "40.3"
-  }
+  "champion": null
 }
