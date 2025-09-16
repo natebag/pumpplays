@@ -16,12 +16,12 @@
       "rank": 2,
       "commands": {},
       "topCommands": [],
-      "percentage": "12.9"
+      "percentage": "12.8"
     },
     {
       "username": "PUMPPLAYSGUY",
-      "totalVotes": 4903,
-      "totalWeight": 4903,
+      "totalVotes": 4905,
+      "totalWeight": 4905,
       "rank": 3,
       "commands": {},
       "topCommands": [],
@@ -49,8 +49,8 @@
   "gymLeaders": [
     {
       "username": "LUKEBAG",
-      "totalVotes": 2894,
-      "totalWeight": 2894,
+      "totalVotes": 2909,
+      "totalWeight": 2909,
       "rank": 6,
       "commands": {},
       "topCommands": [],
@@ -76,8 +76,8 @@
     },
     {
       "username": "HO-OH",
-      "totalVotes": 2043,
-      "totalWeight": 2043,
+      "totalVotes": 2044,
+      "totalWeight": 2044,
       "rank": 9,
       "commands": {},
       "topCommands": [],
@@ -94,12 +94,12 @@
     },
     {
       "username": "HELLOGOODBYE",
-      "totalVotes": 1168,
-      "totalWeight": 1168,
+      "totalVotes": 1181,
+      "totalWeight": 1181,
       "rank": 11,
       "commands": {},
       "topCommands": [],
-      "percentage": "1.6"
+      "percentage": "1.7"
     },
     {
       "username": "BEGOTTEN",
@@ -184,11 +184,11 @@
     }
   ],
   "totalUsers": 50,
-  "totalVotes": 71129,
-  "lastUpdated": "2025-09-16T12:43:40.304Z",
-  "nextUpdate": "2025-09-16T16:43:40.304Z",
+  "totalVotes": 71219,
+  "lastUpdated": "2025-09-16T16:43:40.257Z",
+  "nextUpdate": "2025-09-16T20:43:40.257Z",
   "analytics": {
-    "averageVotesPerUser": 1423,
+    "averageVotesPerUser": 1424,
     "topCommands": [],
     "championDominance": "41.1%"
   }
