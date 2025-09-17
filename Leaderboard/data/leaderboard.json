@@ -1,12 +1,12 @@
 {
   "champion": {
     "username": "CUNO",
-    "totalVotes": 29282,
-    "totalWeight": 29282,
+    "totalVotes": 30072,
+    "totalWeight": 30072,
     "rank": 1,
     "commands": {},
     "topCommands": [],
-    "percentage": "40.4"
+    "percentage": "40.9"
   },
   "eliteFour": [
     {
@@ -16,7 +16,7 @@
       "rank": 2,
       "commands": {},
       "topCommands": [],
-      "percentage": "12.6"
+      "percentage": "12.4"
     },
     {
       "username": "PUMPPLAYSGUY",
@@ -25,16 +25,16 @@
       "rank": 3,
       "commands": {},
       "topCommands": [],
-      "percentage": "6.8"
+      "percentage": "6.7"
     },
     {
       "username": "BOMBACLATTTT",
-      "totalVotes": 4260,
-      "totalWeight": 4260,
+      "totalVotes": 4281,
+      "totalWeight": 4281,
       "rank": 4,
       "commands": {},
       "topCommands": [],
-      "percentage": "5.9"
+      "percentage": "5.8"
     },
     {
       "username": "NATEBAG",
@@ -43,7 +43,7 @@
       "rank": 5,
       "commands": {},
       "topCommands": [],
-      "percentage": "5.0"
+      "percentage": "4.9"
     }
   ],
   "gymLeaders": [
@@ -112,12 +112,12 @@
     },
     {
       "username": "DROOBER",
-      "totalVotes": 687,
-      "totalWeight": 687,
+      "totalVotes": 714,
+      "totalWeight": 714,
       "rank": 13,
       "commands": {},
       "topCommands": [],
-      "percentage": "0.9"
+      "percentage": "1.0"
     },
     {
       "username": "HGHOID",
@@ -184,12 +184,12 @@
     }
   ],
   "totalUsers": 50,
-  "totalVotes": 72544,
-  "lastUpdated": "2025-09-17T04:43:40.284Z",
-  "nextUpdate": "2025-09-17T08:43:40.284Z",
+  "totalVotes": 73505,
+  "lastUpdated": "2025-09-17T08:43:40.292Z",
+  "nextUpdate": "2025-09-17T12:43:40.292Z",
   "analytics": {
-    "averageVotesPerUser": 1451,
+    "averageVotesPerUser": 1470,
     "topCommands": [],
-    "championDominance": "40.4%"
+    "championDominance": "40.9%"
   }
 }
