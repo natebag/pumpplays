@@ -1,12 +1,12 @@
 {
   "champion": {
     "username": "CUNO",
-    "totalVotes": 31799,
-    "totalWeight": 31799,
+    "totalVotes": 32917,
+    "totalWeight": 32917,
     "rank": 1,
     "commands": {},
     "topCommands": [],
-    "percentage": "41.1"
+    "percentage": "41.7"
   },
   "eliteFour": [
     {
@@ -16,7 +16,7 @@
       "rank": 2,
       "commands": {},
       "topCommands": [],
-      "percentage": "11.8"
+      "percentage": "11.6"
     },
     {
       "username": "PUMPPLAYSGUY",
@@ -25,7 +25,7 @@
       "rank": 3,
       "commands": {},
       "topCommands": [],
-      "percentage": "6.4"
+      "percentage": "6.3"
     },
     {
       "username": "BOMBACLATTTT",
@@ -34,16 +34,16 @@
       "rank": 4,
       "commands": {},
       "topCommands": [],
-      "percentage": "5.6"
+      "percentage": "5.5"
     },
     {
       "username": "NATEBAG",
-      "totalVotes": 3718,
-      "totalWeight": 3718,
+      "totalVotes": 3746,
+      "totalWeight": 3746,
       "rank": 5,
       "commands": {},
       "topCommands": [],
-      "percentage": "4.8"
+      "percentage": "4.7"
     }
   ],
   "gymLeaders": [
@@ -72,7 +72,7 @@
       "rank": 8,
       "commands": {},
       "topCommands": [],
-      "percentage": "3.2"
+      "percentage": "3.1"
     },
     {
       "username": "2AEMHK",
@@ -108,7 +108,7 @@
       "rank": 12,
       "commands": {},
       "topCommands": [],
-      "percentage": "1.5"
+      "percentage": "1.4"
     },
     {
       "username": "DROOBER",
@@ -147,18 +147,18 @@
       "percentage": "0.7"
     },
     {
-      "username": "RAYQUAZ",
-      "totalVotes": 401,
-      "totalWeight": 401,
+      "username": "TEAMROCKET.",
+      "totalVotes": 580,
+      "totalWeight": 580,
       "rank": 17,
       "commands": {},
       "topCommands": [],
-      "percentage": "0.5"
+      "percentage": "0.7"
     },
     {
-      "username": "TEAMROCKET.",
-      "totalVotes": 392,
-      "totalWeight": 392,
+      "username": "RAYQUAZ",
+      "totalVotes": 401,
+      "totalWeight": 401,
       "rank": 18,
       "commands": {},
       "topCommands": [],
@@ -184,12 +184,12 @@
     }
   ],
   "totalUsers": 50,
-  "totalVotes": 77395,
-  "lastUpdated": "2025-09-18T07:34:22.592Z",
-  "nextUpdate": "2025-09-18T11:34:22.592Z",
+  "totalVotes": 78951,
+  "lastUpdated": "2025-09-18T11:34:22.597Z",
+  "nextUpdate": "2025-09-18T15:34:22.597Z",
   "analytics": {
-    "averageVotesPerUser": 1548,
+    "averageVotesPerUser": 1579,
     "topCommands": [],
-    "championDominance": "41.1%"
+    "championDominance": "41.7%"
   }
 }
