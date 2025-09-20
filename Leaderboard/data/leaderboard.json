@@ -6,7 +6,7 @@
     "rank": 1,
     "commands": {},
     "topCommands": [],
-    "percentage": "39.6"
+    "percentage": "39.4"
   },
   "eliteFour": [
     {
@@ -25,7 +25,7 @@
       "rank": 3,
       "commands": {},
       "topCommands": [],
-      "percentage": "5.8"
+      "percentage": "5.7"
     },
     {
       "username": "BOMBACLATTTT",
@@ -49,18 +49,27 @@
   "gymLeaders": [
     {
       "username": "LUKEBAG",
-      "totalVotes": 3187,
-      "totalWeight": 3187,
+      "totalVotes": 3194,
+      "totalWeight": 3194,
       "rank": 6,
       "commands": {},
       "topCommands": [],
       "percentage": "3.7"
     },
     {
+      "username": "LUFFY55",
+      "totalVotes": 2904,
+      "totalWeight": 2904,
+      "rank": 7,
+      "commands": {},
+      "topCommands": [],
+      "percentage": "3.3"
+    },
+    {
       "username": "HO-OH",
       "totalVotes": 2576,
       "totalWeight": 2576,
-      "rank": 7,
+      "rank": 8,
       "commands": {},
       "topCommands": [],
       "percentage": "3.0"
@@ -69,7 +78,7 @@
       "username": "WB1",
       "totalVotes": 2568,
       "totalWeight": 2568,
-      "rank": 8,
+      "rank": 9,
       "commands": {},
       "topCommands": [],
       "percentage": "3.0"
@@ -78,28 +87,19 @@
       "username": "OBNOXI",
       "totalVotes": 2478,
       "totalWeight": 2478,
-      "rank": 9,
-      "commands": {},
-      "topCommands": [],
-      "percentage": "2.9"
-    },
-    {
-      "username": "2AEMHK",
-      "totalVotes": 2423,
-      "totalWeight": 2423,
       "rank": 10,
       "commands": {},
       "topCommands": [],
       "percentage": "2.8"
     },
     {
-      "username": "LUFFY55",
-      "totalVotes": 2352,
-      "totalWeight": 2352,
+      "username": "2AEMHK",
+      "totalVotes": 2423,
+      "totalWeight": 2423,
       "rank": 11,
       "commands": {},
       "topCommands": [],
-      "percentage": "2.7"
+      "percentage": "2.8"
     },
     {
       "username": "TEAMROCKET.",
@@ -139,8 +139,8 @@
     },
     {
       "username": "DEDWHALESON",
-      "totalVotes": 1075,
-      "totalWeight": 1075,
+      "totalVotes": 1084,
+      "totalWeight": 1084,
       "rank": 16,
       "commands": {},
       "topCommands": [],
@@ -184,12 +184,12 @@
     }
   ],
   "totalUsers": 50,
-  "totalVotes": 86467,
-  "lastUpdated": "2025-09-19T23:34:22.649Z",
-  "nextUpdate": "2025-09-20T03:34:22.649Z",
+  "totalVotes": 87035,
+  "lastUpdated": "2025-09-20T03:34:22.655Z",
+  "nextUpdate": "2025-09-20T07:34:22.655Z",
   "analytics": {
-    "averageVotesPerUser": 1729,
+    "averageVotesPerUser": 1741,
     "topCommands": [],
-    "championDominance": "39.6%"
+    "championDominance": "39.4%"
   }
 }
