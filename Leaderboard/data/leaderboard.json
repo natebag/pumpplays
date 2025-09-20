@@ -6,17 +6,17 @@
     "rank": 1,
     "commands": {},
     "topCommands": [],
-    "percentage": "39.3"
+    "percentage": "39.2"
   },
   "eliteFour": [
     {
       "username": "DRAGON",
-      "totalVotes": 9553,
-      "totalWeight": 9553,
+      "totalVotes": 9561,
+      "totalWeight": 9561,
       "rank": 2,
       "commands": {},
       "topCommands": [],
-      "percentage": "10.9"
+      "percentage": "11.0"
     },
     {
       "username": "PUMPPLAYSGUY",
@@ -38,8 +38,8 @@
     },
     {
       "username": "NATEBAG",
-      "totalVotes": 3857,
-      "totalWeight": 3857,
+      "totalVotes": 3871,
+      "totalWeight": 3871,
       "rank": 5,
       "commands": {},
       "topCommands": [],
@@ -58,12 +58,12 @@
     },
     {
       "username": "LUFFY55",
-      "totalVotes": 2909,
-      "totalWeight": 2909,
+      "totalVotes": 2934,
+      "totalWeight": 2934,
       "rank": 7,
       "commands": {},
       "topCommands": [],
-      "percentage": "3.3"
+      "percentage": "3.4"
     },
     {
       "username": "HO-OH",
@@ -103,8 +103,8 @@
     },
     {
       "username": "TEAMROCKET.",
-      "totalVotes": 1717,
-      "totalWeight": 1717,
+      "totalVotes": 1727,
+      "totalWeight": 1727,
       "rank": 12,
       "commands": {},
       "topCommands": [],
@@ -184,12 +184,12 @@
     }
   ],
   "totalUsers": 50,
-  "totalVotes": 87250,
-  "lastUpdated": "2025-09-20T15:34:22.672Z",
-  "nextUpdate": "2025-09-20T19:34:22.672Z",
+  "totalVotes": 87307,
+  "lastUpdated": "2025-09-20T19:34:22.675Z",
+  "nextUpdate": "2025-09-20T23:34:22.675Z",
   "analytics": {
-    "averageVotesPerUser": 1745,
+    "averageVotesPerUser": 1746,
     "topCommands": [],
-    "championDominance": "39.3%"
+    "championDominance": "39.2%"
   }
 }
