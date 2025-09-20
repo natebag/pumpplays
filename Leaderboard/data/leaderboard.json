@@ -20,8 +20,8 @@
     },
     {
       "username": "PUMPPLAYSGUY",
-      "totalVotes": 4988,
-      "totalWeight": 4988,
+      "totalVotes": 4990,
+      "totalWeight": 4990,
       "rank": 3,
       "commands": {},
       "topCommands": [],
@@ -38,8 +38,8 @@
     },
     {
       "username": "NATEBAG",
-      "totalVotes": 3845,
-      "totalWeight": 3845,
+      "totalVotes": 3855,
+      "totalWeight": 3855,
       "rank": 5,
       "commands": {},
       "topCommands": [],
@@ -58,8 +58,8 @@
     },
     {
       "username": "LUFFY55",
-      "totalVotes": 2904,
-      "totalWeight": 2904,
+      "totalVotes": 2909,
+      "totalWeight": 2909,
       "rank": 7,
       "commands": {},
       "topCommands": [],
@@ -81,7 +81,7 @@
       "rank": 9,
       "commands": {},
       "topCommands": [],
-      "percentage": "3.0"
+      "percentage": "2.9"
     },
     {
       "username": "OBNOXI",
@@ -184,9 +184,9 @@
     }
   ],
   "totalUsers": 50,
-  "totalVotes": 87035,
-  "lastUpdated": "2025-09-20T03:34:22.655Z",
-  "nextUpdate": "2025-09-20T07:34:22.655Z",
+  "totalVotes": 87052,
+  "lastUpdated": "2025-09-20T07:34:22.663Z",
+  "nextUpdate": "2025-09-20T11:34:22.663Z",
   "analytics": {
     "averageVotesPerUser": 1741,
     "topCommands": [],
