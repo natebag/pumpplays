@@ -20,8 +20,8 @@
     },
     {
       "username": "PUMPPLAYSGUY",
-      "totalVotes": 4990,
-      "totalWeight": 4990,
+      "totalVotes": 4994,
+      "totalWeight": 4994,
       "rank": 3,
       "commands": {},
       "topCommands": [],
@@ -38,8 +38,8 @@
     },
     {
       "username": "NATEBAG",
-      "totalVotes": 3855,
-      "totalWeight": 3855,
+      "totalVotes": 3857,
+      "totalWeight": 3857,
       "rank": 5,
       "commands": {},
       "topCommands": [],
@@ -49,8 +49,8 @@
   "gymLeaders": [
     {
       "username": "LUKEBAG",
-      "totalVotes": 3194,
-      "totalWeight": 3194,
+      "totalVotes": 3197,
+      "totalWeight": 3197,
       "rank": 6,
       "commands": {},
       "topCommands": [],
@@ -121,8 +121,8 @@
     },
     {
       "username": "HELLOGOODBYE",
-      "totalVotes": 1338,
-      "totalWeight": 1338,
+      "totalVotes": 1346,
+      "totalWeight": 1346,
       "rank": 14,
       "commands": {},
       "topCommands": [],
@@ -184,9 +184,9 @@
     }
   ],
   "totalUsers": 50,
-  "totalVotes": 87052,
-  "lastUpdated": "2025-09-20T07:34:22.663Z",
-  "nextUpdate": "2025-09-20T11:34:22.663Z",
+  "totalVotes": 87069,
+  "lastUpdated": "2025-09-20T11:34:22.673Z",
+  "nextUpdate": "2025-09-20T15:34:22.673Z",
   "analytics": {
     "averageVotesPerUser": 1741,
     "topCommands": [],
