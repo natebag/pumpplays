@@ -38,12 +38,12 @@
     },
     {
       "username": "NATEBAG",
-      "totalVotes": 3978,
-      "totalWeight": 3978,
+      "totalVotes": 3981,
+      "totalWeight": 3981,
       "rank": 5,
       "commands": {},
       "topCommands": [],
-      "percentage": "4.5"
+      "percentage": "4.6"
     }
   ],
   "gymLeaders": [
@@ -184,9 +184,9 @@
     }
   ],
   "totalUsers": 50,
-  "totalVotes": 87461,
-  "lastUpdated": "2025-09-21T03:34:22.737Z",
-  "nextUpdate": "2025-09-21T07:34:22.737Z",
+  "totalVotes": 87464,
+  "lastUpdated": "2025-09-21T04:15:11.388Z",
+  "nextUpdate": "2025-09-21T08:15:11.388Z",
   "analytics": {
     "averageVotesPerUser": 1749,
     "topCommands": [],
