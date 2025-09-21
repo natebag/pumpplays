@@ -103,8 +103,8 @@
     },
     {
       "username": "TEAMROCKET.",
-      "totalVotes": 1775,
-      "totalWeight": 1775,
+      "totalVotes": 1789,
+      "totalWeight": 1789,
       "rank": 12,
       "commands": {},
       "topCommands": [],
@@ -184,9 +184,9 @@
     }
   ],
   "totalUsers": 50,
-  "totalVotes": 87487,
-  "lastUpdated": "2025-09-21T16:15:11.427Z",
-  "nextUpdate": "2025-09-21T20:15:11.427Z",
+  "totalVotes": 87501,
+  "lastUpdated": "2025-09-21T20:15:11.434Z",
+  "nextUpdate": "2025-09-22T00:15:11.434Z",
   "analytics": {
     "averageVotesPerUser": 1750,
     "topCommands": [],
