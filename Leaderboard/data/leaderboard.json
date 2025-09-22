@@ -38,8 +38,8 @@
     },
     {
       "username": "NATEBAG",
-      "totalVotes": 4019,
-      "totalWeight": 4019,
+      "totalVotes": 4031,
+      "totalWeight": 4031,
       "rank": 5,
       "commands": {},
       "topCommands": [],
@@ -121,8 +121,8 @@
     },
     {
       "username": "HELLOGOODBYE",
-      "totalVotes": 1346,
-      "totalWeight": 1346,
+      "totalVotes": 1354,
+      "totalWeight": 1354,
       "rank": 14,
       "commands": {},
       "topCommands": [],
@@ -184,9 +184,9 @@
     }
   ],
   "totalUsers": 50,
-  "totalVotes": 87585,
-  "lastUpdated": "2025-09-22T03:06:46.498Z",
-  "nextUpdate": "2025-09-22T07:06:46.498Z",
+  "totalVotes": 87605,
+  "lastUpdated": "2025-09-22T07:06:46.524Z",
+  "nextUpdate": "2025-09-22T11:06:46.524Z",
   "analytics": {
     "averageVotesPerUser": 1752,
     "topCommands": [],
