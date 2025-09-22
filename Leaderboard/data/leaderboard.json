@@ -112,8 +112,8 @@
     },
     {
       "username": "RAYQUAZAA",
-      "totalVotes": 1613,
-      "totalWeight": 1613,
+      "totalVotes": 1618,
+      "totalWeight": 1618,
       "rank": 13,
       "commands": {},
       "topCommands": [],
@@ -184,9 +184,9 @@
     }
   ],
   "totalUsers": 50,
-  "totalVotes": 87618,
-  "lastUpdated": "2025-09-22T11:06:46.525Z",
-  "nextUpdate": "2025-09-22T15:06:46.525Z",
+  "totalVotes": 87623,
+  "lastUpdated": "2025-09-22T15:06:46.528Z",
+  "nextUpdate": "2025-09-22T19:06:46.528Z",
   "analytics": {
     "averageVotesPerUser": 1752,
     "topCommands": [],
