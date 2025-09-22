@@ -49,8 +49,8 @@
   "gymLeaders": [
     {
       "username": "LUKEBAG",
-      "totalVotes": 3205,
-      "totalWeight": 3205,
+      "totalVotes": 3213,
+      "totalWeight": 3213,
       "rank": 6,
       "commands": {},
       "topCommands": [],
@@ -184,11 +184,11 @@
     }
   ],
   "totalUsers": 50,
-  "totalVotes": 87623,
-  "lastUpdated": "2025-09-22T15:06:46.528Z",
-  "nextUpdate": "2025-09-22T19:06:46.528Z",
+  "totalVotes": 87631,
+  "lastUpdated": "2025-09-22T19:06:46.542Z",
+  "nextUpdate": "2025-09-22T23:06:46.542Z",
   "analytics": {
-    "averageVotesPerUser": 1752,
+    "averageVotesPerUser": 1753,
     "topCommands": [],
     "championDominance": "39.1%"
   }
