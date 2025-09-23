@@ -6,7 +6,7 @@
     "rank": 1,
     "commands": {},
     "topCommands": [],
-    "percentage": "38.4"
+    "percentage": "38.2"
   },
   "eliteFour": [
     {
@@ -43,7 +43,7 @@
       "rank": 5,
       "commands": {},
       "topCommands": [],
-      "percentage": "4.6"
+      "percentage": "4.5"
     }
   ],
   "gymLeaders": [
@@ -93,31 +93,31 @@
       "percentage": "2.8"
     },
     {
-      "username": "2AEMHK",
-      "totalVotes": 2423,
-      "totalWeight": 2423,
+      "username": "RAYQUAZAA",
+      "totalVotes": 2461,
+      "totalWeight": 2461,
       "rank": 11,
       "commands": {},
       "topCommands": [],
       "percentage": "2.7"
     },
     {
-      "username": "TEAMROCKET.",
-      "totalVotes": 2198,
-      "totalWeight": 2198,
+      "username": "2AEMHK",
+      "totalVotes": 2423,
+      "totalWeight": 2423,
       "rank": 12,
       "commands": {},
       "topCommands": [],
-      "percentage": "2.5"
+      "percentage": "2.7"
     },
     {
-      "username": "RAYQUAZAA",
-      "totalVotes": 2028,
-      "totalWeight": 2028,
+      "username": "TEAMROCKET.",
+      "totalVotes": 2199,
+      "totalWeight": 2199,
       "rank": 13,
       "commands": {},
       "topCommands": [],
-      "percentage": "2.3"
+      "percentage": "2.5"
     },
     {
       "username": "HELLOGOODBYE",
@@ -184,12 +184,12 @@
     }
   ],
   "totalUsers": 50,
-  "totalVotes": 89289,
-  "lastUpdated": "2025-09-23T11:06:46.582Z",
-  "nextUpdate": "2025-09-23T15:06:46.582Z",
+  "totalVotes": 89752,
+  "lastUpdated": "2025-09-23T15:06:46.582Z",
+  "nextUpdate": "2025-09-23T19:06:46.582Z",
   "analytics": {
-    "averageVotesPerUser": 1786,
+    "averageVotesPerUser": 1795,
     "topCommands": [],
-    "championDominance": "38.4%"
+    "championDominance": "38.2%"
   }
 }
