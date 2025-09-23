@@ -6,7 +6,7 @@
     "rank": 1,
     "commands": {},
     "topCommands": [],
-    "percentage": "38.5"
+    "percentage": "38.4"
   },
   "eliteFour": [
     {
@@ -16,12 +16,12 @@
       "rank": 2,
       "commands": {},
       "topCommands": [],
-      "percentage": "10.8"
+      "percentage": "10.7"
     },
     {
       "username": "PUMPPLAYSGUY",
-      "totalVotes": 5006,
-      "totalWeight": 5006,
+      "totalVotes": 5019,
+      "totalWeight": 5019,
       "rank": 3,
       "commands": {},
       "topCommands": [],
@@ -34,12 +34,12 @@
       "rank": 4,
       "commands": {},
       "topCommands": [],
-      "percentage": "5.0"
+      "percentage": "4.9"
     },
     {
       "username": "LUKEBAG",
-      "totalVotes": 4052,
-      "totalWeight": 4052,
+      "totalVotes": 4074,
+      "totalWeight": 4074,
       "rank": 5,
       "commands": {},
       "topCommands": [],
@@ -112,12 +112,12 @@
     },
     {
       "username": "RAYQUAZAA",
-      "totalVotes": 1706,
-      "totalWeight": 1706,
+      "totalVotes": 2028,
+      "totalWeight": 2028,
       "rank": 13,
       "commands": {},
       "topCommands": [],
-      "percentage": "1.9"
+      "percentage": "2.3"
     },
     {
       "username": "HELLOGOODBYE",
@@ -153,7 +153,7 @@
       "rank": 17,
       "commands": {},
       "topCommands": [],
-      "percentage": "1.0"
+      "percentage": "0.9"
     },
     {
       "username": "HGHOID",
@@ -162,7 +162,7 @@
       "rank": 18,
       "commands": {},
       "topCommands": [],
-      "percentage": "0.7"
+      "percentage": "0.6"
     },
     {
       "username": "HGHOID",
@@ -171,7 +171,7 @@
       "rank": 19,
       "commands": {},
       "topCommands": [],
-      "percentage": "0.7"
+      "percentage": "0.6"
     },
     {
       "username": "RAYQUAZ",
@@ -180,16 +180,16 @@
       "rank": 20,
       "commands": {},
       "topCommands": [],
-      "percentage": "0.5"
+      "percentage": "0.4"
     }
   ],
   "totalUsers": 50,
-  "totalVotes": 88929,
-  "lastUpdated": "2025-09-23T07:06:46.572Z",
-  "nextUpdate": "2025-09-23T11:06:46.572Z",
+  "totalVotes": 89289,
+  "lastUpdated": "2025-09-23T11:06:46.582Z",
+  "nextUpdate": "2025-09-23T15:06:46.582Z",
   "analytics": {
-    "averageVotesPerUser": 1779,
+    "averageVotesPerUser": 1786,
     "topCommands": [],
-    "championDominance": "38.5%"
+    "championDominance": "38.4%"
   }
 }
