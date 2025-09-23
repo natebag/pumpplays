@@ -6,7 +6,7 @@
     "rank": 1,
     "commands": {},
     "topCommands": [],
-    "percentage": "38.2"
+    "percentage": "38.1"
   },
   "eliteFour": [
     {
@@ -16,7 +16,7 @@
       "rank": 2,
       "commands": {},
       "topCommands": [],
-      "percentage": "10.7"
+      "percentage": "10.6"
     },
     {
       "username": "PUMPPLAYSGUY",
@@ -58,12 +58,12 @@
     },
     {
       "username": "LUFFY55",
-      "totalVotes": 2935,
-      "totalWeight": 2935,
+      "totalVotes": 3147,
+      "totalWeight": 3147,
       "rank": 7,
       "commands": {},
       "topCommands": [],
-      "percentage": "3.3"
+      "percentage": "3.5"
     },
     {
       "username": "HO-OH",
@@ -112,8 +112,8 @@
     },
     {
       "username": "TEAMROCKET.",
-      "totalVotes": 2199,
-      "totalWeight": 2199,
+      "totalVotes": 2264,
+      "totalWeight": 2264,
       "rank": 13,
       "commands": {},
       "topCommands": [],
@@ -184,12 +184,12 @@
     }
   ],
   "totalUsers": 50,
-  "totalVotes": 89752,
-  "lastUpdated": "2025-09-23T15:06:46.582Z",
-  "nextUpdate": "2025-09-23T19:06:46.582Z",
+  "totalVotes": 90029,
+  "lastUpdated": "2025-09-23T19:06:46.590Z",
+  "nextUpdate": "2025-09-23T23:06:46.590Z",
   "analytics": {
-    "averageVotesPerUser": 1795,
+    "averageVotesPerUser": 1801,
     "topCommands": [],
-    "championDominance": "38.2%"
+    "championDominance": "38.1%"
   }
 }
