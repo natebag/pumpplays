@@ -6,7 +6,7 @@
     "rank": 1,
     "commands": {},
     "topCommands": [],
-    "percentage": "38.0"
+    "percentage": "37.9"
   },
   "eliteFour": [
     {
@@ -29,8 +29,8 @@
     },
     {
       "username": "BOMBACLATTTT",
-      "totalVotes": 4408,
-      "totalWeight": 4408,
+      "totalVotes": 4424,
+      "totalWeight": 4424,
       "rank": 4,
       "commands": {},
       "topCommands": [],
@@ -72,7 +72,7 @@
       "rank": 8,
       "commands": {},
       "topCommands": [],
-      "percentage": "2.9"
+      "percentage": "2.8"
     },
     {
       "username": "WB1",
@@ -81,7 +81,7 @@
       "rank": 9,
       "commands": {},
       "topCommands": [],
-      "percentage": "2.9"
+      "percentage": "2.8"
     },
     {
       "username": "OBNOXI",
@@ -90,7 +90,7 @@
       "rank": 10,
       "commands": {},
       "topCommands": [],
-      "percentage": "2.8"
+      "percentage": "2.7"
     },
     {
       "username": "RAYQUAZAA",
@@ -184,12 +184,12 @@
     }
   ],
   "totalUsers": 50,
-  "totalVotes": 90071,
-  "lastUpdated": "2025-09-24T03:06:46.602Z",
-  "nextUpdate": "2025-09-24T07:06:46.602Z",
+  "totalVotes": 90396,
+  "lastUpdated": "2025-09-24T07:06:46.608Z",
+  "nextUpdate": "2025-09-24T11:06:46.608Z",
   "analytics": {
-    "averageVotesPerUser": 1801,
+    "averageVotesPerUser": 1808,
     "topCommands": [],
-    "championDominance": "38.0%"
+    "championDominance": "37.9%"
   }
 }
