@@ -3,320 +3,353 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>🌿 Pump Plays Pokémon Emerald — Battle Frontier Democracy</title>
-  <meta name="description" content="Journey through Hoenn together! Chat votes control our Pokémon Emerald adventure. Trade tokens for vote power and help us become the Champion!" />
-  <meta property="og:title" content="Pump Plays Pokémon Emerald — Interactive GBA Livestream" />
-  <meta property="og:description" content="Type !up or /up, !down or /down, !left or /left, !right or /right, !a or /a, !b or /b in chat to control Pokémon Emerald together. Token traders get vote weight boosts!" />
+  <title>Pump Plays Pokémon — The Interactive Web3 Pokémon Hub</title>
+  <meta name="description" content="Play Pokémon together with on‑chain twists. Safe links, live commands, quest log, TeamRocket Terminal, rewards, and more." />
+  <meta property="og:title" content="Pump Plays Pokémon — Interactive Hub" />
+  <meta property="og:description" content="Democracy controls the game. Quests, burns, rewards, and verified links in one place." />
   <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#18C29C" />
+  <meta name="theme-color" content="#15d1c5" />
+
+  <!-- DS Menu / PPP Brand Theme -->
   <style>
     :root{
-      --bg:#0a0d12;         /* deep space */
-      --bg-soft:#0f1320;    /* soft panel */
-      --card:#11182a;       /* card bg */
-      --text:#e7f3ff;       /* main text */
-      --muted:#9fb5d1;      /* secondary text */
-      --brand:#00d084;      /* emerald green */
-      --accent:#ff6b47;     /* fire red accent */
-      --warn:#ffcc02;       /* electric yellow */
-      --ok:#56f59c;         /* grass green */
-      --danger:#ff4757;     /* battle red */
-      --shadow:0 8px 28px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.03);
+      --bg:#05080f;          /* deep space */
+      --bg-2:#070c16;        /* panel */
+      --card:#0b1222;        /* tile */
+      --card-2:#0e1730;      /* tile alt */
+      --line:#1b2644;        /* borders */
+      --text:#eaf4ff;        /* main text */
+      --muted:#9db3d3;       /* secondary */
+      --brand:#1de1b2;       /* PPP teal */
+      --brand-2:#45b5ff;     /* PPP blue */
+      --accent:#ff6b9d;      /* PPP pink */
+      --warn:#ffd34d;        /* yellow */
+      --ok:#56f59c;          /* green */
+      --danger:#ff4b68;      /* red */
       --radius:18px;
+      --shadow:0 10px 30px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.04);
     }
     *{box-sizing:border-box}
-    html,body{margin:0;height:100%;background:radial-gradient(1200px 800px at 20% -10%, #18213a 0%, rgba(24,33,58,0) 60%), linear-gradient(180deg, var(--bg) 0%, #080b10 100%);color:var(--text);font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, Noto Sans, "Apple Color Emoji", "Segoe UI Emoji"}
-    a{color:var(--brand);text-decoration:none}
-    a:hover{text-decoration:underline}
+    html,body{height:100%;margin:0;color:var(--text);background:
+      radial-gradient(1200px 800px at 20% -10%, rgba(33,64,132,.25) 0%, rgba(33,64,132,0) 60%),
+      linear-gradient(180deg, var(--bg) 0%, #04070c 100%);
+      font:16px/1.55 Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial;
+    }
+    a{color:var(--brand)} a:hover{text-decoration:underline}
     .wrap{max-width:1200px;margin:0 auto;padding:24px}
-    header{position:sticky;top:0;backdrop-filter:blur(10px);background:color-mix(in oklab, var(--bg-soft) 92%, transparent);border-bottom:1px solid #1d2440;z-index:10}
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .logo{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.5px}
-    .logo-mark{display:grid;place-items:center;width:38px;height:38px;background:linear-gradient(135deg,#1ce0b7, #4ad2ff);border-radius:10px;box-shadow:var(--shadow)}
-    .logo-mark::after{content:"PP";font-weight:900;color:#0b1222}
-    .nav a.btn{margin-left:8px}
 
-    .hero{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:center;padding:36px 0}
-    .card{background:var(--card);border:1px solid #1b2545;border-radius:var(--radius);box-shadow:var(--shadow)}
-    .hero .left{padding:28px;border-radius:var(--radius);background:linear-gradient(180deg, rgba(24,194,156,.09) 0%, rgba(24,194,156,0) 100%)}
-    h1{font-size:clamp(28px, 4.2vw, 52px);line-height:1.1;margin:0 0 12px}
-    .subtitle{color:var(--muted);font-size:18px}
-    .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;border:1px solid #263154;background:#121a2d;color:var(--text);font-weight:700;box-shadow:var(--shadow);cursor:pointer}
+    /* Top Nav */
+    header{position:sticky;top:0;z-index:20;background:color-mix(in oklab, var(--bg-2) 92%, transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    .nav{display:flex;justify-content:space-between;align-items:center;gap:16px}
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo img{width:42px;height:42px;border-radius:10px;filter:drop-shadow(0 8px 16px rgba(0,0,0,.35))}
+    .brand-title{font-weight:900;letter-spacing:.3px}
+    .brand-sub{font-size:12px;color:var(--muted);margin-top:-2px}
+    .nav .right{display:flex;gap:8px;flex-wrap:wrap}
+
+    /* Buttons */
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 14px;border-radius:12px;border:1px solid #24335a;background:#0c1326;color:var(--text);font-weight:800;box-shadow:var(--shadow);cursor:pointer;text-decoration:none}
     .btn:hover{transform:translateY(-1px)}
-    .btn.brand{background:linear-gradient(135deg,#1ce0b7,#4ad2ff);color:#041420;border-color:#2de0d1}
+    .btn.brand{background:linear-gradient(135deg, var(--brand), var(--brand-2));color:#06101a;border-color:#2de0d1}
+    .btn.pink{background:linear-gradient(135deg,#ff9dba,#ff6b9d);color:#200514;border-color:#ff6b9d}
     .btn.ghost{background:transparent}
 
-    .pill{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:#0f1528;border:1px solid #263154;color:var(--muted);font-weight:700}
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:center;padding:36px 0}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .left.card{padding:26px;background:linear-gradient(180deg, rgba(29,225,178,.08) 0%, rgba(69,181,255,.05) 60%, rgba(255,107,157,.05) 100%)}
+    h1{margin:0 0 10px;font-size:clamp(28px,4.2vw,52px);line-height:1.08}
+    .subtitle{color:var(--muted)}
+    .pill{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:#0f172e;border:1px solid #25345f;color:var(--muted);font-weight:800}
     .pill .dot{width:9px;height:9px;border-radius:50%}
+    .hero-cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
 
-    .screen{aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid #24335a}
-    .screen .top{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:#0e1430}
-    .screen .top strong{letter-spacing:.3px}
-    .screen .vid{display:grid;place-items:center;background:linear-gradient(180deg,#10223f,#0a142b);height:100%}
-    .scanlines{position:relative;overflow:hidden}
-    .scanlines::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0, rgba(255,255,255,.03) 1px, transparent 2px);pointer-events:none}
+    /* DS Tiles */
+    .tiles{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+    .tile{grid-column:span 6;background:var(--card-2);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow)}
+    .tile h3{margin:6px 0 8px;font-size:20px}
+    .tile p{margin:0;color:var(--muted)}
 
+    /* Commands */
+    .section{padding:52px 0}
+    h2{margin:0 0 16px;font-size:clamp(22px,3vw,34px)}
+    .kicker{color:var(--brand);text-transform:uppercase;letter-spacing:1px;font-weight:900;font-size:12px}
     .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
-    .section{padding:54px 0}
-    h2{font-size:clamp(22px,3vw,34px);margin:0 0 18px}
-    .kicker{color:var(--brand);text-transform:uppercase;letter-spacing:1px;font-weight:800;font-size:12px}
+    .panel{grid-column:span 7}
+    .side{grid-column:span 5}
+    table{width:100%;border-collapse:collapse}
+    th,td{padding:10px 12px;border-bottom:1px dashed #223055;text-align:left}
+    th{color:var(--muted);font-weight:700}
 
-    .how .item{grid-column:span 3;background:var(--card);border:1px solid #1b2545;border-radius:16px;padding:18px;box-shadow:var(--shadow)}
-    .how .item h3{margin:6px 0 6px;font-size:18px}
-    .how .item p{margin:0;color:var(--muted)}
+    /* Rewards band */
+    .band{background:linear-gradient(120deg, rgba(29,225,178,.06), rgba(69,181,255,.06));border:1px solid var(--line);padding:16px;border-radius:14px}
+    .badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+    .badge{padding:8px 10px;border-radius:999px;border:1px solid #24335a;background:#0e1630;font-weight:800}
 
-    .cmds .panel{grid-column:span 7}
-    .cmds .panel .table{width:100%;border-collapse:collapse}
-    .cmds .panel th,.cmds .panel td{padding:10px 12px;border-bottom:1px dashed #223055;text-align:left}
-    .cmds .panel th{color:var(--muted);font-weight:600}
-    .cmds .side{grid-column:span 5}
+    /* Safe Links */
+    .links-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .link-card{background:#0c1326;border:1px solid #24335a;border-radius:12px;padding:12px;display:flex;justify-content:space-between;align-items:center}
+    .link-card span{color:var(--muted)}
 
-    .token{background:linear-gradient(180deg, rgba(247,79,120,.06) 0%, rgba(247,79,120,0) 100%)}
-    .token .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-    .tier{background:var(--card);border:1px solid #1b2545;border-radius:14px;padding:16px}
-    .tier h4{margin:6px 0 10px}
-    .tier p{margin:0;color:var(--muted)}
+    /* Roadmap */
+    .poster{background:radial-gradient(600px 300px at 0% 0%, rgba(69,181,255,.15), transparent),
+      radial-gradient(600px 300px at 100% 100%, rgba(29,225,178,.15), transparent), #0b1222;
+      border:1px solid var(--line);border-radius:16px;padding:22px}
+    .poster h4{margin:0 0 8px}
+    .poster ul{margin:6px 0 0 18px;padding:0;color:var(--muted)}
 
-    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
-
-    .faq details{background:var(--card);border:1px solid #1b2545;border-radius:12px;padding:14px;margin:10px 0}
-    .faq summary{cursor:pointer;font-weight:800}
-
-    footer{border-top:1px solid #1d2440;color:var(--muted);padding:24px 0}
+    /* Footer */
+    footer{border-top:1px solid var(--line);color:var(--muted);padding:24px 0}
 
     /* Responsive */
     @media (max-width:980px){
       .hero{grid-template-columns:1fr}
-      .how .item{grid-column:span 6}
-      .cmds .panel{grid-column:span 12}
-      .cmds .side{grid-column:span 12}
-      .token .tiers{grid-template-columns:1fr}
+      .tiles .tile{grid-column:span 12}
+      .panel,.side{grid-column:span 12}
+      .links-grid{grid-template-columns:1fr}
     }
-    .brandline{margin:8px 0 0;font-weight:700;color:var(--text);opacity:.9}
-    /* Theme variants */
-    [data-theme="neon"]{--brand:#ffd800;--accent:#2aa7ff;--bg:#061018;--bg-soft:#0b1422;--card:#0d1a2c}
-    [data-theme="neon"] body{background:radial-gradient(1200px 800px at 20% -10%, #142542 0%, rgba(20,37,66,0) 60%), linear-gradient(180deg, var(--bg) 0%, #060a12 100%)}
-    [data-theme="stripes"]{--brand:#ff1c56;--accent:#ffd166;--bg:#0a0d12;--bg-soft:#101525;--card:#101a2d}
-    [data-theme="stripes"] body{background:
-      repeating-linear-gradient(45deg, rgba(255,255,255,0.03) 0 12px, rgba(255,255,255,0.0) 12px 24px),
-      linear-gradient(180deg, var(--bg) 0%, #080b10 100%)}
   </style>
 </head>
 <body>
+  <!-- NAV -->
   <header>
     <div class="wrap nav">
       <div class="logo">
-        <img src="pump_pokeball_logo.png" alt="Logo" style="width:42px;height:42px;border-radius:8px;filter:drop-shadow(0 4px 8px rgba(0,0,0,0.2))" />
+        <img src="pump_pokeball_logo.png" alt="Pump Plays Pokémon Logo" />
         <div>
-          <div style="font-weight:900;font-size:18px;letter-spacing:.3px">PUMP PLAYS POKÉMON</div>
-          <div style="font-size:12px;color:var(--muted);margin-top:-2px">Interactive Democracy Gaming</div>
+          <div class="brand-title">PUMP PLAYS POKÉMON</div>
+          <div class="brand-sub">Interactive Democracy Gaming</div>
         </div>
       </div>
-      <nav>
-        <a class="btn ghost" id="nav-live" href="#live">Live</a>
-        <a class="btn ghost" id="nav-how" href="#how">How it works</a>
-        <a class="btn ghost" id="nav-commands" href="#commands">Commands</a>
-        <a class="btn ghost" href="https://www.pumpplays.com/Leaderboard/" target="_blank">Leaderboard</a>
-        <button class="btn ghost" id="btn-theme" type="button">Theme: Neon</button>
-        <a class="btn ghost" href="https://pump.fun/coin/DxKwgDV2NZapgrpdvCHNdWcAByWuXvohKsdUAxcrpump" target="_blank" rel="noopener">Live on PumpFun</a>
-        <a class="btn ghost" href="https://twitter.com/pumpplays" target="_blank" rel="noopener">Twitter</a>
-        <a class="btn ghost" href="https://t.me/pumpplays" target="_blank" rel="noopener">Telegram</a>
-        <a class="btn ghost" href="https://dexscreener.com/solana/DxKwgDV2NZapgrpdvCHNdWcAByWuXvohKsdUAxcrpump" target="_blank" rel="noopener">DexScreener</a>
-        <a class="btn" href="https://pump.fun/coin/DxKwgDV2NZapgrpdvCHNdWcAByWuXvohKsdUAxcrpump" target="_blank" rel="noopener">Open Token</a>
-      </nav>
+      <div class="right">
+        <a class="btn ghost" href="#features">Features</a>
+        <a class="btn ghost" href="#commands">Commands</a>
+        <a class="btn ghost" href="#rewards">Rewards</a>
+        <a class="btn ghost" href="#links">Verified Links</a>
+        <a class="btn brand" target="_blank" rel="noopener" href="https://pump.fun/coin/DxKwgDV2NZapgrpdvCHNdWcAByWuXvohKsdUAxcrpump">Watch Live</a>
+      </div>
     </div>
   </header>
 
   <main>
-    <section class="wrap hero" id="live">
+    <!-- HERO -->
+    <section class="wrap hero" id="home">
       <div class="left card">
-        <div class="pill" id="status-pill"><span class="dot" style="background:var(--ok)"></span> Ready to Play</div>
-        <h1>🚀 <span style="color:var(--brand)">PUMP PLAYS</span> <span style="color:#4ad2ff">POKÉMON</span></h1>
-        <p class="brandline" style="color:#ff6b9d;font-size:20px;font-weight:800">AT FULL SPEED!</p>
-        <p class="subtitle">Type <code>!up</code> or <code>/up</code>, <code>!down</code> or <code>/down</code>, <code>!left</code> or <code>/left</code>, <code>!right</code> or <code>/right</code>, <code>!a</code> or <code>/a</code>, <code>!b</code> or <code>/b</code> in chat to guide our trainer! Democracy votes every <strong id="vote-window">3s</strong> 🗳️ Token holders get boosted votes and special battle effects! ⚡</p>
+        <div class="pill"><span class="dot" id="live-dot" style="background:var(--warn)"></span> <span id="live-text">Preparing</span></div>
+        <h1>
+          <span style="color:var(--brand)">PUMP PLAYS</span> <span style="color:var(--brand-2)">POKÉMON</span>
+        </h1>
+        <p class="subtitle">Control the game with chat. Earn rewards as you play. Tackle quests. Or embrace chaos in the TeamRocket Terminal.</p>
         <div class="hero-cta">
-          <a class="btn brand" href="https://pump.fun/coin/DxKwgDV2NZapgrpdvCHNdWcAByWuXvohKsdUAxcrpump" target="_blank" rel="noopener">WATCH LIVE</a>
-          <a class="btn ghost" href="https://t.me/pumpplays" target="_blank" rel="noopener">JOIN TELEGRAM</a>
-          <a class="btn" href="https://pump.fun/coin/DxKwgDV2NZapgrpdvCHNdWcAByWuXvohKsdUAxcrpump" style="background:#ff6b9d;border-color:#ff6b9d" target="_blank" rel="noopener">GET TOKEN</a>
+          <a class="btn brand" target="_blank" rel="noopener" href="https://pump.fun/coin/DxKwgDV2NZapgrpdvCHNdWcAByWuXvohKsdUAxcrpump">Open Livestream</a>
+          <a class="btn" target="_blank" rel="noopener" href="https://t.me/pumpplays">Join Telegram</a>
+          <a class="btn pink" target="_blank" rel="noopener" href="https://chromewebstore.google.com/detail/pump-plays-pokemon/ekpcepkgkjijaedicggnfkolhplocpjn">Chrome DS Controller</a>
         </div>
-        <div style="margin-top:10px;color:var(--muted);font-size:13px">Interactive democracy gaming — powered by the community!</div>
       </div>
-      <div class="card" style="display:grid;place-items:center;padding:40px;background:radial-gradient(circle at center, rgba(24,194,156,0.15) 0%, rgba(74,210,255,0.15) 50%, rgba(255,107,157,0.15) 100%)">
-        <img src="pump_pokeball_logo.png" alt="Pump Plays Pokemon Logo" style="max-width:400px;width:100%;height:auto;filter:drop-shadow(0 8px 16px rgba(0,0,0,0.3))" />
-      </div>
-    </section>
-
-    <section class="wrap section how" id="how">
-      <div class="kicker">How it works</div>
-      <h2>Four moving parts. One clean experience.</h2>
-      <div class="grid">
-        <div class="item">
-          <div class="pill" style="margin-bottom:8px"><span class="dot" style="background:var(--ok)"></span> 01</div>
-          <h3>GBA Emulator</h3>
-          <p>We run Pokémon Emerald on VisualBoyAdvance-M or mGBA. The controller script sends GBA inputs every vote window for precise, responsive gameplay.</p>
-        </div>
-        <div class="item">
-          <div class="pill" style="margin-bottom:8px"><span class="dot" style="background:var(--ok)"></span> 02</div>
-          <h3>Chat → Votes</h3>
-          <p>Pump.fun chat messages like <code>!up</code> or <code>/up</code>, <code>!a</code> or <code>/a</code>, <code>!b</code> or <code>/b</code> are tallied. Majority wins every 3 seconds.</p>
-        </div>
-        <div class="item">
-          <div class="pill" style="margin-bottom:8px"><span class="dot" style="background:var(--ok)"></span> 03</div>
-          <h3>Token Boosts</h3>
-          <p>Recent buyers get 2–5× vote power for a limited time. Big buys trigger spectacular on-screen effects.</p>
-        </div>
-        <div class="item">
-          <div class="pill" style="margin-bottom:8px"><span class="dot" style="background:var(--ok)"></span> 04</div>
-          <h3>Live Overlay</h3>
-          <p>Real-time vote visualization with command bars, winner display, and dazzling trade animations.</p>
-        </div>
+      <div class="card" style="display:grid;place-items:center;padding:40px;background:radial-gradient(circle at center, rgba(29,225,178,.16) 0%, rgba(69,181,255,.16) 50%, rgba(255,107,157,.16) 100%)">
+        <img src="pump_pokeball_logo.png" alt="PPP Emblem" style="max-width:420px;width:100%;height:auto;filter:drop-shadow(0 10px 24px rgba(0,0,0,.45))"/>
       </div>
     </section>
 
-    <section class="wrap section cmds" id="commands">
+    <!-- FEATURES / DS TILES -->
+    <section class="wrap section" id="features">
+      <div class="kicker">Everything in one hub</div>
+      <h2>Play. Earn. Cause mayhem. Track progress.</h2>
+      <div class="tiles">
+        <article class="tile">
+          <div class="pill"><span class="dot" style="background:var(--ok)"></span> Feature</div>
+          <h3>TeamRocket Terminal</h3>
+          <p>Burn PPP to push instant commands to the game and unleash glorious chaos — rate‑limited, verified, and logged.</p>
+          <div style="margin-top:10px"><a class="btn" target="_blank" rel="noopener" href="https://teamrocket.pumpplays.com/">Launch Terminal</a></div>
+        </article>
+        <article class="tile">
+          <div class="pill"><span class="dot" style="background:var(--ok)"></span> Feature</div>
+          <h3>Quest Log</h3>
+          <p>Clear main quests and wild side‑quests (badges, collectors, shiny feats, no‑faint runs). Submit clips, win bounties.</p>
+          <div style="margin-top:10px"><a class="btn" target="_blank" rel="noopener" href="https://quests.pumpplays.com/">Open Quest Log</a></div>
+        </article>
+        <article class="tile">
+          <div class="pill"><span class="dot" style="background:var(--ok)"></span> Feature</div>
+          <h3>Hourly/Daily Rewards</h3>
+          <p>Active players receive small hourly drops, with bigger daily/weekly milestones on the way. Earn while you help steer the run.</p>
+          <div class="badges"><span class="badge">Hourly Live</span><span class="badge">Daily Coming Up</span><span class="badge">Event Bonuses</span></div>
+        </article>
+        <article class="tile">
+          <div class="pill"><span class="dot" style="background:var(--ok)"></span> Feature</div>
+          <h3>Nintendo DS Controller (Chrome Extension)</h3>
+          <p>Fully customizable Nintendo DS controller for PumpPlays. Map buttons, tweak hold timing, and play along in your browser with the verified extension.</p>
+          <div style="margin-top:10px"><a class="btn" target="_blank" rel="noopener" href="https://chromewebstore.google.com/detail/pump-plays-pokemon/ekpcepkgkjijaedicggnfkolhplocpjn">Install Extension</a></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- COMMANDS -->
+    <section class="wrap section" id="commands">
       <div class="grid">
         <div class="panel card">
-          <h2>Chat Commands</h2>
-          <table class="table" aria-label="Command list">
-            <thead>
-              <tr><th>Command</th><th>Action</th></tr>
-            </thead>
+          <div class="kicker">Chat → Game</div>
+          <h2>Commands (both prefixes work: <code>!a</code> or <code>/a</code>)</h2>
+          <table aria-label="Command list">
+            <thead><tr><th>Command</th><th>Action</th></tr></thead>
             <tbody>
-              <tr><td><code>!up</code> or <code>/up</code></td><td>D-Pad up (navigate menus)</td></tr>
-              <tr><td><code>!down</code> or <code>/down</code></td><td>D-Pad down</td></tr>
-              <tr><td><code>!left</code> or <code>/left</code></td><td>D-Pad left</td></tr>
-              <tr><td><code>!right</code> or <code>/right</code></td><td>D-Pad right</td></tr>
-              <tr><td><code>!a</code> or <code>/a</code></td><td>A button (confirm / interact)</td></tr>
-              <tr><td><code>!b</code> or <code>/b</code></td><td>B button (cancel / run)</td></tr>
-              <tr><td><code>!l</code> or <code>/l</code></td><td>L shoulder button</td></tr>
-              <tr><td><code>!r</code> or <code>/r</code></td><td>R shoulder button</td></tr>
-              <tr><td><code>!start</code> or <code>/start</code></td><td>START (pause / menu)</td></tr>
-              <tr><td><code>!select</code> or <code>/select</code></td><td>SELECT (items / shortcuts)</td></tr>
-              <tr><td style="border-top:2px solid var(--brand)"><code>!holda 1000</code></td><td><strong>Hold A button for 1000ms</strong></td></tr>
-              <tr><td><code>!holdright 500</code></td><td><strong>Hold RIGHT for 500ms</strong></td></tr>
-              <tr><td><code>!up75</code></td><td><strong>75% momentum directional</strong></td></tr>
-              <tr><td><code>!release</code></td><td>Release all held buttons</td></tr>
+              <tr><td><code>!up</code> / <code>/up</code></td><td>D‑Pad Up (menus / move)</td></tr>
+              <tr><td><code>!down</code> / <code>/down</code></td><td>D‑Pad Down</td></tr>
+              <tr><td><code>!left</code> / <code>/left</code></td><td>D‑Pad Left</td></tr>
+              <tr><td><code>!right</code> / <code>/right</code></td><td>D‑Pad Right</td></tr>
+              <tr><td><code>!a</code> / <code>/a</code></td><td>A (confirm / interact)</td></tr>
+              <tr><td><code>!b</code> / <code>/b</code></td><td>B (cancel / run)</td></tr>
+              <tr><td><code>!l</code> / <code>/l</code></td><td>L shoulder</td></tr>
+              <tr><td><code>!r</code> / <code>/r</code></td><td>R shoulder</td></tr>
+              <tr><td><code>!start</code> / <code>/start</code></td><td>START (menu)</td></tr>
+              <tr><td><code>!select</code> / <code>/select</code></td><td>SELECT (items / shortcuts)</td></tr>
+              <tr><td style="border-top:2px solid var(--brand)"><code>!holda</code></td><td><strong>Hold A briefly</strong> (no numbers needed)</td></tr>
+              <tr><td><code>!holdright</code></td><td><strong>Hold RIGHT briefly</strong></td></tr>
+              <tr><td><code>!release</code></td><td>Release all holds</td></tr>
             </tbody>
           </table>
-          <div class="hint" style="color:var(--muted);font-size:13px;margin-top:12px;background:var(--bg-soft);padding:12px;border-radius:8px;border:1px solid #1b2545;">
-            <div style="color:var(--brand);font-weight:700;margin-bottom:6px">💡 ADVANCED COMMANDS:</div>
-            <div><strong>Hold Commands:</strong> Use <code>!holda 1500</code> to hold A for 1.5 seconds. Works with any button (100-5000ms range).</div>
-            <div style="margin-top:4px"><strong>Momentum:</strong> Use <code>!up50</code> for 50% power movement, <code>!right100</code> for full power (1-100%).</div>
-            <div style="margin-top:4px"><strong>Both prefixes work:</strong> <code>!up</code> = <code>/up</code>, <code>!holda 800</code> = <code>/holda 800</code></div>
+          <div class="band" style="margin-top:12px">
+            <strong>Tip:</strong> Vote window is <span id="vote-window">3s</span>. Token holders get temporary power boosts after buys.
           </div>
-          <div class="cta">
-            <button class="btn" data-copy="!up !down !left !right !a !b !l !r !start !select">Copy GBA commands</button>
-            <button class="btn ghost" id="btn-sim">Simulate test vote</button>
+          <div style="display:flex;gap:10px;margin-top:12px;flex-wrap:wrap">
+            <a class="btn" data-copy="!up !down !left !right !a !b !l !r !start !select">Copy commands</a>
+            <a class="btn ghost" target="_blank" rel="noopener" href="https://www.pumpplays.com/Leaderboard/">Open Leaderboard</a>
           </div>
         </div>
         <aside class="side card">
-          <h2 style="margin-top:8px">Quick Start (Viewers)</h2>
+          <h2 style="margin-top:8px">Quick Start</h2>
           <ol>
-            <li>Open the livestream (button above).</li>
-            <li>Type a command in chat (e.g., <code>!a</code> or <code>/a</code>, <code>!b</code> or <code>/b</code>, <code>!start</code> or <code>/start</code>).</li>
-            <li>Watch the vote bars move in real time.</li>
-            <li>Every <span id="vote-window-2">3</span> seconds, the winning move plays.</li>
+            <li>Open the livestream.</li>
+            <li>Type a command in chat (ex: <code>!a</code>).</li>
+            <li>Watch vote bars in real time.</li>
+            <li>Every <span id="vote-window-2">3</span> seconds the winning move plays.</li>
           </ol>
-          <div class="kicker" style="margin-top:12px">Want extra influence?</div>
-          <p>Buy the token → get temporary vote boosts. Bigger buys = bigger boosts.</p>
+          <div class="kicker" style="margin-top:10px">Want extra influence?</div>
+          <p>Buy the token for temporary boost windows. Big buys = flashy effects on‑stream.</p>
         </aside>
       </div>
     </section>
 
-
-
-
-    <section class="wrap section" id="disclaimer">
+    <!-- TOKENOMICS & BOOSTS -->
+    <section class="wrap section" id="tokenomics">
+      <div class="kicker">Tokenomics</div>
+      <h2>Vote Boosts powered by PPP</h2>
       <div class="card" style="padding:18px">
+        <p class="subtitle">Buying PPP grants a temporary vote‑power boost. Bigger buys = stronger boosts. Holders also qualify for hourly/daily reward programs.</p>
+        <div class="badges"><span class="badge">Buy → Boost window</span><span class="badge">2×–5× vote power</span><span class="badge">Anti‑spam rate limits</span></div>
+        <div class="grid" style="margin-top:14px">
+          <div class="tile" style="grid-column:span 4"><h3 style="margin:0 0 6px">Small Buy</h3><p>~2× vote power for a short window.</p></div>
+          <div class="tile" style="grid-column:span 4"><h3 style="margin:0 0 6px">Medium Buy</h3><p>~3× vote power for a limited window.</p></div>
+          <div class="tile" style="grid-column:span 4"><h3 style="margin:0 0 6px">Large Buy</h3><p>Up to ~5× vote power for a limited window.</p></div>
+        </div>
+        <p class="subtitle" style="margin-top:10px">Note: Exact multipliers/durations are tuned during events. Trade animations fire on big buys and the overlay reflects your boost in real time.</p>
+      </div>
+    </section>
+
+    <!-- REWARDS -->
+    <section class="wrap section" id="rewards">
+      <div class="kicker">Earn while you play</div>
+      <h2>Rewards & Drops</h2>
+      <div class="card" style="padding:18px">
+        <div class="badges">
+          <span class="badge">Hourly: Active Player Micro‑drops</span>
+          <span class="badge">Daily: Streak Bonuses (soon)</span>
+          <span class="badge">Event: Boss/Badge Bounties</span>
+        </div>
+        <p class="subtitle" style="margin-top:8px">Track live quests and claimables via the <a target="_blank" rel="noopener" href="https://quests.pumpplays.com/">Quest Log</a>. Community bounties are posted there with PPP rewards.</p>
+      </div>
+    </section>
+
+    <!-- VERIFIED LINKS -->
+    <section class="wrap section" id="links">
+      <div class="kicker">No scams zone</div>
+      <h2>Verified, official links</h2>
+      <div class="links-grid">
+        <div class="link-card"><span>🎮 Livestream</span><a class="btn" target="_blank" rel="noopener" href="https://pump.fun/coin/DxKwgDV2NZapgrpdvCHNdWcAByWuXvohKsdUAxcrpump">Open</a></div>
+        <div class="link-card"><span>🚀 PPP Token (PumpFun)</span><a class="btn" target="_blank" rel="noopener" href="https://pump.fun/coin/DxKwgDV2NZapgrpdvCHNdWcAByWuXvohKsdUAxcrpump">Open</a></div>
+        <div class="link-card"><span>📈 DexScreener</span><a class="btn" target="_blank" rel="noopener" href="https://dexscreener.com/solana/DxKwgDV2NZapgrpdvCHNdWcAByWuXvohKsdUAxcrpump">Open</a></div>
+        <div class="link-card"><span>🧪 TeamRocket Terminal</span><a class="btn" target="_blank" rel="noopener" href="https://teamrocket.pumpplays.com/">Open</a></div>
+        <div class="link-card"><span>🗺️ Quest Log</span><a class="btn" target="_blank" rel="noopener" href="https://quests.pumpplays.com/">Open</a></div>
+        <div class="link-card"><span>📊 Leaderboard</span><a class="btn" target="_blank" rel="noopener" href="https://www.pumpplays.com/Leaderboard/">Open</a></div>
+        <div class="link-card"><span>🧩 Chrome Extension (Nintendo DS Controller)</span><a class="btn" target="_blank" rel="noopener" href="https://chromewebstore.google.com/detail/pump-plays-pokemon/ekpcepkgkjijaedicggnfkolhplocpjn">Open</a></div>
+        <div class="link-card"><span>🐦 Twitter/X</span><a class="btn" target="_blank" rel="noopener" href="https://twitter.com/pumpplays">Open</a></div>
+        <div class="link-card"><span>💬 Telegram</span><a class="btn" target="_blank" rel="noopener" href="https://t.me/pumpplays">Open</a></div>
+      </div>
+    </section>
+
+    <!-- ROADMAP POSTER STYLE -->
+    <section class="wrap section" id="roadmap">
+      <div class="kicker">Where we're headed</div>
+      <h2>Roadmap vibes</h2>
+      <div class="poster">
+        <h4>Phase 1 – Beta Test Begins</h4>
+        <ul><li>Holders guide the journey</li><li>Leaderboards rise</li><li>On‑chain levels awaken</li></ul>
+        <h4 style="margin-top:16px">Phase 2 – New Console, New Battles</h4>
+        <ul><li>DS/SoulSilver chapter</li><li>Weekend battle events</li><li>Only the strong will adapt</li></ul>
+        <h4 style="margin-top:16px">Phase 3 – Evolution Continues</h4>
+        <ul><li>Schedules transform</li><li>Special event days</li><li>More games. More variety. More power.</li></ul>
+        <h4 style="margin-top:16px">Phase 4 – The Colosseum Dream</h4>
+        <ul><li>The ultimate arena awaits…</li></ul>
+      </div>
+      <p class="subtitle" style="margin-top:10px">Lore-friendly extras: Giovanni alerts may spike burn rates; Champions Corner (token-gated) is planned for long-term strategists.</p>
+    </section>
+
+    <!-- DISCLAIMER -->
+    <section class="wrap section" id="disclaimer">
+      <div class="card" style="padding:16px">
         <div class="kicker">Disclaimer</div>
-        <p style="margin:6px 0 0;color:var(--muted)">Not affiliated with Nintendo, Game Freak, or The Pokémon Company. “Pokémon” and related names are trademarks of their respective owners. This is a fan-made interactive stream experiment hosted on Pump.fun’s livestream feature.</p>
+        <p class="subtitle">Not affiliated with Nintendo, Game Freak, or The Pokémon Company. "Pokémon" and related names are trademarks of their respective owners. Fan-made interactive stream experiment hosted via Pump.fun.</p>
       </div>
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer>
-    <div class="wrap">
-      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
-        <div>© <span id="year"></span> Pump Plays Pokémon • Built with ❤️ for aspiring Pokémon Masters</div>
-        <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <a href="https://pump.fun/coin/DxKwgDV2NZapgrpdvCHNdWcAByWuXvohKsdUAxcrpump" target="_blank" rel="noopener">🚀 Token</a>
-          <a href="https://www.pumpplays.com/Leaderboard/" target="_blank" rel="noopener">📊 Leaderboard</a>
-          <a href="https://pump.fun/coin/DxKwgDV2NZapgrpdvCHNdWcAByWuXvohKsdUAxcrpump" target="_blank" rel="noopener">🎮 Live Stream</a>
-          <a href="https://twitter.com/pumpplays" target="_blank" rel="noopener">🐦 Twitter</a>
-          <a href="https://t.me/pumpplays" target="_blank" rel="noopener">💬 Telegram</a>
-          <a href="https://dexscreener.com/solana/DxKwgDV2NZapgrpdvCHNdWcAByWuXvohKsdUAxcrpump" target="_blank" rel="noopener">📈 DexScreener</a>
-        </div>
+    <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+      <div>© <span id="year"></span> Pump Plays Pokémon • Built with ❤️ for aspiring Pokémon Masters</div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a href="https://pump.fun/coin/DxKwgDV2NZapgrpdvCHNdWcAByWuXvohKsdUAxcrpump" class="btn ghost" target="_blank" rel="noopener">Token</a>
+        <a href="https://www.pumpplays.com/Leaderboard/" class="btn ghost" target="_blank" rel="noopener">Leaderboard</a>
+        <a href="https://twitter.com/pumpplays" class="btn ghost" target="_blank" rel="noopener">Twitter</a>
+        <a href="https://t.me/pumpplays" class="btn ghost" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://dexscreener.com/solana/DxKwgDV2NZapgrpdvCHNdWcAByWuXvohKsdUAxcrpump" class="btn ghost" target="_blank" rel="noopener">DexScreener</a>
       </div>
     </div>
   </footer>
 
-
+  <!-- JS: Live pill + clipboard + constants -->
   <script>
-    // ======== CONFIG (edit these to your real links) ========
     const LINKS = {
-      mint: 'https://pump.fun/coin/DxKwgDV2NZapgrpdvCHNdWcAByWuXvohKsdUAxcrpump',
       live: 'https://pump.fun/coin/DxKwgDV2NZapgrpdvCHNdWcAByWuXvohKsdUAxcrpump',
-      trades: 'https://pump.fun/coin/DxKwgDV2NZapgrpdvCHNdWcAByWuXvohKsdUAxcrpump?tab=trade',
-      dexscreener: 'https://dexscreener.com/solana/DxKwgDV2NZapgrpdvCHNdWcAByWuXvohKsdUAxcrpump',
-      telegram: 'https://t.me/pumpplays',
-      twitter: 'https://twitter.com/pumpplays',
-      leaderboard: 'https://www.pumpplays.com/Leaderboard/',
-      statusEndpoint: '',
-      voteWindowSeconds: 3
+      voteWindowSeconds: 3,
+      statusEndpoint: '' // optional JSON endpoint that returns { live: boolean }
     };
 
-    // Links are now hardcoded in HTML for better reliability
-
-    // Vote window text
+    // Vote window copy
     const vwEls = [document.getElementById('vote-window'), document.getElementById('vote-window-2')];
     vwEls.forEach(el => el && (el.textContent = LINKS.voteWindowSeconds + 's'));
 
-    // Live status (optional ping)
-    const pill = document.getElementById('status-pill');
-    const pillDot = pill.querySelector('.dot');
-    const pillText = document.getElementById('status-text');
+    // Clipboard
+    document.querySelectorAll('[data-copy]').forEach(btn => {
+      btn.addEventListener('click', async () => {
+        try{ await navigator.clipboard.writeText(btn.getAttribute('data-copy')); btn.textContent = 'Copied!'; setTimeout(()=>btn.textContent='Copy commands', 1200);}catch(e){ btn.textContent = 'Copy failed'; setTimeout(()=>btn.textContent='Copy commands', 1200);}
+      });
+    });
+
+    // Live status (optional)
     async function refreshStatus(){
-      if(!LINKS.statusEndpoint){ pillDot.style.background = 'var(--warn)'; pillText.textContent = 'Preparing'; return; }
+      const dot = document.getElementById('live-dot');
+      const txt = document.getElementById('live-text');
+      if(!LINKS.statusEndpoint){ dot.style.background = 'var(--warn)'; txt.textContent = 'Preparing'; return; }
       try{
-        const r = await fetch(LINKS.statusEndpoint, { cache: 'no-store' });
+        const r = await fetch(LINKS.statusEndpoint, { cache:'no-store' });
         const j = await r.json();
-        const live = !!(j?.live);
-        pillDot.style.background = live ? 'var(--ok)' : 'var(--warn)';
-        pillText.textContent = live ? 'Live' : 'Preparing';
-      }catch(e){ pillDot.style.background = 'var(--warn)'; pillText.textContent = 'Preparing'; }
+        const live = !!j?.live; dot.style.background = live ? 'var(--ok)' : 'var(--warn)'; txt.textContent = live ? 'Live' : 'Preparing';
+      }catch(e){ dot.style.background = 'var(--warn)'; txt.textContent = 'Preparing'; }
     }
     refreshStatus(); setInterval(refreshStatus, 10000);
 
-    // Clipboard helpers
-    document.querySelectorAll('[data-copy]').forEach(btn=>{
-      btn.addEventListener('click', async ()=>{
-        try{ await navigator.clipboard.writeText(btn.dataset.copy); btn.textContent = 'Copied!'; setTimeout(()=>btn.textContent='Copy all', 1200);}catch(e){ btn.textContent = 'Copy failed'; setTimeout(()=>btn.textContent='Copy all', 1200);}
-      })
-    });
-
-    // Simulate a vote lock (front-end only demo)
-    const simBtn = document.getElementById('btn-sim');
-    simBtn?.addEventListener('click', ()=>{
-      const cmds = ['!up','!down','!left','!right','!a','!b','!l','!r','!start','!select'];
-      const pick = cmds[Math.floor(Math.random()*cmds.length)];
-      const el = document.createElement('div');
-      el.textContent = `Simulated winner: ${pick}`;
-      el.style.cssText = 'margin-top:10px;padding:8px 10px;background:#0d1732;border:1px solid #1b2545;border-radius:10px;';
-      document.querySelector('.cmds .panel').appendChild(el);
-      setTimeout(()=>el.remove(), 2500);
-    });
-
     // Year
     document.getElementById('year').textContent = new Date().getFullYear();
-    // Theme toggle
-    const htmlEl = document.documentElement;
-    function setTheme(t){ htmlEl.setAttribute('data-theme', t); localStorage.setItem('pps-theme', t); document.getElementById('btn-theme').textContent = `Theme: ${t === 'neon' ? 'Neon' : 'Stripes'}`; }
-    setTheme(localStorage.getItem('pps-theme') || 'neon');
-    document.getElementById('btn-theme').addEventListener('click', ()=>{
-      const next = (htmlEl.getAttribute('data-theme') === 'neon') ? 'stripes' : 'neon';
-      setTheme(next);
-    });
   </script>
 </body>
 </html>
